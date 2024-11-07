@@ -30,22 +30,10 @@ export default {
   methods: {
     handleRouteChange() {
       this.loading = true;
-      console.log(this.loading);
       this.$nextTick(() => {
-        const images = Array.from(document.images);
-        const imagePromises = images.map((img) =>
-          img.complete
-            ? Promise.resolve()
-            : new Promise((resolve) => {
-              img.onload = resolve;
-              img.onerror = resolve;
-            })
-        );
-
-        Promise.all(imagePromises).then(() => {
+        setTimeout(() => {
           this.loading = false;
-          console.log(this.loading);
-        });
+        }, 7000);
       });
     },
   },

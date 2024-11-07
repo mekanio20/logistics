@@ -1,6 +1,6 @@
 <template>
-    <div v-if="loading" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <lottie-player class="sm:w-600 sm:h-406 w-96 h-96" src="/loader.json" background="transparent" speed="1" loop
+    <div v-if="loading" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px]">
+        <lottie-player class="w-full h-full" src="/loader.json" background="transparent" speed="1" loop
             autoplay></lottie-player>
     </div>
 </template>
