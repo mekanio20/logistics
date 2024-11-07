@@ -28,7 +28,7 @@
             <p class="font-sf_pro font-normal text-base text-m_gray-200">744000, Ashgabat, Seyitnazar Seydi 70/2</p>
         </div>
     </div>
-    <div class="container relative top-28 px-20">
+    <div class="container relative top-28 px-20 select-none">
         <div
             class="rounded-xl sticky right-0 left-0 z-50 flex items-center justify-between bg-white opacity-85 sm:px-10 px-4 py-5 -mt-10">
             <router-link to="/" class="cursor-pointer flex items-center">
@@ -72,7 +72,7 @@
                     </svg>
                 </div>
                 <router-link to="/contact"
-                    class="hidden lg:block ml-2 cursor-pointer relative px-8 py-3 rounded-lg bg-m_red-100 text-white font-poppins font-bold text-base">
+                    class="hidden lg:block ml-2 cursor-pointer z-50 px-8 py-3 rounded-lg bg-m_red-100 text-white font-poppins font-bold text-base">
                     Contact us
                 </router-link>
             </div>
@@ -89,13 +89,13 @@ export default {
                 { id: 1, name: 'Home', url: '/' },
                 { id: 2, name: 'About us', url: '/about' },
                 { id: 3, name: 'Service', url: '/service' },
-                { id: 4, name: 'Projects', url: '/projects' },
+                // { id: 4, name: 'Projects', url: '/projects' },
             ],
             pages: [
                 { id: 1, name: 'Home', url: '/' },
                 { id: 2, name: 'About us', url: '/about' },
                 { id: 3, name: 'Service', url: '/service' },
-                { id: 4, name: 'Projects', url: '/projects' },
+                // { id: 4, name: 'Projects', url: '/projects' },
                 { id: 5, name: 'Contact us', url: '/contact' },
             ],
             isOpen: false,

@@ -44,19 +44,19 @@ export default {
           this.loading = false;
         }, 7000);
 
-        // const imagePromises = images.map((img) =>
-        //   img.complete
-        //     ? Promise.resolve()
-        //     : new Promise((resolve) => {
-        //       img.onload = resolve;
-        //       img.onerror = resolve;
-        //     })
-        // );
+        const imagePromises = images.map((img) =>
+          img.complete
+            ? Promise.resolve()
+            : new Promise((resolve) => {
+              img.onload = resolve;
+              img.onerror = resolve;
+            })
+        );
 
-        // Promise.all(imagePromises).then(() => {
-        //   this.loading = false;
-        //   clearTimeout(this.loadTimeout)
-        // });
+        Promise.all(imagePromises).then(() => {
+          this.loading = false;
+          clearTimeout(this.loadTimeout)
+        });
       });
     },
   },

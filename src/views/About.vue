@@ -3,24 +3,7 @@
         <Navbar active_page="/about" />
         <div class="container">
             <!-- BANNER -->
-            <div class="relative">
-                <img class="w-full h-full object-cover" src="@/assets/imgs/about-page.webp">
-                <h1
-                    class="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-sf_pro font-bold text-6xl text-white leading-[70px]">
-                    About us
-                </h1>
-                <div
-                    class="absolute z-50 inset-y-1/3 right-28 border h-fit bg-white bg-opacity-30 border-white p-4 rounded-full">
-                    <a href="#" target="_blank"><img class="w-5 block py-4 cursor-pointer"
-                            src="@/assets/icons/instagram.svg" alt="instagram"></a>
-                    <a href="#" target="_blank"><img class="w-5 block py-4 cursor-pointer"
-                            src="@/assets/icons/facebook.svg" alt="facebook"></a>
-                    <a href="#" target="_blank"><img class="w-5 block py-4 cursor-pointer"
-                            src="@/assets/icons/youtube.svg" alt="youtube"></a>
-                    <a href="#" target="_blank"><img class="w-5 block py-4 cursor-pointer"
-                            src="@/assets/icons/linkedIn.svg" alt="linkedin"></a>
-                </div>
-            </div>
+            <Banner name="About" image="about-page.webp" />
             <!-- STATISTC -->
             <div class="grid grid-cols-4 gap-x-6 py-20">
                 <div class="bg-m_white-100 rounded-lg p-10 flex items-center flex-col space-y-4">
@@ -67,7 +50,7 @@
             </div>
             <!-- CORE VALUES -->
             <div class="w-full text-center py-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl uppercase pb-20">Core Values</h2>
+                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl pb-20">Core Values</h2>
                 <div class="flex flex-wrap justify-center gap-10">
                     <div
                         class="w-[300px] h-[300px] rounded-xl p-6 flex items-start flex-col justify-between group bg-m_white-300 hover:bg-m_red-100 duration-300">
@@ -188,7 +171,7 @@
             </div>
             <!-- Certificates -->
             <div class="w-full text-center py-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl uppercase">Licenses and certificates
+                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl">Licenses and certificates
                 </h2>
                 <div class="flex items-center gap-x-8 rounded-lg py-20">
                     <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
@@ -207,7 +190,7 @@
             </div>
             <!-- Cargo -->
             <div class="w-full text-center pb-10">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl uppercase">Main types of cargo
+                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl">Main types of cargo
                     transported</h2>
                 <div class="grid grid-cols-4 gap-6 py-20">
                     <div class="rounded-xl relative overflow-hidden">
@@ -289,11 +272,13 @@
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 import AnimatedCounter from '@/components/AnimatedCounter.vue';
+import Banner from '@/components/Banner.vue';
 export default {
     name: "About",
     components: {
         Navbar,
         Footer,
+        Banner,
         AnimatedCounter
     }
 }

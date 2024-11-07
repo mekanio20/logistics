@@ -5,16 +5,18 @@
             <!-- BIG BANNER -->
             <div class="relative">
                 <img class="w-full h-full object-cover" src="@/assets/imgs/bg.webp">
-                <h1 class=" hidden lg:block absolute bottom-12 left-12 font-sf_pro font-bold xl:text-6xl lg:text-5xl text-4xl text-white lg:w-8/12 leading-[70px]">
+                <h1
+                    class=" hidden lg:block absolute bottom-12 left-12 font-sf_pro font-bold xl:text-6xl lg:text-5xl text-4xl text-white lg:w-8/12 leading-[70px]">
                     Turkmen Milli Logistik – Delivering seamless logistics solutions worldwide
                 </h1>
             </div>
             <!-- OUR SERVICES -->
             <div class="w-full text-center py-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl uppercase">Our Services</h2>
+                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl">Our Services</h2>
                 <div class="pt-20 flex items-start gap-x-6">
                     <div class="rounded-lg relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110" src="@/assets/imgs/service1.webp">
+                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+                            src="@/assets/imgs/service1.webp">
                         <div class="absolute top-4 right-4 cursor-pointer">
                             <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -25,13 +27,13 @@
                                     fill="black" />
                             </svg>
                         </div>
-                        <div
-                            class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white uppercase w-1/2">
+                        <div class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white w-1/2">
                             Reliable Sea Freight
                         </div>
                     </div>
                     <div class="rounded-lg relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110" src="@/assets/imgs/service2.webp">
+                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+                            src="@/assets/imgs/service2.webp">
                         <div class="absolute top-4 right-4 cursor-pointer">
                             <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -42,13 +44,13 @@
                                     fill="black" />
                             </svg>
                         </div>
-                        <div
-                            class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white uppercase w-1/2">
+                        <div class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white w-1/2">
                             Ground Transportation
                         </div>
                     </div>
                     <div class="rounded-lg relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110" src="@/assets/imgs/service3.webp">
+                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+                            src="@/assets/imgs/service3.webp">
                         <div class="absolute top-4 right-4 cursor-pointer">
                             <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -59,8 +61,7 @@
                                     fill="black" />
                             </svg>
                         </div>
-                        <div
-                            class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white uppercase w-3/5">
+                        <div class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white w-3/5">
                             Swift And Efficient Air Cargo
                         </div>
                     </div>
@@ -69,23 +70,23 @@
             <!-- STATISTC -->
             <div class="grid grid-cols-4 gap-x-6">
                 <div class="bg-m_white-100 rounded-lg p-10 flex items-center flex-col space-y-4">
-                    <AnimatedCounter class="font-poppins font-semibold text-4xl"
-                            :finalValue="12" :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
+                    <AnimatedCounter class="font-poppins font-semibold text-4xl" :finalValue="12" :start-value="0"
+                        :speed="50" :plus="true"></AnimatedCounter>
                     <p class="font-poppins font-medium text-lg text-m_gray-100">Years of service</p>
                 </div>
                 <div class="bg-m_white-100 rounded-lg p-10 flex items-center flex-col space-y-4">
-                    <AnimatedCounter class="font-poppins font-semibold text-4xl tracking-tighter"
-                            :finalValue="20" :start-value="0" :speed="50" :currency="`K`"></AnimatedCounter>
+                    <AnimatedCounter class="font-poppins font-semibold text-4xl tracking-tighter" :finalValue="20"
+                        :start-value="0" :speed="50" :currency="`K`"></AnimatedCounter>
                     <p class="font-poppins font-medium text-lg text-m_gray-100">Cargo delivered</p>
                 </div>
                 <div class="bg-m_white-100 rounded-lg p-10 flex items-center flex-col space-y-4">
-                    <AnimatedCounter class="font-poppins font-semibold text-4xl"
-                            :finalValue="500" :start-value="100" :speed="1"></AnimatedCounter>
+                    <AnimatedCounter class="font-poppins font-semibold text-4xl" :finalValue="500" :start-value="100"
+                        :speed="1"></AnimatedCounter>
                     <p class="font-poppins font-medium text-lg text-m_gray-100">Total cargo</p>
                 </div>
                 <div class="bg-m_white-100 rounded-lg p-10 flex items-center flex-col space-y-4">
-                    <AnimatedCounter class="font-poppins font-semibold text-4xl"
-                            :finalValue="12" :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
+                    <AnimatedCounter class="font-poppins font-semibold text-4xl" :finalValue="12" :start-value="0"
+                        :speed="50" :plus="true"></AnimatedCounter>
                     <p class="font-poppins font-medium text-lg text-m_gray-100">Years of service</p>
                 </div>
             </div>
@@ -118,7 +119,7 @@
             </div>
             <!-- Certificates -->
             <div class="w-full text-center py-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl uppercase">Licenses and certificates
+                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl">Licenses and certificates
                 </h2>
                 <div class="flex items-center gap-x-8 rounded-lg py-20">
                     <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
@@ -137,73 +138,99 @@
             </div>
             <!-- Cargo -->
             <div class="w-full text-center pb-10">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl uppercase">Main types of cargo
+                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl">Main types of cargo
                     transported</h2>
                 <div class="grid grid-cols-4 gap-6 py-20">
                     <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3" src="@/assets/imgs/cargo1.webp">
+                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                            src="@/assets/imgs/cargo1.webp">
                         <p
                             class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                             Бытовая и вычислительная техника</p>
                     </div>
                     <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3" src="@/assets/imgs/cargo2.webp">
+                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                            src="@/assets/imgs/cargo2.webp">
                         <p
                             class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                             Медицина и фармацевтика</p>
                     </div>
                     <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3" src="@/assets/imgs/cargo3.webp">
+                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                            src="@/assets/imgs/cargo3.webp">
                         <p
                             class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                             Производственные линии и оборудования</p>
                     </div>
                     <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3" src="@/assets/imgs/cargo4.webp">
+                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                            src="@/assets/imgs/cargo4.webp">
                         <p
                             class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                             Семена и растения</p>
                     </div>
                     <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3" src="@/assets/imgs/cargo5.webp">
+                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                            src="@/assets/imgs/cargo5.webp">
                         <p
                             class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                             Сельскохозяйственная техника</p>
                     </div>
                     <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3" src="@/assets/imgs/cargo6.webp">
+                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                            src="@/assets/imgs/cargo6.webp">
                         <p
                             class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                             Химическая промышленность (сера, карбамид, полипропилен)</p>
                     </div>
                     <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3" src="@/assets/imgs/cargo7.webp">
+                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                            src="@/assets/imgs/cargo7.webp">
                         <p
                             class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                             Текстиль</p>
                     </div>
                     <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3" src="@/assets/imgs/cargo8.webp">
+                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                            src="@/assets/imgs/cargo8.webp">
                         <p
                             class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                             Продукты питания</p>
                     </div>
                 </div>
             </div>
+            <!-- Countries -->
+            <div class="w-full overflow-x-hidden pb-20">
+                <h2 v-scroll-reveal="{ origin: 'bottom', distance: '50px', duration: 1000 }"
+                    class="font-poppins font-semibold lg:text-3xl sm:text-2xl text-xl sm:!leading-[55px] text-black text-center pb-10">
+                    Providing Services Across 4 Countries
+                </h2>
+                <swiper :slides-per-view="slidesPerView" :breakpoints="country_breakpoints" :spaceBetween="20"
+                    :modules="modules" :autoplay="{ delay: 1000, disableOnInteraction: false, }" :speed="1000" class="w-full my-10">
+                    <swiper-slide v-for="item in countries" :key="item.id">
+                        <div class="bg-m_white-300 rounded-xl flex flex-col items-center py-10">
+                            <div class="w-28 h-28">
+                                <img :src="item.flag" class="w-full h-full object-cover">
+                            </div>
+                            <p class="font-poppins font-semibold lg:text-2xl text-xl text-black mt-10">{{ item.name }}</p>
+                        </div>
+                    </swiper-slide>
+                </swiper>
+            </div>
             <!-- Service -->
             <div class="w-full pb-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl uppercase text-center pb-10">Services We provide</h2>
-                <div class="flex flex-col lg:flex-row items-center lg:items-start bg-white p-8">
-                    <div class="lg:w-1/2 mb-8 lg:mb-0 lg:mr-8">
+                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl text-center pb-10">Services We provide
+                </h2>
+                <div class="flex flex-col lg:flex-row items-center bg-white p-8">
+                    <div class="lg:w-1/2 h-[585px] mb-16 lg:mb-0 lg:mr-16">
                         <img src="@/assets/imgs/provide.webp" alt="Warehouse"
                             class="rounded-lg shadow-lg object-cover w-full h-full" />
                     </div>
-
                     <div class="lg:w-1/2">
                         <ul class="space-y-4 text-gray-700">
                             <li v-for="(service, index) in services" :key="index" class="flex items-start">
                                 <span class="text-red-500 mr-2">◆</span>
-                                <p class="leading-relaxed">{{ service }}</p>
+                                <p class="leading-relaxed font-poppins font-normal text-xl">{{ service }}</p>
                             </li>
                         </ul>
                     </div>
@@ -218,15 +245,53 @@
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 import AnimatedCounter from '@/components/AnimatedCounter.vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 export default {
     name: "Home",
     components: {
         Navbar,
         Footer,
-        AnimatedCounter
+        AnimatedCounter,
+        Swiper,
+        SwiperSlide,
     },
     data() {
         return {
+            slidesPerView: null,
+            modules: [Pagination, Navigation, Autoplay],
+            countries: [
+                {
+                    id: 1,
+                    name: "Turkey",
+                    flag: "/src/assets/imgs/turkey.png"
+                },
+                {
+                    id: 2,
+                    name: "Russia",
+                    flag: "/src/assets/imgs/russia.png"
+                },
+                {
+                    id: 3,
+                    name: "China",
+                    flag: "/src/assets/imgs/china.png"
+                },
+                {
+                    id: 4,
+                    name: "Dubai",
+                    flag: "/svgs/dubay.svg"
+                },
+            ],
+            country_breakpoints: {
+                300: { slidesPerView: 1 },
+                500: { slidesPerView: 2 },
+                950: { slidesPerView: 2.8 },
+                1100: { slidesPerView: 3.4 },
+                1200: { slidesPerView: 4 }
+            },
             services: [
                 "Экспедирование экспортно-импортных и транзитных перевозок, грузов по странам СНГ, Ближнего и Дальнего Востока, стран Балтии и Евросоюза",
                 "Перевозка опасных грузов",
