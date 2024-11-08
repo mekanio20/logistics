@@ -449,33 +449,42 @@ export default {
             galleryItems: [
                 {
                     img: '/imgs/slide-1.webp',
-                    title: 'Я таргетолог',
-                    description: 'Targeting Specialist',
                 },
                 {
                     img: '/imgs/service1.webp',
-                    title: 'Кем же работать?',
-                    description: 'Career Options',
                 },
                 {
                     img: '/imgs/slide-3.webp',
-                    title: 'Точка Б',
-                    description: '150,000 Сом',
                 },
                 {
                     img: '/imgs/service2.webp',
-                    title: 'Я таргетолог',
-                    description: 'Targeting Specialist',
                 },
                 {
                     img: '/imgs/slide-2.webp',
-                    title: 'Кем же работать?',
-                    description: 'Career Options',
                 },
                 {
                     img: '/imgs/service3.webp',
-                    title: 'Точка Б',
-                    description: '150,000 Сом',
+                },
+                {
+                    img: '/imgs/slide-4.webp',
+                },
+                {
+                    img: '/imgs/slide-5.webp',
+                },
+                {
+                    img: '/imgs/slide-6.webp',
+                },
+                {
+                    img: '/imgs/slide-7.webp',
+                },
+                {
+                    img: '/imgs/slide-8.webp',
+                },
+                {
+                    img: '/imgs/slide-9.webp',
+                },
+                {
+                    img: '/imgs/slide-10.webp',
                 },
             ],
             country_breakpoints: {
