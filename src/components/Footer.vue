@@ -3,7 +3,7 @@
         <div class="container sm:py-16 py-10">
             <div class="flex lg:flex-row flex-col-reverse items-start justify-between rounded-xl">
                 <div
-                    class="lg:flex-1 w-full flex lg:items-start items-center lg:justify-start justify-center flex-col lg:mt-0 lg:pl-10 mt-10">
+                    class="lg:flex-1 w-full flex lg:items-start items-center lg:justify-start justify-center flex-col lg:mt-0 mt-10">
                     <router-link to="/" class="flex items-center space-x-4 cursor-pointer">
                         <img class="w-20" src="/svgs/logo.svg">
                     </router-link>
@@ -28,12 +28,6 @@
                             <h3
                                 class="font-poppins font-medium lg:text-base sm:text-sm mobile:text-sm text-xs text-black mb-10">
                                 Home</h3>
-                        </router-link>
-                        <router-link class="flex flex-col lg:items-start lg:justify-start items-center justify-center"
-                            to="/projects">
-                            <h3
-                                class="font-poppins font-medium lg:text-base sm:text-sm mobile:text-sm text-xs text-black mb-10">
-                                Projects</h3>
                         </router-link>
                         <router-link class="flex flex-col lg:items-start lg:justify-start items-center justify-center"
                             to="/service">

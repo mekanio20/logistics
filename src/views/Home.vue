@@ -1,238 +1,399 @@
 <template>
     <div class="w-full">
         <Navbar active_page="/" />
-        <div class="container">
-            <!-- BIG BANNER -->
-            <div class="relative">
-                <img class="w-full h-full object-cover" src="@/assets/imgs/bg.webp">
-                <h1
-                    class=" hidden lg:block absolute bottom-12 left-12 font-sf_pro font-bold xl:text-6xl lg:text-5xl text-4xl text-white lg:w-8/12 leading-[70px]">
-                    Turkmen Milli Logistik – Delivering seamless logistics solutions worldwide
-                </h1>
-            </div>
-            <!-- OUR SERVICES -->
-            <div class="w-full text-center py-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl">Our Services</h2>
-                <div class="pt-20 flex items-start gap-x-6">
-                    <div class="rounded-lg relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
-                            src="@/assets/imgs/service1.webp">
-                        <div class="absolute top-4 right-4 cursor-pointer">
-                            <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <circle opacity="0.9" cx="30.7734" cy="30.7734" r="21.2756"
-                                    transform="rotate(40.6108 30.7734 30.7734)" fill="white" />
-                                <path
-                                    d="M27.0284 25.4929C26.8602 25.5143 26.707 25.6006 26.6015 25.7333C26.496 25.866 26.4465 26.0347 26.4636 26.2034C26.4808 26.3721 26.5631 26.5275 26.6931 26.6363C26.8232 26.7451 26.9905 26.7989 27.1596 26.786L34.6043 26.032L26.2913 35.7273C26.1791 35.8582 26.1234 36.0283 26.1366 36.2002C26.1498 36.3721 26.2308 36.5317 26.3617 36.6439C26.4926 36.7562 26.6627 36.8118 26.8346 36.7986C27.0065 36.7854 27.1661 36.7045 27.2783 36.5736L35.5913 26.8783L35.983 34.3514C35.9874 34.4367 36.0085 34.5203 36.0452 34.5974C36.082 34.6745 36.1335 34.7436 36.1969 34.8008C36.2603 34.8579 36.3344 34.9021 36.4148 34.9306C36.4953 34.9592 36.5806 34.9716 36.6659 34.9672C36.7511 34.9628 36.8347 34.9417 36.9118 34.9049C36.9889 34.8682 37.058 34.8167 37.1152 34.7533C37.1724 34.6899 37.2165 34.6158 37.245 34.5354C37.2736 34.4549 37.286 34.3696 37.2816 34.2843L36.8178 25.4146C36.8077 25.2209 36.7329 25.0362 36.6054 24.89C36.5521 24.8244 36.4872 24.7692 36.414 24.727C36.2503 24.624 36.0569 24.5787 35.8644 24.5983L27.0284 25.4929Z"
-                                    fill="black" />
-                            </svg>
-                        </div>
-                        <div class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white w-1/2">
-                            Reliable Sea Freight
-                        </div>
-                    </div>
-                    <div class="rounded-lg relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
-                            src="@/assets/imgs/service2.webp">
-                        <div class="absolute top-4 right-4 cursor-pointer">
-                            <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <circle opacity="0.9" cx="30.7734" cy="30.7734" r="21.2756"
-                                    transform="rotate(40.6108 30.7734 30.7734)" fill="white" />
-                                <path
-                                    d="M27.0284 25.4929C26.8602 25.5143 26.707 25.6006 26.6015 25.7333C26.496 25.866 26.4465 26.0347 26.4636 26.2034C26.4808 26.3721 26.5631 26.5275 26.6931 26.6363C26.8232 26.7451 26.9905 26.7989 27.1596 26.786L34.6043 26.032L26.2913 35.7273C26.1791 35.8582 26.1234 36.0283 26.1366 36.2002C26.1498 36.3721 26.2308 36.5317 26.3617 36.6439C26.4926 36.7562 26.6627 36.8118 26.8346 36.7986C27.0065 36.7854 27.1661 36.7045 27.2783 36.5736L35.5913 26.8783L35.983 34.3514C35.9874 34.4367 36.0085 34.5203 36.0452 34.5974C36.082 34.6745 36.1335 34.7436 36.1969 34.8008C36.2603 34.8579 36.3344 34.9021 36.4148 34.9306C36.4953 34.9592 36.5806 34.9716 36.6659 34.9672C36.7511 34.9628 36.8347 34.9417 36.9118 34.9049C36.9889 34.8682 37.058 34.8167 37.1152 34.7533C37.1724 34.6899 37.2165 34.6158 37.245 34.5354C37.2736 34.4549 37.286 34.3696 37.2816 34.2843L36.8178 25.4146C36.8077 25.2209 36.7329 25.0362 36.6054 24.89C36.5521 24.8244 36.4872 24.7692 36.414 24.727C36.2503 24.624 36.0569 24.5787 35.8644 24.5983L27.0284 25.4929Z"
-                                    fill="black" />
-                            </svg>
-                        </div>
-                        <div class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white w-1/2">
-                            Ground Transportation
-                        </div>
-                    </div>
-                    <div class="rounded-lg relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
-                            src="@/assets/imgs/service3.webp">
-                        <div class="absolute top-4 right-4 cursor-pointer">
-                            <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <circle opacity="0.9" cx="30.7734" cy="30.7734" r="21.2756"
-                                    transform="rotate(40.6108 30.7734 30.7734)" fill="white" />
-                                <path
-                                    d="M27.0284 25.4929C26.8602 25.5143 26.707 25.6006 26.6015 25.7333C26.496 25.866 26.4465 26.0347 26.4636 26.2034C26.4808 26.3721 26.5631 26.5275 26.6931 26.6363C26.8232 26.7451 26.9905 26.7989 27.1596 26.786L34.6043 26.032L26.2913 35.7273C26.1791 35.8582 26.1234 36.0283 26.1366 36.2002C26.1498 36.3721 26.2308 36.5317 26.3617 36.6439C26.4926 36.7562 26.6627 36.8118 26.8346 36.7986C27.0065 36.7854 27.1661 36.7045 27.2783 36.5736L35.5913 26.8783L35.983 34.3514C35.9874 34.4367 36.0085 34.5203 36.0452 34.5974C36.082 34.6745 36.1335 34.7436 36.1969 34.8008C36.2603 34.8579 36.3344 34.9021 36.4148 34.9306C36.4953 34.9592 36.5806 34.9716 36.6659 34.9672C36.7511 34.9628 36.8347 34.9417 36.9118 34.9049C36.9889 34.8682 37.058 34.8167 37.1152 34.7533C37.1724 34.6899 37.2165 34.6158 37.245 34.5354C37.2736 34.4549 37.286 34.3696 37.2816 34.2843L36.8178 25.4146C36.8077 25.2209 36.7329 25.0362 36.6054 24.89C36.5521 24.8244 36.4872 24.7692 36.414 24.727C36.2503 24.624 36.0569 24.5787 35.8644 24.5983L27.0284 25.4929Z"
-                                    fill="black" />
-                            </svg>
-                        </div>
-                        <div class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white w-3/5">
-                            Swift And Efficient Air Cargo
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- STATISTC -->
-            <div class="grid grid-cols-4 gap-x-6">
-                <div class="bg-m_white-100 rounded-lg p-10 flex items-center flex-col space-y-4">
-                    <AnimatedCounter class="font-poppins font-semibold text-4xl" :finalValue="12" :start-value="0"
-                        :speed="50" :plus="true"></AnimatedCounter>
-                    <p class="font-poppins font-medium text-lg text-m_gray-100">Years of service</p>
-                </div>
-                <div class="bg-m_white-100 rounded-lg p-10 flex items-center flex-col space-y-4">
-                    <AnimatedCounter class="font-poppins font-semibold text-4xl tracking-tighter" :finalValue="20"
-                        :start-value="0" :speed="50" :currency="`K`"></AnimatedCounter>
-                    <p class="font-poppins font-medium text-lg text-m_gray-100">Cargo delivered</p>
-                </div>
-                <div class="bg-m_white-100 rounded-lg p-10 flex items-center flex-col space-y-4">
-                    <AnimatedCounter class="font-poppins font-semibold text-4xl" :finalValue="500" :start-value="100"
-                        :speed="1"></AnimatedCounter>
-                    <p class="font-poppins font-medium text-lg text-m_gray-100">Total cargo</p>
-                </div>
-                <div class="bg-m_white-100 rounded-lg p-10 flex items-center flex-col space-y-4">
-                    <AnimatedCounter class="font-poppins font-semibold text-4xl" :finalValue="12" :start-value="0"
-                        :speed="50" :plus="true"></AnimatedCounter>
-                    <p class="font-poppins font-medium text-lg text-m_gray-100">Years of service</p>
-                </div>
-            </div>
-            <!-- ABOUT US -->
-            <div class="flex items-center py-20">
-                <div class="flex-1 mr-28">
-                    <img src="@/assets/imgs/about.webp">
-                </div>
-                <div class="flex-1 flex items-start flex-col space-y-8">
-                    <h3 class="font-poppins font-medium text-xl text-m_red-100">About us</h3>
-                    <h2 class="font-poppins font-semibold text-4xl">Главный принцип нашей работы –
-                        Прозрачность и надежность</h2>
-                    <p class="font-poppins font-normal text-m_gray-200 text-lg">Компания имеет прямые договора с
-                        Агентствами железнодорожного, автомо- бильного, морского и
-                        речного транспорта Туркменистана. Также налажено долгос- рочное сотрудничество с крупнейшими
-                        собственниками подвижного состава и экспедиторами стран СНГ, Средиземного моря и стран Балтии.
+        <!-- Main -->
+        <div class="relative">
+            <img class="h-screen fixed -z-10 top-0 object-cover" src="/imgs/bg.png">
+            <div class="container flex justify-between items-start mt-10">
+                <div class="w-1/2 flex flex-col space-y-6 mt-20">
+                    <p class="font-poppins font-medium text-base text-m_red-100">Turkmen Milli Logistik</p>
+                    <h1 class="font-poppins font-bold text-5xl leading-[60px]">Delivering seamless logistics solutions
+                        worldwide</h1>
+                    <p class="font-manjari text-m_gray-300">
+                        Lorem ipsum dolor sit amet, consec tetur adipi sicing elit temporibus repel lendus quae quaerat
+                        inventore ipsam distinctio officiis unde assumenda minima qui obcaecati iustor praeses antium
+                        ametus.
                     </p>
-                    <a
-                        class="flex items-center space-x-4 bg-m_red-100 px-10 py-3 rounded-xl sm:mt-14 mt-10 cursor-pointer">
-                        <span class="font-poppins font-medium lg:text-lg sm:text-base text-sm text-white">Read
-                            more</span>
-                        <svg class="sm:w-[15px] w-[10px]" viewBox="0 0 22 18" fill="white"
-                            xmlns="http://www.w3.org/2000/svg">
+                </div>
+                <div class="w-[600px] h-[600px] overflow-y-scroll no-scrollbar relative">
+                    <div class="columns-2 gap-8 animate-scroll">
+                        <div v-for="(item, index) in galleryItems" :key="index" class="w-full mb-5 overflow-hidden">
+                            <img class="w-full h-full object-cover mb-3 rounded-xl" :src="item.img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-full" style="box-shadow: 0 -50px 40px 5px #eee">
+            <!-- About us -->
+            <div class="bg-white">
+                <div class="container flex items-center space-x-20 py-40">
+                    <div class="w-[500px] h-[600px]">
+                        <img class="w-full h-full object-cover rounded-lg" src="@/assets/imgs/service-page.webp">
+                    </div>
+                    <div class="flex-1 flex flex-col space-y-4">
+                        <h3
+                            class="font-poppins font-semibold uppercase text-m_red-100 border-b-2 border-m_red-100 w-fit">
+                            About us</h3>
+                        <h1 class="font-poppins font-bold text-4xl pb-3">Главный принцип нашей работы –
+                            Прозрачность и надежность</h1>
+                        <p class="font-manjari font-normal text-base text-m_gray-300">Компания имеет прямые договора с
+                            Агентствами железнодорожного, автомо- бильного, морского и
+                            речного транспорта Туркменистана. Также налажено долгос- рочное сотрудничество с крупнейшими
+                            собственниками подвижного состава и экспедиторами стран СНГ, Средиземного моря и стран
+                            Балтии.
+                        </p>
+                        <div class="flex flex-col space-y-4">
+                            <div class="p-6 flex items-start space-x-4 border"
+                                style="border-color: rgba(0, 0, 0, 0.06);">
+                                <div class="w-[70px] pt-1">
+                                    <svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.33337 0.333374C12.7518 0.333374 16.3334 3.91497 16.3334 8.33337C16.3334 12.7518 12.7518 16.3334 8.33337 16.3334C3.91497 16.3334 0.333374 12.7518 0.333374 8.33337C0.333374 3.91497 3.91497 0.333374 8.33337 0.333374ZM10.9094 5.90937L7.33337 9.48537L5.75737 7.90937C5.64363 7.80339 5.4932 7.74569 5.33776 7.74843C5.18232 7.75118 5.03401 7.81415 4.92408 7.92408C4.81415 8.03401 4.75118 8.18232 4.74843 8.33776C4.74569 8.4932 4.80339 8.64363 4.90937 8.75737L6.90937 10.7574C7.02187 10.8697 7.17437 10.9328 7.33337 10.9328C7.49237 10.9328 7.64487 10.8697 7.75737 10.7574L11.7574 6.75737C11.8163 6.70244 11.8636 6.6362 11.8964 6.5626C11.9292 6.48901 11.9468 6.40955 11.9482 6.32899C11.9497 6.24843 11.9348 6.16841 11.9047 6.0937C11.8745 6.01899 11.8296 5.95112 11.7726 5.89414C11.7156 5.83717 11.6478 5.79225 11.5731 5.76208C11.4983 5.7319 11.4183 5.71708 11.3378 5.7185C11.2572 5.71992 11.1777 5.73756 11.1041 5.77035C11.0305 5.80314 10.9643 5.85042 10.9094 5.90937Z"
+                                            fill="#E92A34" />
+                                    </svg>
+                                </div>
+                                <div class="flex flex-col space-y-4">
+                                    <h3 class="font-poppins font-bold text-xl">Сплоченность персонала, командная
+                                        работа компании</h3>
+                                    <p class="font-manjari font-normal text-base text-m_gray-300">Сплоченность и
+                                        командная работа — наши ключевые принципы. Каждый член команды
+                                        понимает свою роль и вносит свой уникальный вклад, делая общее дело успешным.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="p-6 flex items-start space-x-4 border"
+                                style="border-color: rgba(0, 0, 0, 0.06);">
+                                <div class="w-[70px] pt-1">
+                                    <svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.33337 0.333374C12.7518 0.333374 16.3334 3.91497 16.3334 8.33337C16.3334 12.7518 12.7518 16.3334 8.33337 16.3334C3.91497 16.3334 0.333374 12.7518 0.333374 8.33337C0.333374 3.91497 3.91497 0.333374 8.33337 0.333374ZM10.9094 5.90937L7.33337 9.48537L5.75737 7.90937C5.64363 7.80339 5.4932 7.74569 5.33776 7.74843C5.18232 7.75118 5.03401 7.81415 4.92408 7.92408C4.81415 8.03401 4.75118 8.18232 4.74843 8.33776C4.74569 8.4932 4.80339 8.64363 4.90937 8.75737L6.90937 10.7574C7.02187 10.8697 7.17437 10.9328 7.33337 10.9328C7.49237 10.9328 7.64487 10.8697 7.75737 10.7574L11.7574 6.75737C11.8163 6.70244 11.8636 6.6362 11.8964 6.5626C11.9292 6.48901 11.9468 6.40955 11.9482 6.32899C11.9497 6.24843 11.9348 6.16841 11.9047 6.0937C11.8745 6.01899 11.8296 5.95112 11.7726 5.89414C11.7156 5.83717 11.6478 5.79225 11.5731 5.76208C11.4983 5.7319 11.4183 5.71708 11.3378 5.7185C11.2572 5.71992 11.1777 5.73756 11.1041 5.77035C11.0305 5.80314 10.9643 5.85042 10.9094 5.90937Z"
+                                            fill="#E92A34" />
+                                    </svg>
+                                </div>
+                                <div class="flex flex-col space-y-4">
+                                    <h3 class="font-poppins font-bold text-xl">«Надежность» с точки зрения клиентов</h3>
+                                    <p class="font-manjari font-normal text-base text-m_gray-300">
+                                        Надежность для нас — это готовность поддержать клиента в любой ситуации,
+                                        предлагать
+                                        решения и обеспечивать высокий уровень сервиса, который оправдывает и
+                                        превосходит
+                                        ожидания.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Certificate -->
+            <div class="bg-m_gray-400">
+                <div class="container py-40">
+                    <h2 class="font-poppins font-semibold text-m_black-100 text-4xl text-center">Licenses and
+                        certificates
+                    </h2>
+                    <div class="flex items-center gap-x-8 rounded-lg py-20 text-center">
+                        <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
+                            <img class="w-full h-full object-cover" src="@/assets/imgs/cert1.webp">
+                            <p class="font-poppins font-normal text-lg">Лицензия на морские и речные перевозки</p>
+                        </div>
+                        <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
+                            <img class="w-full h-full object-cover" src="@/assets/imgs/cert2.webp">
+                            <p class="font-poppins font-normal text-lg">Лицензия на морские автомобильные перевозки
+                            </p>
+                        </div>
+                        <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
+                            <img class="w-full h-full object-cover" src="@/assets/imgs/cert3.webp">
+                            <p class="font-poppins font-normal text-lg">Сертификат ISO 9001:2015</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Core Values -->
+            <div class="bg-white">
+                <div class="container flex items-center space-x-20 py-40">
+                    <div class="flex-1 flex flex-col space-y-8">
+                        <h3
+                            class="font-poppins font-semibold uppercase text-m_red-100 border-b-2 border-m_red-100 w-fit">
+                            Ключевые ценности</h3>
+                        <h1 class="font-poppins font-bold text-4xl pb-3">Наши ценности — основа нашего успеха</h1>
+                        <p class="font-manjari font-normal text-base text-m_gray-300">Компания имеет прямые договора с
+                            Наши ценности отражают наши принципы и стремления. Мы придерживаемся честности,
+                            ответственности и высокого уровня качества, создавая прочные и доверительные отношения с
+                            нашими клиентами и партнерами.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 border flex items-center space-x-6"
+                                style="border-color: rgba(0, 0, 0, 0.06);">
+                                <div class="rounded-full p-3 bg-m_gray-400">
+                                    <svg class="w-[20px] h-[20px]" viewBox="0 0 26 19" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M25.8273 6.95961L23.2355 1.77383C23.14 1.58296 23.0078 1.41277 22.8466 1.27297C22.6853 1.13318 22.4981 1.02652 22.2956 0.959087C22.0931 0.891654 21.8793 0.864769 21.6664 0.879966C21.4536 0.895163 21.2458 0.952146 21.0549 1.04766L18.529 2.31008L13.2082 0.902425C13.0717 0.866896 12.9283 0.866896 12.7918 0.902425L7.47092 2.31008L4.94506 1.04766C4.75421 0.952146 4.54641 0.895163 4.33353 0.879966C4.12065 0.864769 3.90687 0.891654 3.70438 0.959087C3.50189 1.02652 3.31467 1.13318 3.15341 1.27297C2.99215 1.41277 2.86 1.58296 2.76452 1.77383L0.172642 6.9586C0.0771289 7.14945 0.0201465 7.35725 0.00494921 7.57013C-0.0102481 7.78301 0.0166373 7.9968 0.0840702 8.19928C0.151503 8.40177 0.258162 8.58899 0.397957 8.75025C0.537752 8.91152 0.707944 9.04366 0.898814 9.13914L3.641 10.5113L9.2767 14.5362C9.35979 14.5952 9.45312 14.6382 9.55194 14.6631L16.0519 16.2881C16.1881 16.3223 16.3307 16.3206 16.466 16.2832C16.6012 16.2458 16.7245 16.174 16.8238 16.0748L22.4169 10.4808L25.1001 9.13914C25.4854 8.94631 25.7782 8.6084 25.9144 8.1997C26.0506 7.791 26.0189 7.34496 25.8263 6.95961H25.8273ZM20.2526 10.3488L16.7578 7.54969C16.6012 7.42431 16.4038 7.36127 16.2036 7.37271C16.0033 7.38415 15.8144 7.46925 15.6731 7.61164C13.8643 9.43368 11.8483 9.20313 10.5625 8.39063L14.954 4.125H18.1848L20.9483 9.65102L20.2526 10.3488ZM4.21788 2.5L6.29686 3.53797L3.69991 8.72274L1.62499 7.68578L4.21788 2.5ZM15.9991 14.5991L10.0973 13.1245L5.10045 9.55555L7.94421 3.86805L13 2.52844L13.9953 2.79149L9.42499 7.22774L9.41686 7.23688C9.24482 7.40892 9.11361 7.61739 9.0329 7.84692C8.9522 8.07645 8.92407 8.32117 8.95058 8.56302C8.9771 8.80488 9.05758 9.03769 9.1861 9.24428C9.31462 9.45087 9.48788 9.62597 9.69311 9.75664C11.7812 11.0902 14.301 10.8738 16.2855 9.24883L19.0937 11.5045L15.9991 14.5991ZM22.296 8.72172L19.7041 3.54203L21.7821 2.5L24.375 7.68578L22.296 8.72172ZM13.3839 18.1335C13.34 18.3091 13.2387 18.465 13.0961 18.5765C12.9535 18.688 12.7778 18.7487 12.5968 18.749C12.53 18.749 12.4635 18.7408 12.3987 18.7246L8.16663 17.6663C8.06765 17.6419 7.97424 17.5988 7.89139 17.5394L5.21522 15.628C5.05067 15.4988 4.9423 15.3111 4.91267 15.104C4.88304 14.8969 4.93444 14.6863 5.05617 14.5162C5.17789 14.346 5.36056 14.2294 5.56613 14.1905C5.7717 14.1517 5.98434 14.1937 6.15975 14.3077L8.70999 16.1297L12.7969 17.1494C13.0059 17.2017 13.1856 17.3348 13.2964 17.5196C13.4072 17.7043 13.4402 17.9255 13.388 18.1345L13.3839 18.1335Z"
+                                            fill="#E92A34" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-poppins font-bold text-xl">Доверие и признание со стороны государства
+                                </h3>
+                            </div>
+                            <div class="p-4 border flex items-center space-x-6"
+                                style="border-color: rgba(0, 0, 0, 0.06);">
+                                <div class="rounded-full p-3 bg-m_gray-400">
+                                    <svg class="w-[20px] h-[20px]" viewBox="0 0 20 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.3243 0.975C14.3243 0.716414 14.427 0.468419 14.6099 0.285571C14.7927 0.102723 15.0407 0 15.2993 0H18.5493C18.8079 0 19.0559 0.102723 19.2388 0.285571C19.4216 0.468419 19.5243 0.716414 19.5243 0.975V4.225C19.5243 4.48359 19.4216 4.73158 19.2388 4.91443C19.0559 5.09728 18.8079 5.2 18.5493 5.2C18.2907 5.2 18.0427 5.09728 17.8599 4.91443C17.677 4.73158 17.5743 4.48359 17.5743 4.225V3.328L11.7633 9.139C11.5805 9.32158 11.3327 9.42414 11.0743 9.42414C10.8159 9.42414 10.5681 9.32158 10.3853 9.139L7.17432 5.928L1.68832 11.414C1.59906 11.5098 1.49142 11.5866 1.37182 11.6399C1.25222 11.6932 1.12311 11.7219 0.9922 11.7242C0.861286 11.7265 0.731249 11.7024 0.609844 11.6534C0.48844 11.6043 0.378155 11.5313 0.285571 11.4387C0.192987 11.3462 0.119999 11.2359 0.0709613 11.1145C0.0219239 10.9931 -0.00215808 10.863 0.000151737 10.7321C0.00246156 10.6012 0.0311162 10.4721 0.0844057 10.3525C0.137695 10.2329 0.214528 10.1253 0.310321 10.036L6.48532 3.861C6.66813 3.67841 6.91594 3.57586 7.17432 3.57586C7.4327 3.57586 7.68051 3.67841 7.86332 3.861L11.0743 7.072L16.1963 1.95H15.2993C15.0407 1.95 14.7927 1.84728 14.6099 1.66443C14.427 1.48158 14.3243 1.23359 14.3243 0.975ZM0.999321 15.6C1.25791 15.6 1.5059 15.7027 1.68875 15.8856C1.8716 16.0684 1.97432 16.3164 1.97432 16.575V19.825C1.97432 20.0836 1.8716 20.3316 1.68875 20.5144C1.5059 20.6973 1.25791 20.8 0.999321 20.8C0.740735 20.8 0.49274 20.6973 0.309892 20.5144C0.127044 20.3316 0.0243209 20.0836 0.0243209 19.825V16.575C0.0243209 16.3164 0.127044 16.0684 0.309892 15.8856C0.49274 15.7027 0.740735 15.6 0.999321 15.6ZM7.17432 12.675C7.17432 12.4164 7.0716 12.1684 6.88875 11.9856C6.7059 11.8027 6.45791 11.7 6.19932 11.7C5.94073 11.7 5.69274 11.8027 5.50989 11.9856C5.32704 12.1684 5.22432 12.4164 5.22432 12.675V19.825C5.22432 20.0836 5.32704 20.3316 5.50989 20.5144C5.69274 20.6973 5.94073 20.8 6.19932 20.8C6.45791 20.8 6.7059 20.6973 6.88875 20.5144C7.0716 20.3316 7.17432 20.0836 7.17432 19.825V12.675ZM11.3993 14.3C11.6579 14.3 11.9059 14.4027 12.0887 14.5856C12.2716 14.7684 12.3743 15.0164 12.3743 15.275V19.825C12.3743 20.0836 12.2716 20.3316 12.0887 20.5144C11.9059 20.6973 11.6579 20.8 11.3993 20.8C11.1407 20.8 10.8927 20.6973 10.7099 20.5144C10.527 20.3316 10.4243 20.0836 10.4243 19.825V15.275C10.4243 15.0164 10.527 14.7684 10.7099 14.5856C10.8927 14.4027 11.1407 14.3 11.3993 14.3ZM17.5743 10.075C17.5743 9.81641 17.4716 9.56842 17.2887 9.38557C17.1059 9.20272 16.8579 9.1 16.5993 9.1C16.3407 9.1 16.0927 9.20272 15.9099 9.38557C15.727 9.56842 15.6243 9.81641 15.6243 10.075V19.825C15.6243 20.0836 15.727 20.3316 15.9099 20.5144C16.0927 20.6973 16.3407 20.8 16.5993 20.8C16.8579 20.8 17.1059 20.6973 17.2887 20.5144C17.4716 20.3316 17.5743 20.0836 17.5743 19.825V10.075Z"
+                                            fill="#E92A34" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-poppins font-bold text-xl">Стабильность развития компании</h3>
+                            </div>
+                            <div class="p-4 border flex items-center space-x-6"
+                                style="border-color: rgba(0, 0, 0, 0.06);">
+                                <div class="rounded-full p-3 bg-m_gray-400">
+                                    <svg class="w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M11.6667 23.3333C5.22317 23.3333 0 18.1102 0 11.6667C0 5.22317 5.22317 0 11.6667 0C18.1102 0 23.3333 5.22317 23.3333 11.6667C23.3333 18.1102 18.1102 23.3333 11.6667 23.3333ZM11.6667 21.9333C14.3896 21.9333 17.0009 20.8517 18.9263 18.9263C20.8517 17.0009 21.9333 14.3896 21.9333 11.6667C21.9333 8.94378 20.8517 6.33241 18.9263 4.40704C17.0009 2.48166 14.3896 1.4 11.6667 1.4C8.94378 1.4 6.33241 2.48166 4.40704 4.40704C2.48166 6.33241 1.4 8.94378 1.4 11.6667C1.4 14.3896 2.48166 17.0009 4.40704 18.9263C6.33241 20.8517 8.94378 21.9333 11.6667 21.9333ZM10.2993 14.651L17.0765 7.875L18.0658 8.8655L11.1242 15.8072C10.9054 16.0259 10.6087 16.1488 10.2993 16.1488C9.98998 16.1488 9.69328 16.0259 9.4745 15.8072L5.83333 12.1637L6.82383 11.1732L10.3005 14.6498L10.2993 14.651Z"
+                                            fill="#E92A34" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-poppins font-bold text-xl">Ответственность за взятые на себя
+                                    обязательства.</h3>
+                            </div>
+                            <div class="p-4 border flex items-center space-x-6"
+                                style="border-color: rgba(0, 0, 0, 0.06);">
+                                <div class="rounded-full p-3 bg-m_gray-400">
+                                    <svg class="w-[20px] h-[20px]" viewBox="0 0 24 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M17.4167 18.6667C18.6133 18.6667 19.5833 17.6966 19.5833 16.5C19.5833 15.3034 18.6133 14.3333 17.4167 14.3333C16.22 14.3333 15.25 15.3034 15.25 16.5C15.25 17.6966 16.22 18.6667 17.4167 18.6667Z"
+                                            stroke="#E92A34" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M6.58332 18.6667C7.77994 18.6667 8.74999 17.6966 8.74999 16.5C8.74999 15.3034 7.77994 14.3333 6.58332 14.3333C5.38671 14.3333 4.41666 15.3034 4.41666 16.5C4.41666 17.6966 5.38671 18.6667 6.58332 18.6667Z"
+                                            stroke="#E92A34" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M10.9167 15.4167H15.25M13.625 4.58334H14.6466C16.0657 4.58334 16.7764 4.58334 17.3777 4.92459C17.98 5.26475 18.3808 5.89417 19.1836 7.15192C19.7469 8.03375 20.3362 8.67509 21.1672 9.24384C22.0035 9.818 22.4022 10.0986 22.6221 10.5482C22.8333 10.9793 22.8333 11.4896 22.8333 12.5101C22.8333 13.8567 22.8333 14.5294 22.4552 14.9573L22.4054 15.0104C22.0078 15.4167 21.3806 15.4167 20.1282 15.4167H19.5833"
+                                            stroke="#E92A34" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M13.0833 4.58334L14.1602 7.2765C14.6877 8.59492 14.951 9.25467 15.5024 9.62734C16.0527 10 16.7623 10 18.1837 10H21.75M13.0833 4.58334C13.0833 3.05042 13.0833 2.2845 12.6283 1.81C12.1733 1.33334 11.4399 1.33334 9.97416 1.33334H4.27582C2.81007 1.33334 2.07666 1.33442 1.62166 1.81C1.16666 2.28559 1.16666 3.0515 1.16666 4.58334V12.1667C1.16666 13.6996 1.16666 14.4655 1.62166 14.94C2.07666 15.4167 2.81007 15.4167 4.27582 15.4167M13.0833 4.58334V15.4167H8.42066"
+                                            stroke="#E92A34" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-poppins font-bold text-xl">Современный транспорт</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[500px] h-[600px]">
+                        <img class="w-full h-full object-cover rounded-lg" src="@/assets/imgs/about-page2.webp">
+                    </div>
+                </div>
+            </div>
+            <!-- Our services -->
+            <div class="bg-m_gray-400">
+                <div class="container py-40">
+                    <h2 class="font-poppins font-semibold text-m_black-100 text-4xl text-center">Our Services</h2>
+                    <div class="pt-20 flex items-start gap-x-6">
+                        <div class="rounded-lg relative overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+                                src="@/assets/imgs/service1.webp">
+                            <div class="absolute top-4 right-4 cursor-pointer">
+                                <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle opacity="0.9" cx="30.7734" cy="30.7734" r="21.2756"
+                                        transform="rotate(40.6108 30.7734 30.7734)" fill="white" />
+                                    <path
+                                        d="M27.0284 25.4929C26.8602 25.5143 26.707 25.6006 26.6015 25.7333C26.496 25.866 26.4465 26.0347 26.4636 26.2034C26.4808 26.3721 26.5631 26.5275 26.6931 26.6363C26.8232 26.7451 26.9905 26.7989 27.1596 26.786L34.6043 26.032L26.2913 35.7273C26.1791 35.8582 26.1234 36.0283 26.1366 36.2002C26.1498 36.3721 26.2308 36.5317 26.3617 36.6439C26.4926 36.7562 26.6627 36.8118 26.8346 36.7986C27.0065 36.7854 27.1661 36.7045 27.2783 36.5736L35.5913 26.8783L35.983 34.3514C35.9874 34.4367 36.0085 34.5203 36.0452 34.5974C36.082 34.6745 36.1335 34.7436 36.1969 34.8008C36.2603 34.8579 36.3344 34.9021 36.4148 34.9306C36.4953 34.9592 36.5806 34.9716 36.6659 34.9672C36.7511 34.9628 36.8347 34.9417 36.9118 34.9049C36.9889 34.8682 37.058 34.8167 37.1152 34.7533C37.1724 34.6899 37.2165 34.6158 37.245 34.5354C37.2736 34.4549 37.286 34.3696 37.2816 34.2843L36.8178 25.4146C36.8077 25.2209 36.7329 25.0362 36.6054 24.89C36.5521 24.8244 36.4872 24.7692 36.414 24.727C36.2503 24.624 36.0569 24.5787 35.8644 24.5983L27.0284 25.4929Z"
+                                        fill="black" />
+                                </svg>
+                            </div>
+                            <div
+                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white w-1/2">
+                                Reliable Sea Freight
+                            </div>
+                        </div>
+                        <div class="rounded-lg relative overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+                                src="@/assets/imgs/service2.webp">
+                            <div class="absolute top-4 right-4 cursor-pointer">
+                                <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle opacity="0.9" cx="30.7734" cy="30.7734" r="21.2756"
+                                        transform="rotate(40.6108 30.7734 30.7734)" fill="white" />
+                                    <path
+                                        d="M27.0284 25.4929C26.8602 25.5143 26.707 25.6006 26.6015 25.7333C26.496 25.866 26.4465 26.0347 26.4636 26.2034C26.4808 26.3721 26.5631 26.5275 26.6931 26.6363C26.8232 26.7451 26.9905 26.7989 27.1596 26.786L34.6043 26.032L26.2913 35.7273C26.1791 35.8582 26.1234 36.0283 26.1366 36.2002C26.1498 36.3721 26.2308 36.5317 26.3617 36.6439C26.4926 36.7562 26.6627 36.8118 26.8346 36.7986C27.0065 36.7854 27.1661 36.7045 27.2783 36.5736L35.5913 26.8783L35.983 34.3514C35.9874 34.4367 36.0085 34.5203 36.0452 34.5974C36.082 34.6745 36.1335 34.7436 36.1969 34.8008C36.2603 34.8579 36.3344 34.9021 36.4148 34.9306C36.4953 34.9592 36.5806 34.9716 36.6659 34.9672C36.7511 34.9628 36.8347 34.9417 36.9118 34.9049C36.9889 34.8682 37.058 34.8167 37.1152 34.7533C37.1724 34.6899 37.2165 34.6158 37.245 34.5354C37.2736 34.4549 37.286 34.3696 37.2816 34.2843L36.8178 25.4146C36.8077 25.2209 36.7329 25.0362 36.6054 24.89C36.5521 24.8244 36.4872 24.7692 36.414 24.727C36.2503 24.624 36.0569 24.5787 35.8644 24.5983L27.0284 25.4929Z"
+                                        fill="black" />
+                                </svg>
+                            </div>
+                            <div
+                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white w-1/2">
+                                Ground Transportation
+                            </div>
+                        </div>
+                        <div class="rounded-lg relative overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+                                src="@/assets/imgs/service3.webp">
+                            <div class="absolute top-4 right-4 cursor-pointer">
+                                <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle opacity="0.9" cx="30.7734" cy="30.7734" r="21.2756"
+                                        transform="rotate(40.6108 30.7734 30.7734)" fill="white" />
+                                    <path
+                                        d="M27.0284 25.4929C26.8602 25.5143 26.707 25.6006 26.6015 25.7333C26.496 25.866 26.4465 26.0347 26.4636 26.2034C26.4808 26.3721 26.5631 26.5275 26.6931 26.6363C26.8232 26.7451 26.9905 26.7989 27.1596 26.786L34.6043 26.032L26.2913 35.7273C26.1791 35.8582 26.1234 36.0283 26.1366 36.2002C26.1498 36.3721 26.2308 36.5317 26.3617 36.6439C26.4926 36.7562 26.6627 36.8118 26.8346 36.7986C27.0065 36.7854 27.1661 36.7045 27.2783 36.5736L35.5913 26.8783L35.983 34.3514C35.9874 34.4367 36.0085 34.5203 36.0452 34.5974C36.082 34.6745 36.1335 34.7436 36.1969 34.8008C36.2603 34.8579 36.3344 34.9021 36.4148 34.9306C36.4953 34.9592 36.5806 34.9716 36.6659 34.9672C36.7511 34.9628 36.8347 34.9417 36.9118 34.9049C36.9889 34.8682 37.058 34.8167 37.1152 34.7533C37.1724 34.6899 37.2165 34.6158 37.245 34.5354C37.2736 34.4549 37.286 34.3696 37.2816 34.2843L36.8178 25.4146C36.8077 25.2209 36.7329 25.0362 36.6054 24.89C36.5521 24.8244 36.4872 24.7692 36.414 24.727C36.2503 24.624 36.0569 24.5787 35.8644 24.5983L27.0284 25.4929Z"
+                                        fill="black" />
+                                </svg>
+                            </div>
+                            <div
+                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white w-3/5">
+                                Swift And Efficient Air Cargo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Statistic -->
+            <div class="bg-m_red-100 py-20 px-6 flex items-center justify-evenly">
+                <div class="flex items-center space-x-4">
+                    <div class="w-[60px]">
+                        <svg viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
-                                d="M12.3025 0.269824C12.2094 0.182232 12.0989 0.11326 11.9775 0.0669526C11.856 0.0206449 11.7262 -0.00206728 11.5954 0.000147736C11.4647 0.00236275 11.3357 0.0294604 11.2161 0.079852C11.0965 0.130244 10.9886 0.202915 10.8988 0.293607C10.809 0.384299 10.7391 0.491186 10.6931 0.608003C10.6471 0.72482 10.6261 0.849216 10.6312 0.9739C10.6362 1.09858 10.6674 1.22104 10.7227 1.33411C10.778 1.44717 10.8564 1.54856 10.9533 1.63232L17.8159 7.82608L1.14861 7.82608C0.888054 7.82608 0.638166 7.92485 0.453924 8.10066C0.269682 8.27648 0.166178 8.51493 0.166178 8.76357C0.166178 9.01222 0.269682 9.25067 0.453924 9.42649C0.638166 9.6023 0.888054 9.70107 1.14861 9.70107L17.8186 9.70107L10.9533 15.8973C10.8564 15.9811 10.778 16.0825 10.7227 16.1955C10.6674 16.3086 10.6362 16.4311 10.6312 16.5557C10.6261 16.6804 10.6471 16.8048 10.6931 16.9216C10.7391 17.0385 10.809 17.1453 10.8988 17.236C10.9886 17.3267 11.0965 17.3994 11.2161 17.4498C11.3357 17.5002 11.4647 17.5273 11.5954 17.5295C11.7262 17.5317 11.856 17.509 11.9775 17.4627C12.0989 17.4164 12.2094 17.3474 12.3025 17.2598L20.7095 9.67232C20.9183 9.48399 21.0564 9.2354 21.1025 8.96482C21.1334 8.82965 21.1325 8.68963 21.0999 8.55482C21.0523 8.28814 20.9153 8.04339 20.7095 7.85732L12.3025 0.269824Z"
+                                d="M33.92 28.269L27.7134 16.7668C28.3466 15.3267 28.7008 13.7351 28.7008 12.0606C28.7008 5.60695 23.4799 0.37561 17.0404 0.37561C10.5993 0.37561 5.37894 5.60748 5.37894 12.0606C5.37894 13.7755 5.75069 15.4027 6.41251 16.8694L0.178215 28.2637C-0.0228051 28.6298 0.0106043 29.0815 0.26197 29.4158C0.513866 29.749 0.939173 29.9058 1.34536 29.8101L6.66912 28.5863L8.49125 33.672C8.63338 34.0674 8.99346 34.3416 9.41081 34.3724C9.43789 34.3745 9.46384 34.3756 9.48929 34.3756C9.68107 34.3755 9.86925 34.3234 10.0338 34.2246C10.1983 34.1259 10.3331 33.9843 10.4237 33.815L15.8493 23.6855C16.2449 23.7257 16.6422 23.7457 17.0398 23.7456C17.4084 23.7456 17.7721 23.7264 18.1317 23.6924L23.675 33.823C23.7731 34.0025 23.9209 34.1499 24.1006 34.2473C24.2803 34.3447 24.4842 34.3879 24.6879 34.3719C25.1042 34.3384 25.4627 34.0647 25.6037 33.6715L27.4258 28.5857L32.7496 29.8096C33.1579 29.9084 33.579 29.7495 33.8309 29.4174C34.0838 29.0858 34.1178 28.6362 33.92 28.269H33.92ZM9.68226 30.7061L8.34794 26.9808C8.16551 26.4743 7.6363 26.1794 7.11232 26.3043L3.17479 27.2093L7.66285 19.0062C9.14081 21.007 11.2408 22.5163 13.6765 23.2507L9.68226 30.7061ZM7.50955 12.0605C7.50955 6.79465 11.7855 2.51031 17.0408 2.51031C22.2956 2.51031 26.5709 6.79465 26.5709 12.0605C26.5709 17.3264 22.2956 21.6118 17.0408 21.6118C11.7849 21.6118 7.50955 17.3264 7.50955 12.0605ZM26.9825 26.3042C26.4564 26.1799 25.9293 26.4743 25.7468 26.9807L24.4035 30.7331L20.3218 23.2746C22.8222 22.5407 24.9731 20.9916 26.4702 18.9323L30.9396 27.2135L26.9825 26.3042Z"
                                 fill="white" />
                         </svg>
-                    </a>
+                    </div>
+                    <div class="flex flex-col">
+                        <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="5"
+                            :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
+                        <p class="font-poppins text-lg text-white">Years of experience</p>
+                    </div>
                 </div>
-            </div>
-            <!-- Certificates -->
-            <div class="w-full text-center py-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl">Licenses and certificates
-                </h2>
-                <div class="flex items-center gap-x-8 rounded-lg py-20">
-                    <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
-                        <img class="w-full h-full object-cover" src="@/assets/imgs/cert1.webp">
-                        <p class="font-poppins font-normal text-lg">Лицензия на морские и речные перевозки</p>
+                <div class="flex items-center space-x-4">
+                    <div class="w-[60px]">
+                        <svg viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20.0476 29.1114L28.4952 33.4852C28.8286 33.6576 29.198 33.7487 29.5733 33.7512C29.9486 33.7537 30.3191 33.6674 30.6547 33.4995L37.7786 29.9375C38.174 29.7399 38.5066 29.4362 38.7392 29.0602C38.9717 28.6843 39.095 28.251 39.0952 27.809V21.228C39.095 20.786 38.9717 20.3527 38.7392 19.9768C38.5066 19.6008 38.174 19.297 37.7786 19.0995L29.5714 14.9947L21.3333 19.2614C20.9458 19.4621 20.621 19.7655 20.3942 20.1384C20.1675 20.5112 20.0476 20.9392 20.0476 21.3756V29.1114Z"
+                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M2.28571 29.7756L9.44762 33.4852C9.78098 33.6576 10.1504 33.7487 10.5257 33.7512C10.901 33.7537 11.2715 33.6674 11.6071 33.4994L20.0476 29.2804V21.228C20.0474 20.786 19.9241 20.3527 19.6915 19.9768C19.459 19.6008 19.1264 19.297 18.731 19.0994L10.5238 14.9947L2.28571 19.2614C1.89822 19.4621 1.57336 19.7655 1.34662 20.1383C1.11987 20.5112 0.999965 20.9392 1 21.3756V27.6614C0.999965 28.0978 1.11987 28.5258 1.34662 28.8986C1.57336 29.2715 1.89822 29.5749 2.28571 29.7756ZM10.5238 14.8256L18.9714 19.1994C19.3048 19.3719 19.6742 19.463 20.0495 19.4655C20.4248 19.468 20.7953 19.3817 21.131 19.2137L29.5714 14.9947V6.94231C29.5712 6.50025 29.4479 6.06699 29.2154 5.69105C28.9828 5.31511 28.6502 5.01133 28.2548 4.81373L21.131 1.25183C20.7953 1.08384 20.4248 0.997569 20.0495 1.00005C19.6742 1.00253 19.3048 1.0937 18.9714 1.26611L11.8095 4.97564C11.422 5.17638 11.0972 5.47976 10.8704 5.85263C10.6437 6.22551 10.5238 6.65352 10.5238 7.08992V14.8256Z"
+                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M11.3476 5.8828L18.9833 9.69946C19.3138 9.8646 19.6782 9.95057 20.0476 9.95057C20.417 9.95057 20.7814 9.8646 21.1119 9.69946L28.6666 5.92327M15.9976 3.4447L24.8095 7.85184M25.5214 17.7304L34.3333 22.1376M6.47379 17.7304L15.2857 22.1376M20.8714 20.1685L28.5071 23.9852C28.8376 24.1503 29.202 24.2363 29.5714 24.2363C29.9409 24.2363 30.3052 24.1503 30.6357 23.9852L38.1881 20.209M1.82379 20.1685L9.45951 23.9852C9.78998 24.1503 10.1544 24.2363 10.5238 24.2363C10.8932 24.2363 11.2576 24.1503 11.5881 23.9852L19.1405 20.209M20.0476 10.2328V19.7566M29.5714 24.5185V32.8518M10.5238 24.5185V32.8518"
+                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
                     </div>
-                    <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
-                        <img class="w-full h-full object-cover" src="@/assets/imgs/cert2.webp">
-                        <p class="font-poppins font-normal text-lg">Лицензия на морские автомобильные перевозки</p>
+                    <div class="flex flex-col">
+                        <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="500"
+                            :start-value="100" :speed="1" :plus="true"></AnimatedCounter>
+                        <p class="font-poppins text-lg text-white">Cargo deliveredusers</p>
                     </div>
-                    <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
-                        <img class="w-full h-full object-cover" src="@/assets/imgs/cert3.webp">
-                        <p class="font-poppins font-normal text-lg">Сертификат ISO 9001:2015</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-[60px]">
+                        <svg viewBox="0 0 40 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.44756 12.3756C9.7206 12.3756 10.9415 11.8699 11.8417 10.9697C12.7418 10.0695 13.2476 8.84865 13.2476 7.57561C13.2476 6.30257 12.7418 5.08167 11.8417 4.1815C10.9415 3.28132 9.7206 2.77561 8.44756 2.77561C7.17452 2.77561 5.95362 3.28132 5.05345 4.1815C4.15327 5.08167 3.64756 6.30257 3.64756 7.57561C3.64756 8.84865 4.15327 10.0695 5.05345 10.9697C5.95362 11.8699 7.17452 12.3756 8.44756 12.3756ZM8.44756 14.7756C9.39308 14.7756 10.3293 14.5894 11.2029 14.2275C12.0764 13.8657 12.8701 13.3354 13.5387 12.6668C14.2073 11.9982 14.7377 11.2045 15.0995 10.3309C15.4613 9.45739 15.6476 8.52113 15.6476 7.57561C15.6476 6.63009 15.4613 5.69383 15.0995 4.82029C14.7377 3.94675 14.2073 3.15302 13.5387 2.48444C12.8701 1.81586 12.0764 1.28551 11.2029 0.923678C10.3293 0.561844 9.39308 0.37561 8.44756 0.37561C6.538 0.37561 4.70665 1.13418 3.35639 2.48444C2.00613 3.8347 1.24756 5.66605 1.24756 7.57561C1.24756 9.48517 2.00613 11.3165 3.35639 12.6668C4.70665 14.017 6.538 14.7756 8.44756 14.7756Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M5.69721 12.126C5.80896 12.2375 5.89762 12.3699 5.95812 12.5157C6.01861 12.6615 6.04975 12.8178 6.04975 12.9756C6.04975 13.1335 6.01861 13.2897 5.95812 13.4355C5.89762 13.5813 5.80896 13.7137 5.69721 13.8252L4.88601 14.634C3.32489 16.1956 2.44781 18.3132 2.44761 20.5212V24.9756C2.44761 25.2939 2.32118 25.5991 2.09614 25.8241C1.87109 26.0492 1.56587 26.1756 1.24761 26.1756C0.929348 26.1756 0.624123 26.0492 0.399079 25.8241C0.174036 25.5991 0.0476074 25.2939 0.0476074 24.9756V20.5212C0.0479476 17.6767 1.17797 14.9487 3.18921 12.9372L3.99801 12.126C4.10948 12.0143 4.2419 11.9256 4.38769 11.8651C4.53348 11.8046 4.68977 11.7735 4.84761 11.7735C5.00545 11.7735 5.16174 11.8046 5.30753 11.8651C5.45332 11.9256 5.58574 12.0143 5.69721 12.126ZM33.998 11.406C33.8863 11.5175 33.7976 11.6499 33.7371 11.7957C33.6766 11.9415 33.6455 12.0978 33.6455 12.2556C33.6455 12.4135 33.6766 12.5697 33.7371 12.7155C33.7976 12.8613 33.8863 12.9937 33.998 13.1052L34.8092 13.914C36.3703 15.4756 37.2474 17.5932 37.2476 19.8012V24.9756C37.2476 25.2939 37.374 25.5991 37.5991 25.8241C37.8241 26.0492 38.1293 26.1756 38.4476 26.1756C38.7659 26.1756 39.0711 26.0492 39.2961 25.8241C39.5212 25.5991 39.6476 25.2939 39.6476 24.9756V19.8012C39.6473 16.9567 38.5172 14.2287 36.506 12.2172L35.6972 11.406C35.5857 11.2943 35.4533 11.2056 35.3075 11.1451C35.1617 11.0846 35.0055 11.0535 34.8476 11.0535C34.6898 11.0535 34.5335 11.0846 34.3877 11.1451C34.2419 11.2056 34.1095 11.2943 33.998 11.406Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M30.0477 12.3756C28.7746 12.3756 27.5537 11.8699 26.6535 10.9697C25.7534 10.0695 25.2477 8.84865 25.2477 7.57561C25.2477 6.30257 25.7534 5.08167 26.6535 4.1815C27.5537 3.28132 28.7746 2.77561 30.0477 2.77561C31.3207 2.77561 32.5416 3.28132 33.4418 4.1815C34.3419 5.08167 34.8477 6.30257 34.8477 7.57561C34.8477 8.84865 34.3419 10.0695 33.4418 10.9697C32.5416 11.8699 31.3207 12.3756 30.0477 12.3756ZM30.0477 14.7756C29.1021 14.7756 28.1659 14.5894 27.2923 14.2275C26.4188 13.8657 25.6251 13.3354 24.9565 12.6668C24.2879 11.9982 23.7576 11.2045 23.3957 10.3309C23.0339 9.45739 22.8477 8.52113 22.8477 7.57561C22.8477 6.63009 23.0339 5.69383 23.3957 4.82029C23.7576 3.94675 24.2879 3.15302 24.9565 2.48444C25.6251 1.81586 26.4188 1.28551 27.2923 0.923678C28.1659 0.561844 29.1021 0.37561 30.0477 0.37561C31.9572 0.37561 33.7886 1.13418 35.1388 2.48444C36.4891 3.8347 37.2477 5.66605 37.2477 7.57561C37.2477 9.48517 36.4891 11.3165 35.1388 12.6668C33.7886 14.017 31.9572 14.7756 30.0477 14.7756ZM19.2477 22.5756C17.6564 22.5756 16.1302 23.2078 15.005 24.333C13.8798 25.4582 13.2477 26.9843 13.2477 28.5756V31.6956C13.2477 32.0139 13.1212 32.3191 12.8962 32.5441C12.6711 32.7692 12.3659 32.8956 12.0477 32.8956C11.7294 32.8956 11.4242 32.7692 11.1991 32.5441C10.9741 32.3191 10.8477 32.0139 10.8477 31.6956V28.5756C10.8477 26.3478 11.7327 24.2112 13.308 22.6359C14.8833 21.0606 17.0198 20.1756 19.2477 20.1756C21.4755 20.1756 23.612 21.0606 25.1874 22.6359C26.7627 24.2112 27.6477 26.3478 27.6477 28.5756V31.6956C27.6477 32.0139 27.5212 32.3191 27.2962 32.5441C27.0711 32.7692 26.7659 32.8956 26.4477 32.8956C26.1294 32.8956 25.8242 32.7692 25.5991 32.5441C25.3741 32.3191 25.2477 32.0139 25.2477 31.6956V28.5756C25.2477 27.7877 25.0925 27.0075 24.7909 26.2795C24.4894 25.5516 24.0474 24.8901 23.4903 24.333C22.9331 23.7758 22.2717 23.3339 21.5438 23.0323C20.8158 22.7308 20.0356 22.5756 19.2477 22.5756Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M19.2476 18.9756C20.5206 18.9756 21.7415 18.4699 22.6417 17.5697C23.5419 16.6695 24.0476 15.4486 24.0476 14.1756C24.0476 12.9025 23.5419 11.6816 22.6417 10.7815C21.7415 9.8813 20.5206 9.37559 19.2476 9.37559C17.9746 9.37559 16.7537 9.8813 15.8535 10.7815C14.9533 11.6816 14.4476 12.9025 14.4476 14.1756C14.4476 15.4486 14.9533 16.6695 15.8535 17.5697C16.7537 18.4699 17.9746 18.9756 19.2476 18.9756ZM19.2476 21.3756C21.1572 21.3756 22.9885 20.617 24.3388 19.2668C25.689 17.9165 26.4476 16.0851 26.4476 14.1756C26.4476 12.266 25.689 10.4347 24.3388 9.08442C22.9885 7.73416 21.1572 6.97559 19.2476 6.97559C17.338 6.97559 15.5067 7.73416 14.1564 9.08442C12.8062 10.4347 12.0476 12.266 12.0476 14.1756C12.0476 16.0851 12.8062 17.9165 14.1564 19.2668C15.5067 20.617 17.338 21.3756 19.2476 21.3756Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="480"
+                            :start-value="0" :speed="1" :plus="true"></AnimatedCounter>
+                        <p class="font-poppins text-lg text-white">Satisfied clients</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-[60px]">
+                        <svg viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M31.869 16.7342C31.8712 16.407 31.8053 16.083 31.6754 15.7827C31.5456 15.4824 31.3546 15.2124 31.1147 14.9899L16.5476 1.5542L1.98041 14.9899C1.74051 15.2124 1.54956 15.4824 1.4197 15.7827C1.28984 16.083 1.22391 16.407 1.22613 16.7342V29.8399C1.22613 30.4651 1.47447 31.0646 1.91652 31.5067C2.35857 31.9487 2.95812 32.1971 3.58327 32.1971H29.5118C30.137 32.1971 30.7365 31.9487 31.1786 31.5067C31.6206 31.0646 31.869 30.4651 31.869 29.8399V16.7342Z"
+                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M16.5476 31.6078C16.5476 32.197 17.1369 32.197 17.1369 32.197H24.2059C24.7952 32.197 24.7952 31.6078 24.7952 31.6078V24.5387C24.7952 23.9494 24.2059 23.9494 24.2059 23.9494H17.1369C16.5476 23.9494 16.5476 24.5387 16.5476 24.5387M16.5476 31.6078V24.5387M16.5476 31.6078C16.5476 31.6078 16.5476 32.197 15.9583 32.197H8.88921C8.88921 32.197 8.29993 32.197 8.29993 31.6078V24.5387C8.29993 24.5387 8.29993 23.9494 8.88921 23.9494H15.9583C15.9583 23.9494 16.5476 23.9494 16.5476 24.5387M13.0119 15.6994H20.0809C20.0809 15.6994 20.6702 15.6994 20.6702 16.2887V23.3578C20.6702 23.3578 20.6702 23.947 20.0809 23.947H13.0119C13.0119 23.947 12.4226 23.947 12.4226 23.3578V16.2887C12.4226 16.2887 12.4226 15.6994 13.0119 15.6994Z"
+                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="20"
+                            :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
+                        <p class="font-poppins text-lg text-white">Warehouses</p>
                     </div>
                 </div>
             </div>
             <!-- Cargo -->
-            <div class="w-full text-center pb-10">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl">Main types of cargo
-                    transported</h2>
-                <div class="grid grid-cols-4 gap-6 py-20">
-                    <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                            src="@/assets/imgs/cargo1.webp">
-                        <p
-                            class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                            Бытовая и вычислительная техника</p>
-                    </div>
-                    <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                            src="@/assets/imgs/cargo2.webp">
-                        <p
-                            class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                            Медицина и фармацевтика</p>
-                    </div>
-                    <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                            src="@/assets/imgs/cargo3.webp">
-                        <p
-                            class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                            Производственные линии и оборудования</p>
-                    </div>
-                    <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                            src="@/assets/imgs/cargo4.webp">
-                        <p
-                            class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                            Семена и растения</p>
-                    </div>
-                    <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                            src="@/assets/imgs/cargo5.webp">
-                        <p
-                            class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                            Сельскохозяйственная техника</p>
-                    </div>
-                    <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                            src="@/assets/imgs/cargo6.webp">
-                        <p
-                            class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                            Химическая промышленность (сера, карбамид, полипропилен)</p>
-                    </div>
-                    <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                            src="@/assets/imgs/cargo7.webp">
-                        <p
-                            class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                            Текстиль</p>
-                    </div>
-                    <div class="rounded-xl relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                            src="@/assets/imgs/cargo8.webp">
-                        <p
-                            class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                            Продукты питания</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Countries -->
-            <div class="w-full overflow-x-hidden pb-20">
-                <h2 v-scroll-reveal="{ origin: 'bottom', distance: '50px', duration: 1000 }"
-                    class="font-poppins font-semibold lg:text-3xl sm:text-2xl text-xl sm:!leading-[55px] text-black text-center pb-10">
-                    Providing Services Across 4 Countries
-                </h2>
-                <swiper :slides-per-view="slidesPerView" :breakpoints="country_breakpoints" :spaceBetween="20"
-                    :modules="modules" :autoplay="{ delay: 1000, disableOnInteraction: false, }" :speed="1000" class="w-full my-10">
-                    <swiper-slide v-for="item in countries" :key="item.id">
-                        <div class="bg-m_white-300 rounded-xl flex flex-col items-center py-10">
-                            <div class="w-28 h-28">
-                                <img :src="item.flag" class="w-full h-full object-cover">
-                            </div>
-                            <p class="font-poppins font-semibold lg:text-2xl text-xl text-black mt-10">{{ item.name }}</p>
+            <div class="bg-white">
+                <div class="container py-40">
+                    <h2 class="font-poppins font-semibold text-m_black-100 text-4xl text-center">Main types of cargo
+                        transported</h2>
+                    <div class="grid grid-cols-4 gap-6 py-20">
+                        <div class="rounded-xl relative overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                                src="@/assets/imgs/cargo1.webp">
+                            <p
+                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
+                                Бытовая и вычислительная техника</p>
                         </div>
-                    </swiper-slide>
-                </swiper>
-            </div>
-            <!-- Service -->
-            <div class="w-full pb-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-3xl text-center pb-10">Services We provide
-                </h2>
-                <div class="flex flex-col lg:flex-row items-center bg-white p-8">
-                    <div class="lg:w-1/2 h-[585px] mb-16 lg:mb-0 lg:mr-16">
-                        <img src="@/assets/imgs/provide.webp" alt="Warehouse"
-                            class="rounded-lg shadow-lg object-cover w-full h-full" />
-                    </div>
-                    <div class="lg:w-1/2">
-                        <ul class="space-y-4 text-gray-700">
-                            <li v-for="(service, index) in services" :key="index" class="flex items-start">
-                                <span class="text-red-500 mr-2">◆</span>
-                                <p class="leading-relaxed font-poppins font-normal text-xl">{{ service }}</p>
-                            </li>
-                        </ul>
+                        <div class="rounded-xl relative overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                                src="@/assets/imgs/cargo2.webp">
+                            <p
+                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
+                                Медицина и фармацевтика</p>
+                        </div>
+                        <div class="rounded-xl relative overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                                src="@/assets/imgs/cargo3.webp">
+                            <p
+                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
+                                Производственные линии и оборудования</p>
+                        </div>
+                        <div class="rounded-xl relative overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                                src="@/assets/imgs/cargo4.webp">
+                            <p
+                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
+                                Семена и растения</p>
+                        </div>
+                        <div class="rounded-xl relative overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                                src="@/assets/imgs/cargo5.webp">
+                            <p
+                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
+                                Сельскохозяйственная техника</p>
+                        </div>
+                        <div class="rounded-xl relative overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                                src="@/assets/imgs/cargo6.webp">
+                            <p
+                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
+                                Химическая промышленность (сера, карбамид, полипропилен)</p>
+                        </div>
+                        <div class="rounded-xl relative overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                                src="@/assets/imgs/cargo7.webp">
+                            <p
+                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
+                                Текстиль</p>
+                        </div>
+                        <div class="rounded-xl relative overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
+                                src="@/assets/imgs/cargo8.webp">
+                            <p
+                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
+                                Продукты питания</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -245,10 +406,9 @@
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 import AnimatedCounter from '@/components/AnimatedCounter.vue';
+import { Navigation, EffectFade, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 export default {
     name: "Home",
@@ -262,7 +422,8 @@ export default {
     data() {
         return {
             slidesPerView: null,
-            modules: [Pagination, Navigation, Autoplay],
+            modules: [Navigation, EffectFade, Autoplay],
+            images: ['/imgs/slider-1.webp', '/imgs/slider-2.webp', '/imgs/slider-3.webp'],
             countries: [
                 {
                     id: 1,
@@ -285,6 +446,38 @@ export default {
                     flag: "/svgs/dubay.svg"
                 },
             ],
+            galleryItems: [
+                {
+                    img: '/imgs/slide-1.webp',
+                    title: 'Я таргетолог',
+                    description: 'Targeting Specialist',
+                },
+                {
+                    img: '/imgs/service1.webp',
+                    title: 'Кем же работать?',
+                    description: 'Career Options',
+                },
+                {
+                    img: '/imgs/slide-3.webp',
+                    title: 'Точка Б',
+                    description: '150,000 Сом',
+                },
+                {
+                    img: '/imgs/service2.webp',
+                    title: 'Я таргетолог',
+                    description: 'Targeting Specialist',
+                },
+                {
+                    img: '/imgs/slide-2.webp',
+                    title: 'Кем же работать?',
+                    description: 'Career Options',
+                },
+                {
+                    img: '/imgs/service3.webp',
+                    title: 'Точка Б',
+                    description: '150,000 Сом',
+                },
+            ],
             country_breakpoints: {
                 300: { slidesPerView: 1 },
                 500: { slidesPerView: 2 },
@@ -304,3 +497,19 @@ export default {
     }
 }
 </script>
+
+<style>
+@keyframes scroll {
+    0% {
+        transform: translateY(-1%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.animate-scroll {
+    animation: scroll 40s linear infinite;
+}
+</style>
