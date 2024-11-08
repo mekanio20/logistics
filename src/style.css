@@ -29,3 +29,11 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+.hover_effect {
+  @apply relative inline-block hover:after:w-1/2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:rounded-lg after:bg-white after:w-0 after:transition-all after:duration-300
+}
+
+.active_page {
+  @apply relative inline-block after:w-1/2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:rounded-lg after:bg-white after:transition-all after:duration-300
+}

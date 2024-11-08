@@ -21,14 +21,17 @@
             <div class="flex items-center space-x-6">
                 <!-- Social links -->
                 <div class="flex items-center space-x-2">
-                    <div v-for="item in icons" :key="item.id" class="rounded-full p-2 bg-m_gray-400">
+                    <div v-for="item in icons" :key="item.id"
+                        @mouseenter="hoveredIcon = item.id"
+                        @mouseleave="hoveredIcon = null"
+                        class="rounded-full p-2 bg-m_gray-400 hover:bg-m_red-100 hover:-mt-2 duration-300">
                         <a :href="item.url">
-                            <component :is="item.icon" />
+                            <component :is="item.icon" :color="hoveredIcon === item.id ? '#FFFFFF' : '#B3B3B3'" />
                         </a>
                     </div>
                 </div>
                 <!-- Language -->
-                <div class="flex items-center space-x-2 cursor-pointer">
+                <div class="flex items-center space-x-2 cursor-pointer select-none">
                     <svg class="w-[14px]" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M7.00004 13.4167C10.5438 13.4167 13.4167 10.5438 13.4167 7.00004C13.4167 3.45629 10.5438 0.583374 7.00004 0.583374M7.00004 13.4167C3.45629 13.4167 0.583374 10.5438 0.583374 7.00004C0.583374 3.45629 3.45629 0.583374 7.00004 0.583374M7.00004 13.4167C8.75004 13.4167 9.33337 10.5 9.33337 7.00004C9.33337 3.50004 8.75004 0.583374 7.00004 0.583374M7.00004 13.4167C5.25004 13.4167 4.66671 10.5 4.66671 7.00004C4.66671 3.50004 5.25004 0.583374 7.00004 0.583374M1.16671 9.33337H12.8334M1.16671 4.66671H12.8334"
@@ -49,14 +52,16 @@
                     <img src="/svgs/white-logo.svg">
                 </router-link>
                 <!-- Pages -->
-                <div class="flex items-center">
+                <div class="flex space-x-10 items-center pt-8 pb-7 px-5">
                     <router-link v-for="item in pages" :key="item.id" :to="item.url"
-                        class="font-sf_pro font-medium lg:text-base text-sm cursor-pointer text-white py-8 px-5">
+                        class="font-sf_pro font-medium lg:text-base text-sm cursor-pointer text-white pb-1 hover_effect"
+                        :class="{ 'active_page': $route.path === item.url }">
                         {{ item.name }}
                     </router-link>
                 </div>
             </div>
-            <router-link to="/contact" class="font-sf_pro font-normal lg:text-base text-sm bg-m_red-400 text-white py-8 px-10">
+            <router-link to="/contact"
+                class="font-sf_pro font-normal lg:text-base text-sm bg-m_red-400 hover:opacity-80 duration-300 text-white py-8 px-10">
                 Contact us
             </router-link>
         </nav>
@@ -103,6 +108,7 @@ export default {
             ],
             isOpen: false,
             isLang: false,
+            hoveredIcon: null,
             langs: ['TM', 'EN', 'RU']
         }
     },

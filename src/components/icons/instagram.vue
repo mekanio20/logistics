@@ -7,7 +7,7 @@
                 <rect width="20" height="20" fill="url(#pattern0_810_24191)" />
             </mask>
             <g mask="url(#mask0_810_24191)">
-                <rect x="-2.72754" y="-0.908691" width="24.5455" height="20.9091" fill="#B3B3B3" />
+                <rect x="-2.72754" y="-0.908691" width="24.5455" height="20.9091" :fill="color" />
             </g>
         </g>
         <defs>
@@ -19,3 +19,14 @@
         </defs>
     </svg>
 </template>
+
+<script>
+export default {
+    props: {
+        color: {
+            type: String,
+            default: '#B3B3B3'
+        }
+    }
+}
+</script>

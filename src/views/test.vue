@@ -1,46 +1,11 @@
 <template>
-  <div class="text-4xl font-bold text-center">
-    {{ animatedCounter }}
+  <div class="text-center mt-10">
+    <p class="relative inline-block text-xl font-semibold text-gray-700 hover:after:w-1/2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-m_red-100 after:w-0 after:transition-all after:duration-500">
+      Hover Me
+    </p>
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    targetNumber: {
-      type: Number,
-      required: true,
-    },
-    duration: {
-      type: Number,
-      default: 2000, // animasyon süresi (milisaniye cinsinden)
-    },
-  },
-  data() {
-    return {
-      animatedCounter: 0, // Başlangıç değeri
-    };
-  },
-  mounted() {
-    this.animateCounter();
-  },
-  methods: {
-    animateCounter() {
-      const startTime = performance.now();
-      const updateCounter = (currentTime) => {
-        const elapsedTime = currentTime - startTime;
-        const progress = Math.min(elapsedTime / this.duration, 1); // 0 ile 1 arasında bir oran
-        this.animatedCounter = Math.floor(progress * this.targetNumber);
-        if (progress < 1) {
-          requestAnimationFrame(updateCounter); // animasyon devam ediyor
-        }
-      };
-      requestAnimationFrame(updateCounter); // animasyonu başlat
-    },
-  },
-};
-</script>
-
-<style scoped>
-/* Gerekirse stil ekleyebilirsiniz */
+<style>
+/* Ek CSS gerekmez, Tailwind ile yapıldı */
 </style>
