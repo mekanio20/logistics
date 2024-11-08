@@ -334,7 +334,7 @@
             </div>
             <!-- Cargo -->
             <div class="bg-white">
-                <div class="container py-40">
+                <div class="container pt-40">
                     <h2 class="font-poppins font-semibold text-m_black-100 text-4xl text-center">Main types of cargo
                         transported</h2>
                     <div class="grid grid-cols-4 gap-6 py-20">
