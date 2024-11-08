@@ -1,6 +1,6 @@
 <template>
     <div class="w-full">
-        <Navbar active_page="/" />
+        <Navbar />
         <!-- Main -->
         <div class="relative">
             <img class="h-screen fixed -z-10 top-0 object-cover" src="/imgs/bg.png">

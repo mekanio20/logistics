@@ -123,11 +123,6 @@ export default {
             localStorage.setItem('lang', lang)
             this.$i18n.locale = lang
         }
-    },
-    props: {
-        active_page: {
-            type: String
-        }
     }
 }
 </script>
