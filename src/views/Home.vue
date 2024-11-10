@@ -1,15 +1,15 @@
 <template>
-    <div class="w-full">
+    <div class="w-full overflow-hidden">
         <Navbar />
         <!-- Main -->
         <div class="relative">
             <img class="h-screen fixed -z-10 top-0 object-cover" src="/imgs/bg.png">
             <div class="container flex lg:flex-row lg:space-y-0 space-y-10 flex-col justify-between items-start mt-10">
                 <div class="lg:w-1/2 w-full flex flex-col space-y-4 lg:mt-20 mb-10 mr-4">
-                    <p class="font-poppins font-medium text-base text-m_red-100">Turkmen Milli Logistik</p>
-                    <h1 class="lg:w-fit sm:w-4/5 w-full font-poppins font-bold lg:text-5xl md:text-4xl text-3xl lg:!leading-[65px] !leading-[50px]">Delivering seamless logistics solutions
+                    <p class="font-poppins font-medium lg:text-base text-sm text-m_red-100">Turkmen Milli Logistik</p>
+                    <h1 class="lg:w-fit sm:w-4/5 w-full font-poppins font-bold lg:text-5xl md:text-4xl text-3xl lg:!leading-[65px] !leading-[40px]">Delivering seamless logistics solutions
                         worldwide</h1>
-                    <p class="font-manjari text-m_gray-300">
+                    <p class="font-manjari text-m_gray-300 lg:text-base text-sm">
                         Lorem ipsum dolor sit amet, consec tetur adipi sicing elit temporibus repel lendus quae quaerat
                         inventore ipsam distinctio officiis unde assumenda minima qui obcaecati iustor praeses antium
                         ametus.
@@ -33,11 +33,11 @@
                     </div>
                     <div class="lg:flex-1 w-full flex flex-col space-y-4">
                         <h3
-                            class="font-poppins font-semibold uppercase text-m_red-100 border-b-2 border-m_red-100 w-fit">
+                            class="font-poppins font-semibold uppercase lg:text-base text-sm text-m_red-100 border-b-2 border-m_red-100 w-fit">
                             About us</h3>
-                        <h1 class="font-poppins font-bold text-3xl pb-3">Главный принцип нашей работы –
+                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3">Главный принцип нашей работы –
                             Прозрачность и надежность</h1>
-                        <p class="font-manjari font-normal text-sm text-m_gray-300">Компания имеет прямые договора с
+                        <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">Компания имеет прямые договора с
                             Агентствами железнодорожного, автомо- бильного, морского и
                             речного транспорта Туркменистана. Также налажено долгос- рочное сотрудничество с крупнейшими
                             собственниками подвижного состава и экспедиторами стран СНГ, Средиземного моря и стран
@@ -54,9 +54,9 @@
                                     </svg>
                                 </div>
                                 <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold text-lg">Сплоченность персонала, командная
+                                    <h3 class="font-poppins font-bold lg:text-lg text-base">Сплоченность персонала, командная
                                         работа компании</h3>
-                                    <p class="font-manjari font-normal text-sm text-m_gray-300">Сплоченность и
+                                    <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">Сплоченность и
                                         командная работа — наши ключевые принципы. Каждый член команды
                                         понимает свою роль и вносит свой уникальный вклад, делая общее дело успешным.
                                     </p>
@@ -72,8 +72,8 @@
                                     </svg>
                                 </div>
                                 <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold text-lg">«Надежность» с точки зрения клиентов</h3>
-                                    <p class="font-manjari font-normal text-sm text-m_gray-300">
+                                    <h3 class="font-poppins font-bold lg:text-lg text-base">«Надежность» с точки зрения клиентов</h3>
+                                    <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
                                         Надежность для нас — это готовность поддержать клиента в любой ситуации,
                                         предлагать
                                         решения и обеспечивать высокий уровень сервиса, который оправдывает и
@@ -89,22 +89,22 @@
             <!-- Certificate -->
             <div class="bg-m_gray-400">
                 <div class="container lg:py-40 py-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-4xl text-3xl text-center">Licenses and
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Licenses and
                         certificates
                     </h2>
                     <div class="flex items-center gap-x-8 rounded-lg py-20 text-center overflow-x-auto no-scrollbar">
                         <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
                             <img class="w-full h-full object-cover" src="@/assets/imgs/cert1.webp">
-                            <p class="font-poppins font-normal text-lg">Лицензия на морские и речные перевозки</p>
+                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские и речные перевозки</p>
                         </div>
                         <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
                             <img class="w-full h-full object-cover" src="@/assets/imgs/cert2.webp">
-                            <p class="font-poppins font-normal text-lg">Лицензия на морские автомобильные перевозки
+                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские автомобильные перевозки
                             </p>
                         </div>
                         <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
                             <img class="w-full h-full object-cover" src="@/assets/imgs/cert3.webp">
-                            <p class="font-poppins font-normal text-lg">Сертификат ISO 9001:2015</p>
+                            <p class="font-poppins font-normal lg:text-lg text-base">Сертификат ISO 9001:2015</p>
                         </div>
                     </div>
                 </div>
@@ -114,9 +114,9 @@
                 <div class="container flex lg:flex-row flex-col lg:space-y-0 space-y-10 items-center lg:space-x-20 space-x-0 lg:py-40 py-20">
                     <div class="flex-1 flex flex-col space-y-8">
                         <h3
-                            class="font-poppins font-semibold uppercase text-m_red-100 lg:text-lg text-base border-b-2 border-m_red-100 w-fit">
+                            class="font-poppins font-semibold uppercase text-m_red-100 lg:text-base text-sm border-b-2 border-m_red-100 w-fit">
                             Ключевые ценности</h3>
-                        <h1 class="font-poppins font-bold lg:text-4xl text-3xl pb-3">Наши ценности — основа нашего успеха</h1>
+                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3">Наши ценности — основа нашего успеха</h1>
                         <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">Компания имеет прямые договора с
                             Наши ценности отражают наши принципы и стремления. Мы придерживаемся честности,
                             ответственности и высокого уровня качества, создавая прочные и доверительные отношения с
@@ -133,7 +133,7 @@
                                             fill="#E92A34" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold lg:text-xl text-lg">Доверие и признание со стороны государства
+                                <h3 class="font-poppins font-bold lg:text-lg text-base">Доверие и признание со стороны государства
                                 </h3>
                             </div>
                             <div class="p-4 border flex items-center space-x-6"
@@ -146,7 +146,7 @@
                                             fill="#E92A34" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold lg:text-xl text-lg">Стабильность развития компании</h3>
+                                <h3 class="font-poppins font-bold lg:text-lg text-base">Стабильность развития компании</h3>
                             </div>
                             <div class="p-4 border flex items-center space-x-6"
                                 style="border-color: rgba(0, 0, 0, 0.06);">
@@ -158,7 +158,7 @@
                                             fill="#E92A34" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold lg:text-xl text-lg">Ответственность за взятые на себя
+                                <h3 class="font-poppins font-bold lg:text-lg text-base">Ответственность за взятые на себя
                                     обязательства.</h3>
                             </div>
                             <div class="p-4 border flex items-center space-x-6"
@@ -184,11 +184,11 @@
                                             stroke-linejoin="round" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold lg:text-xl text-lg">Современный транспорт</h3>
+                                <h3 class="font-poppins font-bold lg:text-lg text-base">Современный транспорт</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-[500px] w-full h-[600px]">
+                    <div class="lg:w-[500px] w-full lg:h-[600px] h-full">
                         <img class="w-full h-full object-cover rounded-lg" src="@/assets/imgs/about-page2.webp">
                     </div>
                 </div>
@@ -196,7 +196,7 @@
             <!-- Our services -->
             <div class="bg-m_gray-400">
                 <div class="container lg:py-40 py-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-4xl text-3xl text-center">Our Services</h2>
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Our Services</h2>
                     <div class="pt-20 flex items-start gap-x-6 overflow-x-auto no-scrollbar">
                         <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
                             <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
@@ -258,8 +258,8 @@
             <!-- Statistic -->
             <div class="bg-m_red-100 py-20 px-6">
                 <div class="container grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-y-10 place-items-center">
-                    <div class="w-[300px] flex items-center space-x-4">
-                        <div class="w-[60px]">
+                    <div class="sm:w-[300px] w-full flex items-center space-x-4">
+                        <div class="lg:w-[60px] w-[30px]">
                             <svg viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M33.92 28.269L27.7134 16.7668C28.3466 15.3267 28.7008 13.7351 28.7008 12.0606C28.7008 5.60695 23.4799 0.37561 17.0404 0.37561C10.5993 0.37561 5.37894 5.60748 5.37894 12.0606C5.37894 13.7755 5.75069 15.4027 6.41251 16.8694L0.178215 28.2637C-0.0228051 28.6298 0.0106043 29.0815 0.26197 29.4158C0.513866 29.749 0.939173 29.9058 1.34536 29.8101L6.66912 28.5863L8.49125 33.672C8.63338 34.0674 8.99346 34.3416 9.41081 34.3724C9.43789 34.3745 9.46384 34.3756 9.48929 34.3756C9.68107 34.3755 9.86925 34.3234 10.0338 34.2246C10.1983 34.1259 10.3331 33.9843 10.4237 33.815L15.8493 23.6855C16.2449 23.7257 16.6422 23.7457 17.0398 23.7456C17.4084 23.7456 17.7721 23.7264 18.1317 23.6924L23.675 33.823C23.7731 34.0025 23.9209 34.1499 24.1006 34.2473C24.2803 34.3447 24.4842 34.3879 24.6879 34.3719C25.1042 34.3384 25.4627 34.0647 25.6037 33.6715L27.4258 28.5857L32.7496 29.8096C33.1579 29.9084 33.579 29.7495 33.8309 29.4174C34.0838 29.0858 34.1178 28.6362 33.92 28.269H33.92ZM9.68226 30.7061L8.34794 26.9808C8.16551 26.4743 7.6363 26.1794 7.11232 26.3043L3.17479 27.2093L7.66285 19.0062C9.14081 21.007 11.2408 22.5163 13.6765 23.2507L9.68226 30.7061ZM7.50955 12.0605C7.50955 6.79465 11.7855 2.51031 17.0408 2.51031C22.2956 2.51031 26.5709 6.79465 26.5709 12.0605C26.5709 17.3264 22.2956 21.6118 17.0408 21.6118C11.7849 21.6118 7.50955 17.3264 7.50955 12.0605ZM26.9825 26.3042C26.4564 26.1799 25.9293 26.4743 25.7468 26.9807L24.4035 30.7331L20.3218 23.2746C22.8222 22.5407 24.9731 20.9916 26.4702 18.9323L30.9396 27.2135L26.9825 26.3042Z"
@@ -267,13 +267,13 @@
                             </svg>
                         </div>
                         <div class="flex flex-col">
-                            <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="5"
+                            <AnimatedCounter class="font-poppins font-semibold lg:text-2xl text-xl text-white" :finalValue="5"
                                 :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
-                            <p class="font-poppins text-lg text-white">Years of experience</p>
+                            <p class="font-poppins lg:text-lg text-sm text-white">Years of experience</p>
                         </div>
                     </div>
-                    <div class="w-[300px] flex items-center space-x-4">
-                        <div class="w-[60px]">
+                    <div class="sm:w-[300px] w-full flex items-center space-x-4">
+                        <div class="lg:w-[60px] w-[30px]">
                             <svg viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M20.0476 29.1114L28.4952 33.4852C28.8286 33.6576 29.198 33.7487 29.5733 33.7512C29.9486 33.7537 30.3191 33.6674 30.6547 33.4995L37.7786 29.9375C38.174 29.7399 38.5066 29.4362 38.7392 29.0602C38.9717 28.6843 39.095 28.251 39.0952 27.809V21.228C39.095 20.786 38.9717 20.3527 38.7392 19.9768C38.5066 19.6008 38.174 19.297 37.7786 19.0995L29.5714 14.9947L21.3333 19.2614C20.9458 19.4621 20.621 19.7655 20.3942 20.1384C20.1675 20.5112 20.0476 20.9392 20.0476 21.3756V29.1114Z"
@@ -287,13 +287,13 @@
                             </svg>
                         </div>
                         <div class="flex flex-col">
-                            <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="500"
+                            <AnimatedCounter class="font-poppins font-semibold lg:text-2xl text-xl text-white" :finalValue="500"
                                 :start-value="100" :speed="1" :plus="true"></AnimatedCounter>
-                            <p class="font-poppins text-lg text-white">Cargo deliveredusers</p>
+                            <p class="font-poppins lg:text-lg text-sm text-white">Cargo deliveredusers</p>
                         </div>
                     </div>
-                    <div class="w-[300px] flex items-center space-x-4">
-                        <div class="w-[60px]">
+                    <div class="sm:w-[300px] w-full flex items-center space-x-4">
+                        <div class="lg:w-[60px] w-[30px]">
                             <svg viewBox="0 0 40 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M8.44756 12.3756C9.7206 12.3756 10.9415 11.8699 11.8417 10.9697C12.7418 10.0695 13.2476 8.84865 13.2476 7.57561C13.2476 6.30257 12.7418 5.08167 11.8417 4.1815C10.9415 3.28132 9.7206 2.77561 8.44756 2.77561C7.17452 2.77561 5.95362 3.28132 5.05345 4.1815C4.15327 5.08167 3.64756 6.30257 3.64756 7.57561C3.64756 8.84865 4.15327 10.0695 5.05345 10.9697C5.95362 11.8699 7.17452 12.3756 8.44756 12.3756ZM8.44756 14.7756C9.39308 14.7756 10.3293 14.5894 11.2029 14.2275C12.0764 13.8657 12.8701 13.3354 13.5387 12.6668C14.2073 11.9982 14.7377 11.2045 15.0995 10.3309C15.4613 9.45739 15.6476 8.52113 15.6476 7.57561C15.6476 6.63009 15.4613 5.69383 15.0995 4.82029C14.7377 3.94675 14.2073 3.15302 13.5387 2.48444C12.8701 1.81586 12.0764 1.28551 11.2029 0.923678C10.3293 0.561844 9.39308 0.37561 8.44756 0.37561C6.538 0.37561 4.70665 1.13418 3.35639 2.48444C2.00613 3.8347 1.24756 5.66605 1.24756 7.57561C1.24756 9.48517 2.00613 11.3165 3.35639 12.6668C4.70665 14.017 6.538 14.7756 8.44756 14.7756Z"
@@ -310,13 +310,13 @@
                             </svg>
                         </div>
                         <div class="flex flex-col">
-                            <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="480"
+                            <AnimatedCounter class="font-poppins font-semibold lg:text-2xl text-xl text-white" :finalValue="480"
                                 :start-value="0" :speed="1" :plus="true"></AnimatedCounter>
-                            <p class="font-poppins text-lg text-white">Satisfied clients</p>
+                            <p class="font-poppins lg:text-lg text-sm text-white">Satisfied clients</p>
                         </div>
                     </div>
-                    <div class="w-[300px] flex items-center space-x-4">
-                        <div class="w-[60px]">
+                    <div class="sm:w-[300px] w-full flex items-center space-x-4">
+                        <div class="lg:w-[60px] w-[30px]">
                             <svg viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M31.869 16.7342C31.8712 16.407 31.8053 16.083 31.6754 15.7827C31.5456 15.4824 31.3546 15.2124 31.1147 14.9899L16.5476 1.5542L1.98041 14.9899C1.74051 15.2124 1.54956 15.4824 1.4197 15.7827C1.28984 16.083 1.22391 16.407 1.22613 16.7342V29.8399C1.22613 30.4651 1.47447 31.0646 1.91652 31.5067C2.35857 31.9487 2.95812 32.1971 3.58327 32.1971H29.5118C30.137 32.1971 30.7365 31.9487 31.1786 31.5067C31.6206 31.0646 31.869 30.4651 31.869 29.8399V16.7342Z"
@@ -327,9 +327,9 @@
                             </svg>
                         </div>
                         <div class="flex flex-col">
-                            <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="20"
+                            <AnimatedCounter class="font-poppins font-semibold lg:text-2xl text-xl text-white" :finalValue="20"
                                 :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
-                            <p class="font-poppins text-lg text-white">Warehouses</p>
+                            <p class="font-poppins lg:text-lg text-sm text-white">Warehouses</p>
                         </div>
                     </div>
                 </div>
@@ -337,59 +337,59 @@
             <!-- Cargo -->
             <div class="bg-white">
                 <div class="container lg:pt-40 pt-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-4xl text-3xl text-center">Main types of cargo
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Main types of cargo
                         transported</h2>
                     <div class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 py-20">
-                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full sm:mx-0 mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo1.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Бытовая и вычислительная техника</p>
                         </div>
-                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full sm:mx-0 mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo2.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Медицина и фармацевтика</p>
                         </div>
-                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full sm:mx-0 mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo3.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Производственные линии и оборудования</p>
                         </div>
-                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full sm:mx-0 mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo4.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Семена и растения</p>
                         </div>
-                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full sm:mx-0 mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo5.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Сельскохозяйственная техника</p>
                         </div>
-                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full sm:mx-0 mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo6.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Химическая промышленность (сера, карбамид, полипропилен)</p>
                         </div>
-                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full sm:mx-0 mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo7.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Текстиль</p>
                         </div>
-                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full sm:mx-0 mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo8.webp">
                             <p
