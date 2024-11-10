@@ -4,10 +4,10 @@
         <!-- Main -->
         <div class="relative">
             <img class="h-screen fixed -z-10 top-0 object-cover" src="/imgs/bg.png">
-            <div class="container flex justify-between items-start mt-10">
-                <div class="w-1/2 flex flex-col space-y-6 mt-20">
+            <div class="container flex lg:flex-row lg:space-y-0 space-y-10 flex-col justify-between items-start mt-10">
+                <div class="lg:w-1/2 w-full flex flex-col space-y-4 lg:mt-20 mb-10 mr-4">
                     <p class="font-poppins font-medium text-base text-m_red-100">Turkmen Milli Logistik</p>
-                    <h1 class="font-poppins font-bold text-5xl leading-[60px]">Delivering seamless logistics solutions
+                    <h1 class="lg:w-fit sm:w-4/5 w-full font-poppins font-bold lg:text-5xl md:text-4xl text-3xl lg:!leading-[65px] !leading-[50px]">Delivering seamless logistics solutions
                         worldwide</h1>
                     <p class="font-manjari text-m_gray-300">
                         Lorem ipsum dolor sit amet, consec tetur adipi sicing elit temporibus repel lendus quae quaerat
@@ -15,8 +15,8 @@
                         ametus.
                     </p>
                 </div>
-                <div class="w-[600px] h-[600px] overflow-y-scroll no-scrollbar relative">
-                    <div class="columns-2 gap-8 animate-scroll">
+                <div class="xl:w-[600px] w-[500px] h-[600px] lg:block hidden overflow-y-scroll no-scrollbar relative">
+                    <div class="sm:columns-2 columns-1 gap-8 animate-scroll">
                         <div v-for="(item, index) in galleryItems" :key="index" class="w-full mb-5 overflow-hidden">
                             <img class="w-full h-full object-cover mb-3 rounded-xl" :src="item.img" />
                         </div>
@@ -27,17 +27,17 @@
         <div class="w-full h-full" style="box-shadow: 0 -50px 40px 5px #eee">
             <!-- About us -->
             <div class="bg-white">
-                <div class="container flex items-center space-x-20 py-40">
-                    <div class="w-[500px] h-[600px]">
+                <div class="container flex lg:flex-row flex-col lg:space-y-0 space-y-6 items-center lg:space-x-10 space-x-0 lg:py-40 py-10">
+                    <div class="lg:w-[500px] w-full lg:h-[600px] h-full">
                         <img class="w-full h-full object-cover rounded-lg" src="@/assets/imgs/service-page.webp">
                     </div>
-                    <div class="flex-1 flex flex-col space-y-4">
+                    <div class="lg:flex-1 w-full flex flex-col space-y-4">
                         <h3
                             class="font-poppins font-semibold uppercase text-m_red-100 border-b-2 border-m_red-100 w-fit">
                             About us</h3>
-                        <h1 class="font-poppins font-bold text-4xl pb-3">Главный принцип нашей работы –
+                        <h1 class="font-poppins font-bold text-3xl pb-3">Главный принцип нашей работы –
                             Прозрачность и надежность</h1>
-                        <p class="font-manjari font-normal text-base text-m_gray-300">Компания имеет прямые договора с
+                        <p class="font-manjari font-normal text-sm text-m_gray-300">Компания имеет прямые договора с
                             Агентствами железнодорожного, автомо- бильного, морского и
                             речного транспорта Туркменистана. Также налажено долгос- рочное сотрудничество с крупнейшими
                             собственниками подвижного состава и экспедиторами стран СНГ, Средиземного моря и стран
@@ -54,9 +54,9 @@
                                     </svg>
                                 </div>
                                 <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold text-xl">Сплоченность персонала, командная
+                                    <h3 class="font-poppins font-bold text-lg">Сплоченность персонала, командная
                                         работа компании</h3>
-                                    <p class="font-manjari font-normal text-base text-m_gray-300">Сплоченность и
+                                    <p class="font-manjari font-normal text-sm text-m_gray-300">Сплоченность и
                                         командная работа — наши ключевые принципы. Каждый член команды
                                         понимает свою роль и вносит свой уникальный вклад, делая общее дело успешным.
                                     </p>
@@ -72,8 +72,8 @@
                                     </svg>
                                 </div>
                                 <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold text-xl">«Надежность» с точки зрения клиентов</h3>
-                                    <p class="font-manjari font-normal text-base text-m_gray-300">
+                                    <h3 class="font-poppins font-bold text-lg">«Надежность» с точки зрения клиентов</h3>
+                                    <p class="font-manjari font-normal text-sm text-m_gray-300">
                                         Надежность для нас — это готовность поддержать клиента в любой ситуации,
                                         предлагать
                                         решения и обеспечивать высокий уровень сервиса, который оправдывает и
@@ -88,11 +88,11 @@
             </div>
             <!-- Certificate -->
             <div class="bg-m_gray-400">
-                <div class="container py-40">
-                    <h2 class="font-poppins font-semibold text-m_black-100 text-4xl text-center">Licenses and
+                <div class="container lg:py-40 py-20">
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-4xl text-3xl text-center">Licenses and
                         certificates
                     </h2>
-                    <div class="flex items-center gap-x-8 rounded-lg py-20 text-center">
+                    <div class="flex items-center gap-x-8 rounded-lg py-20 text-center overflow-x-auto no-scrollbar">
                         <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
                             <img class="w-full h-full object-cover" src="@/assets/imgs/cert1.webp">
                             <p class="font-poppins font-normal text-lg">Лицензия на морские и речные перевозки</p>
@@ -111,18 +111,18 @@
             </div>
             <!-- Core Values -->
             <div class="bg-white">
-                <div class="container flex items-center space-x-20 py-40">
+                <div class="container flex lg:flex-row flex-col lg:space-y-0 space-y-10 items-center lg:space-x-20 space-x-0 lg:py-40 py-20">
                     <div class="flex-1 flex flex-col space-y-8">
                         <h3
-                            class="font-poppins font-semibold uppercase text-m_red-100 border-b-2 border-m_red-100 w-fit">
+                            class="font-poppins font-semibold uppercase text-m_red-100 lg:text-lg text-base border-b-2 border-m_red-100 w-fit">
                             Ключевые ценности</h3>
-                        <h1 class="font-poppins font-bold text-4xl pb-3">Наши ценности — основа нашего успеха</h1>
-                        <p class="font-manjari font-normal text-base text-m_gray-300">Компания имеет прямые договора с
+                        <h1 class="font-poppins font-bold lg:text-4xl text-3xl pb-3">Наши ценности — основа нашего успеха</h1>
+                        <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">Компания имеет прямые договора с
                             Наши ценности отражают наши принципы и стремления. Мы придерживаемся честности,
                             ответственности и высокого уровня качества, создавая прочные и доверительные отношения с
                             нашими клиентами и партнерами.
                         </p>
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid xl:grid-cols-2 grid-cols-1 gap-4">
                             <div class="p-4 border flex items-center space-x-6"
                                 style="border-color: rgba(0, 0, 0, 0.06);">
                                 <div class="rounded-full p-3 bg-m_gray-400">
@@ -133,7 +133,7 @@
                                             fill="#E92A34" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold text-xl">Доверие и признание со стороны государства
+                                <h3 class="font-poppins font-bold lg:text-xl text-lg">Доверие и признание со стороны государства
                                 </h3>
                             </div>
                             <div class="p-4 border flex items-center space-x-6"
@@ -146,7 +146,7 @@
                                             fill="#E92A34" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold text-xl">Стабильность развития компании</h3>
+                                <h3 class="font-poppins font-bold lg:text-xl text-lg">Стабильность развития компании</h3>
                             </div>
                             <div class="p-4 border flex items-center space-x-6"
                                 style="border-color: rgba(0, 0, 0, 0.06);">
@@ -158,7 +158,7 @@
                                             fill="#E92A34" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold text-xl">Ответственность за взятые на себя
+                                <h3 class="font-poppins font-bold lg:text-xl text-lg">Ответственность за взятые на себя
                                     обязательства.</h3>
                             </div>
                             <div class="p-4 border flex items-center space-x-6"
@@ -184,22 +184,22 @@
                                             stroke-linejoin="round" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold text-xl">Современный транспорт</h3>
+                                <h3 class="font-poppins font-bold lg:text-xl text-lg">Современный транспорт</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="w-[500px] h-[600px]">
+                    <div class="lg:w-[500px] w-full h-[600px]">
                         <img class="w-full h-full object-cover rounded-lg" src="@/assets/imgs/about-page2.webp">
                     </div>
                 </div>
             </div>
             <!-- Our services -->
             <div class="bg-m_gray-400">
-                <div class="container py-40">
-                    <h2 class="font-poppins font-semibold text-m_black-100 text-4xl text-center">Our Services</h2>
-                    <div class="pt-20 flex items-start gap-x-6">
-                        <div class="rounded-lg relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+                <div class="container lg:py-40 py-20">
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-4xl text-3xl text-center">Our Services</h2>
+                    <div class="pt-20 flex items-start gap-x-6 overflow-x-auto no-scrollbar">
+                        <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
+                            <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
                                 src="@/assets/imgs/service1.webp">
                             <div class="absolute top-4 right-4 cursor-pointer">
                                 <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
@@ -212,12 +212,12 @@
                                 </svg>
                             </div>
                             <div
-                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white w-1/2">
+                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-1/2">
                                 Reliable Sea Freight
                             </div>
                         </div>
-                        <div class="rounded-lg relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+                        <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
+                            <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
                                 src="@/assets/imgs/service2.webp">
                             <div class="absolute top-4 right-4 cursor-pointer">
                                 <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
@@ -230,12 +230,12 @@
                                 </svg>
                             </div>
                             <div
-                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white w-1/2">
+                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-1/2">
                                 Ground Transportation
                             </div>
                         </div>
-                        <div class="rounded-lg relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+                        <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
+                            <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
                                 src="@/assets/imgs/service3.webp">
                             <div class="absolute top-4 right-4 cursor-pointer">
                                 <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
@@ -248,7 +248,7 @@
                                 </svg>
                             </div>
                             <div
-                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold text-xl text-white w-3/5">
+                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-3/5">
                                 Swift And Efficient Air Cargo
                             </div>
                         </div>
@@ -256,138 +256,140 @@
                 </div>
             </div>
             <!-- Statistic -->
-            <div class="bg-m_red-100 py-20 px-6 flex items-center justify-evenly">
-                <div class="flex items-center space-x-4">
-                    <div class="w-[60px]">
-                        <svg viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M33.92 28.269L27.7134 16.7668C28.3466 15.3267 28.7008 13.7351 28.7008 12.0606C28.7008 5.60695 23.4799 0.37561 17.0404 0.37561C10.5993 0.37561 5.37894 5.60748 5.37894 12.0606C5.37894 13.7755 5.75069 15.4027 6.41251 16.8694L0.178215 28.2637C-0.0228051 28.6298 0.0106043 29.0815 0.26197 29.4158C0.513866 29.749 0.939173 29.9058 1.34536 29.8101L6.66912 28.5863L8.49125 33.672C8.63338 34.0674 8.99346 34.3416 9.41081 34.3724C9.43789 34.3745 9.46384 34.3756 9.48929 34.3756C9.68107 34.3755 9.86925 34.3234 10.0338 34.2246C10.1983 34.1259 10.3331 33.9843 10.4237 33.815L15.8493 23.6855C16.2449 23.7257 16.6422 23.7457 17.0398 23.7456C17.4084 23.7456 17.7721 23.7264 18.1317 23.6924L23.675 33.823C23.7731 34.0025 23.9209 34.1499 24.1006 34.2473C24.2803 34.3447 24.4842 34.3879 24.6879 34.3719C25.1042 34.3384 25.4627 34.0647 25.6037 33.6715L27.4258 28.5857L32.7496 29.8096C33.1579 29.9084 33.579 29.7495 33.8309 29.4174C34.0838 29.0858 34.1178 28.6362 33.92 28.269H33.92ZM9.68226 30.7061L8.34794 26.9808C8.16551 26.4743 7.6363 26.1794 7.11232 26.3043L3.17479 27.2093L7.66285 19.0062C9.14081 21.007 11.2408 22.5163 13.6765 23.2507L9.68226 30.7061ZM7.50955 12.0605C7.50955 6.79465 11.7855 2.51031 17.0408 2.51031C22.2956 2.51031 26.5709 6.79465 26.5709 12.0605C26.5709 17.3264 22.2956 21.6118 17.0408 21.6118C11.7849 21.6118 7.50955 17.3264 7.50955 12.0605ZM26.9825 26.3042C26.4564 26.1799 25.9293 26.4743 25.7468 26.9807L24.4035 30.7331L20.3218 23.2746C22.8222 22.5407 24.9731 20.9916 26.4702 18.9323L30.9396 27.2135L26.9825 26.3042Z"
-                                fill="white" />
-                        </svg>
+            <div class="bg-m_red-100 py-20 px-6">
+                <div class="container grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-y-10 place-items-center">
+                    <div class="w-[300px] flex items-center space-x-4">
+                        <div class="w-[60px]">
+                            <svg viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M33.92 28.269L27.7134 16.7668C28.3466 15.3267 28.7008 13.7351 28.7008 12.0606C28.7008 5.60695 23.4799 0.37561 17.0404 0.37561C10.5993 0.37561 5.37894 5.60748 5.37894 12.0606C5.37894 13.7755 5.75069 15.4027 6.41251 16.8694L0.178215 28.2637C-0.0228051 28.6298 0.0106043 29.0815 0.26197 29.4158C0.513866 29.749 0.939173 29.9058 1.34536 29.8101L6.66912 28.5863L8.49125 33.672C8.63338 34.0674 8.99346 34.3416 9.41081 34.3724C9.43789 34.3745 9.46384 34.3756 9.48929 34.3756C9.68107 34.3755 9.86925 34.3234 10.0338 34.2246C10.1983 34.1259 10.3331 33.9843 10.4237 33.815L15.8493 23.6855C16.2449 23.7257 16.6422 23.7457 17.0398 23.7456C17.4084 23.7456 17.7721 23.7264 18.1317 23.6924L23.675 33.823C23.7731 34.0025 23.9209 34.1499 24.1006 34.2473C24.2803 34.3447 24.4842 34.3879 24.6879 34.3719C25.1042 34.3384 25.4627 34.0647 25.6037 33.6715L27.4258 28.5857L32.7496 29.8096C33.1579 29.9084 33.579 29.7495 33.8309 29.4174C34.0838 29.0858 34.1178 28.6362 33.92 28.269H33.92ZM9.68226 30.7061L8.34794 26.9808C8.16551 26.4743 7.6363 26.1794 7.11232 26.3043L3.17479 27.2093L7.66285 19.0062C9.14081 21.007 11.2408 22.5163 13.6765 23.2507L9.68226 30.7061ZM7.50955 12.0605C7.50955 6.79465 11.7855 2.51031 17.0408 2.51031C22.2956 2.51031 26.5709 6.79465 26.5709 12.0605C26.5709 17.3264 22.2956 21.6118 17.0408 21.6118C11.7849 21.6118 7.50955 17.3264 7.50955 12.0605ZM26.9825 26.3042C26.4564 26.1799 25.9293 26.4743 25.7468 26.9807L24.4035 30.7331L20.3218 23.2746C22.8222 22.5407 24.9731 20.9916 26.4702 18.9323L30.9396 27.2135L26.9825 26.3042Z"
+                                    fill="white" />
+                            </svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="5"
+                                :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
+                            <p class="font-poppins text-lg text-white">Years of experience</p>
+                        </div>
                     </div>
-                    <div class="flex flex-col">
-                        <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="5"
-                            :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
-                        <p class="font-poppins text-lg text-white">Years of experience</p>
+                    <div class="w-[300px] flex items-center space-x-4">
+                        <div class="w-[60px]">
+                            <svg viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M20.0476 29.1114L28.4952 33.4852C28.8286 33.6576 29.198 33.7487 29.5733 33.7512C29.9486 33.7537 30.3191 33.6674 30.6547 33.4995L37.7786 29.9375C38.174 29.7399 38.5066 29.4362 38.7392 29.0602C38.9717 28.6843 39.095 28.251 39.0952 27.809V21.228C39.095 20.786 38.9717 20.3527 38.7392 19.9768C38.5066 19.6008 38.174 19.297 37.7786 19.0995L29.5714 14.9947L21.3333 19.2614C20.9458 19.4621 20.621 19.7655 20.3942 20.1384C20.1675 20.5112 20.0476 20.9392 20.0476 21.3756V29.1114Z"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M2.28571 29.7756L9.44762 33.4852C9.78098 33.6576 10.1504 33.7487 10.5257 33.7512C10.901 33.7537 11.2715 33.6674 11.6071 33.4994L20.0476 29.2804V21.228C20.0474 20.786 19.9241 20.3527 19.6915 19.9768C19.459 19.6008 19.1264 19.297 18.731 19.0994L10.5238 14.9947L2.28571 19.2614C1.89822 19.4621 1.57336 19.7655 1.34662 20.1383C1.11987 20.5112 0.999965 20.9392 1 21.3756V27.6614C0.999965 28.0978 1.11987 28.5258 1.34662 28.8986C1.57336 29.2715 1.89822 29.5749 2.28571 29.7756ZM10.5238 14.8256L18.9714 19.1994C19.3048 19.3719 19.6742 19.463 20.0495 19.4655C20.4248 19.468 20.7953 19.3817 21.131 19.2137L29.5714 14.9947V6.94231C29.5712 6.50025 29.4479 6.06699 29.2154 5.69105C28.9828 5.31511 28.6502 5.01133 28.2548 4.81373L21.131 1.25183C20.7953 1.08384 20.4248 0.997569 20.0495 1.00005C19.6742 1.00253 19.3048 1.0937 18.9714 1.26611L11.8095 4.97564C11.422 5.17638 11.0972 5.47976 10.8704 5.85263C10.6437 6.22551 10.5238 6.65352 10.5238 7.08992V14.8256Z"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M11.3476 5.8828L18.9833 9.69946C19.3138 9.8646 19.6782 9.95057 20.0476 9.95057C20.417 9.95057 20.7814 9.8646 21.1119 9.69946L28.6666 5.92327M15.9976 3.4447L24.8095 7.85184M25.5214 17.7304L34.3333 22.1376M6.47379 17.7304L15.2857 22.1376M20.8714 20.1685L28.5071 23.9852C28.8376 24.1503 29.202 24.2363 29.5714 24.2363C29.9409 24.2363 30.3052 24.1503 30.6357 23.9852L38.1881 20.209M1.82379 20.1685L9.45951 23.9852C9.78998 24.1503 10.1544 24.2363 10.5238 24.2363C10.8932 24.2363 11.2576 24.1503 11.5881 23.9852L19.1405 20.209M20.0476 10.2328V19.7566M29.5714 24.5185V32.8518M10.5238 24.5185V32.8518"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="500"
+                                :start-value="100" :speed="1" :plus="true"></AnimatedCounter>
+                            <p class="font-poppins text-lg text-white">Cargo deliveredusers</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <div class="w-[60px]">
-                        <svg viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M20.0476 29.1114L28.4952 33.4852C28.8286 33.6576 29.198 33.7487 29.5733 33.7512C29.9486 33.7537 30.3191 33.6674 30.6547 33.4995L37.7786 29.9375C38.174 29.7399 38.5066 29.4362 38.7392 29.0602C38.9717 28.6843 39.095 28.251 39.0952 27.809V21.228C39.095 20.786 38.9717 20.3527 38.7392 19.9768C38.5066 19.6008 38.174 19.297 37.7786 19.0995L29.5714 14.9947L21.3333 19.2614C20.9458 19.4621 20.621 19.7655 20.3942 20.1384C20.1675 20.5112 20.0476 20.9392 20.0476 21.3756V29.1114Z"
-                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M2.28571 29.7756L9.44762 33.4852C9.78098 33.6576 10.1504 33.7487 10.5257 33.7512C10.901 33.7537 11.2715 33.6674 11.6071 33.4994L20.0476 29.2804V21.228C20.0474 20.786 19.9241 20.3527 19.6915 19.9768C19.459 19.6008 19.1264 19.297 18.731 19.0994L10.5238 14.9947L2.28571 19.2614C1.89822 19.4621 1.57336 19.7655 1.34662 20.1383C1.11987 20.5112 0.999965 20.9392 1 21.3756V27.6614C0.999965 28.0978 1.11987 28.5258 1.34662 28.8986C1.57336 29.2715 1.89822 29.5749 2.28571 29.7756ZM10.5238 14.8256L18.9714 19.1994C19.3048 19.3719 19.6742 19.463 20.0495 19.4655C20.4248 19.468 20.7953 19.3817 21.131 19.2137L29.5714 14.9947V6.94231C29.5712 6.50025 29.4479 6.06699 29.2154 5.69105C28.9828 5.31511 28.6502 5.01133 28.2548 4.81373L21.131 1.25183C20.7953 1.08384 20.4248 0.997569 20.0495 1.00005C19.6742 1.00253 19.3048 1.0937 18.9714 1.26611L11.8095 4.97564C11.422 5.17638 11.0972 5.47976 10.8704 5.85263C10.6437 6.22551 10.5238 6.65352 10.5238 7.08992V14.8256Z"
-                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                                d="M11.3476 5.8828L18.9833 9.69946C19.3138 9.8646 19.6782 9.95057 20.0476 9.95057C20.417 9.95057 20.7814 9.8646 21.1119 9.69946L28.6666 5.92327M15.9976 3.4447L24.8095 7.85184M25.5214 17.7304L34.3333 22.1376M6.47379 17.7304L15.2857 22.1376M20.8714 20.1685L28.5071 23.9852C28.8376 24.1503 29.202 24.2363 29.5714 24.2363C29.9409 24.2363 30.3052 24.1503 30.6357 23.9852L38.1881 20.209M1.82379 20.1685L9.45951 23.9852C9.78998 24.1503 10.1544 24.2363 10.5238 24.2363C10.8932 24.2363 11.2576 24.1503 11.5881 23.9852L19.1405 20.209M20.0476 10.2328V19.7566M29.5714 24.5185V32.8518M10.5238 24.5185V32.8518"
-                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <div class="w-[300px] flex items-center space-x-4">
+                        <div class="w-[60px]">
+                            <svg viewBox="0 0 40 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.44756 12.3756C9.7206 12.3756 10.9415 11.8699 11.8417 10.9697C12.7418 10.0695 13.2476 8.84865 13.2476 7.57561C13.2476 6.30257 12.7418 5.08167 11.8417 4.1815C10.9415 3.28132 9.7206 2.77561 8.44756 2.77561C7.17452 2.77561 5.95362 3.28132 5.05345 4.1815C4.15327 5.08167 3.64756 6.30257 3.64756 7.57561C3.64756 8.84865 4.15327 10.0695 5.05345 10.9697C5.95362 11.8699 7.17452 12.3756 8.44756 12.3756ZM8.44756 14.7756C9.39308 14.7756 10.3293 14.5894 11.2029 14.2275C12.0764 13.8657 12.8701 13.3354 13.5387 12.6668C14.2073 11.9982 14.7377 11.2045 15.0995 10.3309C15.4613 9.45739 15.6476 8.52113 15.6476 7.57561C15.6476 6.63009 15.4613 5.69383 15.0995 4.82029C14.7377 3.94675 14.2073 3.15302 13.5387 2.48444C12.8701 1.81586 12.0764 1.28551 11.2029 0.923678C10.3293 0.561844 9.39308 0.37561 8.44756 0.37561C6.538 0.37561 4.70665 1.13418 3.35639 2.48444C2.00613 3.8347 1.24756 5.66605 1.24756 7.57561C1.24756 9.48517 2.00613 11.3165 3.35639 12.6668C4.70665 14.017 6.538 14.7756 8.44756 14.7756Z"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M5.69721 12.126C5.80896 12.2375 5.89762 12.3699 5.95812 12.5157C6.01861 12.6615 6.04975 12.8178 6.04975 12.9756C6.04975 13.1335 6.01861 13.2897 5.95812 13.4355C5.89762 13.5813 5.80896 13.7137 5.69721 13.8252L4.88601 14.634C3.32489 16.1956 2.44781 18.3132 2.44761 20.5212V24.9756C2.44761 25.2939 2.32118 25.5991 2.09614 25.8241C1.87109 26.0492 1.56587 26.1756 1.24761 26.1756C0.929348 26.1756 0.624123 26.0492 0.399079 25.8241C0.174036 25.5991 0.0476074 25.2939 0.0476074 24.9756V20.5212C0.0479476 17.6767 1.17797 14.9487 3.18921 12.9372L3.99801 12.126C4.10948 12.0143 4.2419 11.9256 4.38769 11.8651C4.53348 11.8046 4.68977 11.7735 4.84761 11.7735C5.00545 11.7735 5.16174 11.8046 5.30753 11.8651C5.45332 11.9256 5.58574 12.0143 5.69721 12.126ZM33.998 11.406C33.8863 11.5175 33.7976 11.6499 33.7371 11.7957C33.6766 11.9415 33.6455 12.0978 33.6455 12.2556C33.6455 12.4135 33.6766 12.5697 33.7371 12.7155C33.7976 12.8613 33.8863 12.9937 33.998 13.1052L34.8092 13.914C36.3703 15.4756 37.2474 17.5932 37.2476 19.8012V24.9756C37.2476 25.2939 37.374 25.5991 37.5991 25.8241C37.8241 26.0492 38.1293 26.1756 38.4476 26.1756C38.7659 26.1756 39.0711 26.0492 39.2961 25.8241C39.5212 25.5991 39.6476 25.2939 39.6476 24.9756V19.8012C39.6473 16.9567 38.5172 14.2287 36.506 12.2172L35.6972 11.406C35.5857 11.2943 35.4533 11.2056 35.3075 11.1451C35.1617 11.0846 35.0055 11.0535 34.8476 11.0535C34.6898 11.0535 34.5335 11.0846 34.3877 11.1451C34.2419 11.2056 34.1095 11.2943 33.998 11.406Z"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M30.0477 12.3756C28.7746 12.3756 27.5537 11.8699 26.6535 10.9697C25.7534 10.0695 25.2477 8.84865 25.2477 7.57561C25.2477 6.30257 25.7534 5.08167 26.6535 4.1815C27.5537 3.28132 28.7746 2.77561 30.0477 2.77561C31.3207 2.77561 32.5416 3.28132 33.4418 4.1815C34.3419 5.08167 34.8477 6.30257 34.8477 7.57561C34.8477 8.84865 34.3419 10.0695 33.4418 10.9697C32.5416 11.8699 31.3207 12.3756 30.0477 12.3756ZM30.0477 14.7756C29.1021 14.7756 28.1659 14.5894 27.2923 14.2275C26.4188 13.8657 25.6251 13.3354 24.9565 12.6668C24.2879 11.9982 23.7576 11.2045 23.3957 10.3309C23.0339 9.45739 22.8477 8.52113 22.8477 7.57561C22.8477 6.63009 23.0339 5.69383 23.3957 4.82029C23.7576 3.94675 24.2879 3.15302 24.9565 2.48444C25.6251 1.81586 26.4188 1.28551 27.2923 0.923678C28.1659 0.561844 29.1021 0.37561 30.0477 0.37561C31.9572 0.37561 33.7886 1.13418 35.1388 2.48444C36.4891 3.8347 37.2477 5.66605 37.2477 7.57561C37.2477 9.48517 36.4891 11.3165 35.1388 12.6668C33.7886 14.017 31.9572 14.7756 30.0477 14.7756ZM19.2477 22.5756C17.6564 22.5756 16.1302 23.2078 15.005 24.333C13.8798 25.4582 13.2477 26.9843 13.2477 28.5756V31.6956C13.2477 32.0139 13.1212 32.3191 12.8962 32.5441C12.6711 32.7692 12.3659 32.8956 12.0477 32.8956C11.7294 32.8956 11.4242 32.7692 11.1991 32.5441C10.9741 32.3191 10.8477 32.0139 10.8477 31.6956V28.5756C10.8477 26.3478 11.7327 24.2112 13.308 22.6359C14.8833 21.0606 17.0198 20.1756 19.2477 20.1756C21.4755 20.1756 23.612 21.0606 25.1874 22.6359C26.7627 24.2112 27.6477 26.3478 27.6477 28.5756V31.6956C27.6477 32.0139 27.5212 32.3191 27.2962 32.5441C27.0711 32.7692 26.7659 32.8956 26.4477 32.8956C26.1294 32.8956 25.8242 32.7692 25.5991 32.5441C25.3741 32.3191 25.2477 32.0139 25.2477 31.6956V28.5756C25.2477 27.7877 25.0925 27.0075 24.7909 26.2795C24.4894 25.5516 24.0474 24.8901 23.4903 24.333C22.9331 23.7758 22.2717 23.3339 21.5438 23.0323C20.8158 22.7308 20.0356 22.5756 19.2477 22.5756Z"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M19.2476 18.9756C20.5206 18.9756 21.7415 18.4699 22.6417 17.5697C23.5419 16.6695 24.0476 15.4486 24.0476 14.1756C24.0476 12.9025 23.5419 11.6816 22.6417 10.7815C21.7415 9.8813 20.5206 9.37559 19.2476 9.37559C17.9746 9.37559 16.7537 9.8813 15.8535 10.7815C14.9533 11.6816 14.4476 12.9025 14.4476 14.1756C14.4476 15.4486 14.9533 16.6695 15.8535 17.5697C16.7537 18.4699 17.9746 18.9756 19.2476 18.9756ZM19.2476 21.3756C21.1572 21.3756 22.9885 20.617 24.3388 19.2668C25.689 17.9165 26.4476 16.0851 26.4476 14.1756C26.4476 12.266 25.689 10.4347 24.3388 9.08442C22.9885 7.73416 21.1572 6.97559 19.2476 6.97559C17.338 6.97559 15.5067 7.73416 14.1564 9.08442C12.8062 10.4347 12.0476 12.266 12.0476 14.1756C12.0476 16.0851 12.8062 17.9165 14.1564 19.2668C15.5067 20.617 17.338 21.3756 19.2476 21.3756Z"
+                                    fill="white" />
+                            </svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="480"
+                                :start-value="0" :speed="1" :plus="true"></AnimatedCounter>
+                            <p class="font-poppins text-lg text-white">Satisfied clients</p>
+                        </div>
                     </div>
-                    <div class="flex flex-col">
-                        <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="500"
-                            :start-value="100" :speed="1" :plus="true"></AnimatedCounter>
-                        <p class="font-poppins text-lg text-white">Cargo deliveredusers</p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <div class="w-[60px]">
-                        <svg viewBox="0 0 40 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.44756 12.3756C9.7206 12.3756 10.9415 11.8699 11.8417 10.9697C12.7418 10.0695 13.2476 8.84865 13.2476 7.57561C13.2476 6.30257 12.7418 5.08167 11.8417 4.1815C10.9415 3.28132 9.7206 2.77561 8.44756 2.77561C7.17452 2.77561 5.95362 3.28132 5.05345 4.1815C4.15327 5.08167 3.64756 6.30257 3.64756 7.57561C3.64756 8.84865 4.15327 10.0695 5.05345 10.9697C5.95362 11.8699 7.17452 12.3756 8.44756 12.3756ZM8.44756 14.7756C9.39308 14.7756 10.3293 14.5894 11.2029 14.2275C12.0764 13.8657 12.8701 13.3354 13.5387 12.6668C14.2073 11.9982 14.7377 11.2045 15.0995 10.3309C15.4613 9.45739 15.6476 8.52113 15.6476 7.57561C15.6476 6.63009 15.4613 5.69383 15.0995 4.82029C14.7377 3.94675 14.2073 3.15302 13.5387 2.48444C12.8701 1.81586 12.0764 1.28551 11.2029 0.923678C10.3293 0.561844 9.39308 0.37561 8.44756 0.37561C6.538 0.37561 4.70665 1.13418 3.35639 2.48444C2.00613 3.8347 1.24756 5.66605 1.24756 7.57561C1.24756 9.48517 2.00613 11.3165 3.35639 12.6668C4.70665 14.017 6.538 14.7756 8.44756 14.7756Z"
-                                fill="white" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M5.69721 12.126C5.80896 12.2375 5.89762 12.3699 5.95812 12.5157C6.01861 12.6615 6.04975 12.8178 6.04975 12.9756C6.04975 13.1335 6.01861 13.2897 5.95812 13.4355C5.89762 13.5813 5.80896 13.7137 5.69721 13.8252L4.88601 14.634C3.32489 16.1956 2.44781 18.3132 2.44761 20.5212V24.9756C2.44761 25.2939 2.32118 25.5991 2.09614 25.8241C1.87109 26.0492 1.56587 26.1756 1.24761 26.1756C0.929348 26.1756 0.624123 26.0492 0.399079 25.8241C0.174036 25.5991 0.0476074 25.2939 0.0476074 24.9756V20.5212C0.0479476 17.6767 1.17797 14.9487 3.18921 12.9372L3.99801 12.126C4.10948 12.0143 4.2419 11.9256 4.38769 11.8651C4.53348 11.8046 4.68977 11.7735 4.84761 11.7735C5.00545 11.7735 5.16174 11.8046 5.30753 11.8651C5.45332 11.9256 5.58574 12.0143 5.69721 12.126ZM33.998 11.406C33.8863 11.5175 33.7976 11.6499 33.7371 11.7957C33.6766 11.9415 33.6455 12.0978 33.6455 12.2556C33.6455 12.4135 33.6766 12.5697 33.7371 12.7155C33.7976 12.8613 33.8863 12.9937 33.998 13.1052L34.8092 13.914C36.3703 15.4756 37.2474 17.5932 37.2476 19.8012V24.9756C37.2476 25.2939 37.374 25.5991 37.5991 25.8241C37.8241 26.0492 38.1293 26.1756 38.4476 26.1756C38.7659 26.1756 39.0711 26.0492 39.2961 25.8241C39.5212 25.5991 39.6476 25.2939 39.6476 24.9756V19.8012C39.6473 16.9567 38.5172 14.2287 36.506 12.2172L35.6972 11.406C35.5857 11.2943 35.4533 11.2056 35.3075 11.1451C35.1617 11.0846 35.0055 11.0535 34.8476 11.0535C34.6898 11.0535 34.5335 11.0846 34.3877 11.1451C34.2419 11.2056 34.1095 11.2943 33.998 11.406Z"
-                                fill="white" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M30.0477 12.3756C28.7746 12.3756 27.5537 11.8699 26.6535 10.9697C25.7534 10.0695 25.2477 8.84865 25.2477 7.57561C25.2477 6.30257 25.7534 5.08167 26.6535 4.1815C27.5537 3.28132 28.7746 2.77561 30.0477 2.77561C31.3207 2.77561 32.5416 3.28132 33.4418 4.1815C34.3419 5.08167 34.8477 6.30257 34.8477 7.57561C34.8477 8.84865 34.3419 10.0695 33.4418 10.9697C32.5416 11.8699 31.3207 12.3756 30.0477 12.3756ZM30.0477 14.7756C29.1021 14.7756 28.1659 14.5894 27.2923 14.2275C26.4188 13.8657 25.6251 13.3354 24.9565 12.6668C24.2879 11.9982 23.7576 11.2045 23.3957 10.3309C23.0339 9.45739 22.8477 8.52113 22.8477 7.57561C22.8477 6.63009 23.0339 5.69383 23.3957 4.82029C23.7576 3.94675 24.2879 3.15302 24.9565 2.48444C25.6251 1.81586 26.4188 1.28551 27.2923 0.923678C28.1659 0.561844 29.1021 0.37561 30.0477 0.37561C31.9572 0.37561 33.7886 1.13418 35.1388 2.48444C36.4891 3.8347 37.2477 5.66605 37.2477 7.57561C37.2477 9.48517 36.4891 11.3165 35.1388 12.6668C33.7886 14.017 31.9572 14.7756 30.0477 14.7756ZM19.2477 22.5756C17.6564 22.5756 16.1302 23.2078 15.005 24.333C13.8798 25.4582 13.2477 26.9843 13.2477 28.5756V31.6956C13.2477 32.0139 13.1212 32.3191 12.8962 32.5441C12.6711 32.7692 12.3659 32.8956 12.0477 32.8956C11.7294 32.8956 11.4242 32.7692 11.1991 32.5441C10.9741 32.3191 10.8477 32.0139 10.8477 31.6956V28.5756C10.8477 26.3478 11.7327 24.2112 13.308 22.6359C14.8833 21.0606 17.0198 20.1756 19.2477 20.1756C21.4755 20.1756 23.612 21.0606 25.1874 22.6359C26.7627 24.2112 27.6477 26.3478 27.6477 28.5756V31.6956C27.6477 32.0139 27.5212 32.3191 27.2962 32.5441C27.0711 32.7692 26.7659 32.8956 26.4477 32.8956C26.1294 32.8956 25.8242 32.7692 25.5991 32.5441C25.3741 32.3191 25.2477 32.0139 25.2477 31.6956V28.5756C25.2477 27.7877 25.0925 27.0075 24.7909 26.2795C24.4894 25.5516 24.0474 24.8901 23.4903 24.333C22.9331 23.7758 22.2717 23.3339 21.5438 23.0323C20.8158 22.7308 20.0356 22.5756 19.2477 22.5756Z"
-                                fill="white" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M19.2476 18.9756C20.5206 18.9756 21.7415 18.4699 22.6417 17.5697C23.5419 16.6695 24.0476 15.4486 24.0476 14.1756C24.0476 12.9025 23.5419 11.6816 22.6417 10.7815C21.7415 9.8813 20.5206 9.37559 19.2476 9.37559C17.9746 9.37559 16.7537 9.8813 15.8535 10.7815C14.9533 11.6816 14.4476 12.9025 14.4476 14.1756C14.4476 15.4486 14.9533 16.6695 15.8535 17.5697C16.7537 18.4699 17.9746 18.9756 19.2476 18.9756ZM19.2476 21.3756C21.1572 21.3756 22.9885 20.617 24.3388 19.2668C25.689 17.9165 26.4476 16.0851 26.4476 14.1756C26.4476 12.266 25.689 10.4347 24.3388 9.08442C22.9885 7.73416 21.1572 6.97559 19.2476 6.97559C17.338 6.97559 15.5067 7.73416 14.1564 9.08442C12.8062 10.4347 12.0476 12.266 12.0476 14.1756C12.0476 16.0851 12.8062 17.9165 14.1564 19.2668C15.5067 20.617 17.338 21.3756 19.2476 21.3756Z"
-                                fill="white" />
-                        </svg>
-                    </div>
-                    <div class="flex flex-col">
-                        <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="480"
-                            :start-value="0" :speed="1" :plus="true"></AnimatedCounter>
-                        <p class="font-poppins text-lg text-white">Satisfied clients</p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <div class="w-[60px]">
-                        <svg viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M31.869 16.7342C31.8712 16.407 31.8053 16.083 31.6754 15.7827C31.5456 15.4824 31.3546 15.2124 31.1147 14.9899L16.5476 1.5542L1.98041 14.9899C1.74051 15.2124 1.54956 15.4824 1.4197 15.7827C1.28984 16.083 1.22391 16.407 1.22613 16.7342V29.8399C1.22613 30.4651 1.47447 31.0646 1.91652 31.5067C2.35857 31.9487 2.95812 32.1971 3.58327 32.1971H29.5118C30.137 32.1971 30.7365 31.9487 31.1786 31.5067C31.6206 31.0646 31.869 30.4651 31.869 29.8399V16.7342Z"
-                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                                d="M16.5476 31.6078C16.5476 32.197 17.1369 32.197 17.1369 32.197H24.2059C24.7952 32.197 24.7952 31.6078 24.7952 31.6078V24.5387C24.7952 23.9494 24.2059 23.9494 24.2059 23.9494H17.1369C16.5476 23.9494 16.5476 24.5387 16.5476 24.5387M16.5476 31.6078V24.5387M16.5476 31.6078C16.5476 31.6078 16.5476 32.197 15.9583 32.197H8.88921C8.88921 32.197 8.29993 32.197 8.29993 31.6078V24.5387C8.29993 24.5387 8.29993 23.9494 8.88921 23.9494H15.9583C15.9583 23.9494 16.5476 23.9494 16.5476 24.5387M13.0119 15.6994H20.0809C20.0809 15.6994 20.6702 15.6994 20.6702 16.2887V23.3578C20.6702 23.3578 20.6702 23.947 20.0809 23.947H13.0119C13.0119 23.947 12.4226 23.947 12.4226 23.3578V16.2887C12.4226 16.2887 12.4226 15.6994 13.0119 15.6994Z"
-                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                    <div class="flex flex-col">
-                        <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="20"
-                            :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
-                        <p class="font-poppins text-lg text-white">Warehouses</p>
+                    <div class="w-[300px] flex items-center space-x-4">
+                        <div class="w-[60px]">
+                            <svg viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M31.869 16.7342C31.8712 16.407 31.8053 16.083 31.6754 15.7827C31.5456 15.4824 31.3546 15.2124 31.1147 14.9899L16.5476 1.5542L1.98041 14.9899C1.74051 15.2124 1.54956 15.4824 1.4197 15.7827C1.28984 16.083 1.22391 16.407 1.22613 16.7342V29.8399C1.22613 30.4651 1.47447 31.0646 1.91652 31.5067C2.35857 31.9487 2.95812 32.1971 3.58327 32.1971H29.5118C30.137 32.1971 30.7365 31.9487 31.1786 31.5067C31.6206 31.0646 31.869 30.4651 31.869 29.8399V16.7342Z"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M16.5476 31.6078C16.5476 32.197 17.1369 32.197 17.1369 32.197H24.2059C24.7952 32.197 24.7952 31.6078 24.7952 31.6078V24.5387C24.7952 23.9494 24.2059 23.9494 24.2059 23.9494H17.1369C16.5476 23.9494 16.5476 24.5387 16.5476 24.5387M16.5476 31.6078V24.5387M16.5476 31.6078C16.5476 31.6078 16.5476 32.197 15.9583 32.197H8.88921C8.88921 32.197 8.29993 32.197 8.29993 31.6078V24.5387C8.29993 24.5387 8.29993 23.9494 8.88921 23.9494H15.9583C15.9583 23.9494 16.5476 23.9494 16.5476 24.5387M13.0119 15.6994H20.0809C20.0809 15.6994 20.6702 15.6994 20.6702 16.2887V23.3578C20.6702 23.3578 20.6702 23.947 20.0809 23.947H13.0119C13.0119 23.947 12.4226 23.947 12.4226 23.3578V16.2887C12.4226 16.2887 12.4226 15.6994 13.0119 15.6994Z"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <AnimatedCounter class="font-poppins font-semibold text-4xl text-white" :finalValue="20"
+                                :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
+                            <p class="font-poppins text-lg text-white">Warehouses</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <!-- Cargo -->
             <div class="bg-white">
-                <div class="container pt-40">
-                    <h2 class="font-poppins font-semibold text-m_black-100 text-4xl text-center">Main types of cargo
+                <div class="container lg:pt-40 pt-20">
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-4xl text-3xl text-center">Main types of cargo
                         transported</h2>
-                    <div class="grid grid-cols-4 gap-6 py-20">
-                        <div class="rounded-xl relative overflow-hidden">
+                    <div class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 py-20">
+                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo1.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Бытовая и вычислительная техника</p>
                         </div>
-                        <div class="rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo2.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Медицина и фармацевтика</p>
                         </div>
-                        <div class="rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo3.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Производственные линии и оборудования</p>
                         </div>
-                        <div class="rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo4.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Семена и растения</p>
                         </div>
-                        <div class="rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo5.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Сельскохозяйственная техника</p>
                         </div>
-                        <div class="rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo6.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Химическая промышленность (сера, карбамид, полипропилен)</p>
                         </div>
-                        <div class="rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo7.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
                                 Текстиль</p>
                         </div>
-                        <div class="rounded-xl relative overflow-hidden">
+                        <div class="sm:w-full mx-8 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo8.webp">
                             <p

@@ -11,7 +11,7 @@ export default {
     props: {
         color: {
             type: String,
-            default: '#B3B3B3'
+            default: '#949494'
         }
     }
 }
