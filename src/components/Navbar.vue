@@ -68,7 +68,7 @@
                 </button>
             </div>
             <router-link to="/contact"
-                class="sm:block hidden font-sf_pro font-normal lg:text-base text-sm bg-m_red-400 hover:opacity-80 duration-300 text-white py-8 px-10">
+                class="sm:block hidden font-sf_pro font-normal lg:text-base text-sm bg-m_red-400 hover:bg-red-700 duration-300 text-white py-8 px-10">
                 Contact us
             </router-link>
         </nav>

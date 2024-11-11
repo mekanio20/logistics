@@ -8,8 +8,8 @@
                     <img class="w-full h-full object-cover filter brightness-50" src="@/assets/imgs/contact-page.webp">
                 </div>
                 <div class="flex flex-col space-y-6 py-20 container">
-                    <h1 class="font-poppins font-bold text-5xl text-white">Contact us</h1>
-                    <div class="flex items-center space-x-2 font-manjari text-white text-lg">
+                    <h1 class="font-poppins font-bold lg:text-4xl text-3xl text-white">Contact us</h1>
+                    <div class="flex items-center space-x-2 font-manjari text-white lg:text-lg text-base">
                         <router-link to="/">Home</router-link>
                         <span>/</span>
                         <router-link to="/contact">Contact us</router-link>
@@ -57,7 +57,7 @@ export default {
     },
     methods: {
         addContact() {
-
+            
         }
     }
 }
