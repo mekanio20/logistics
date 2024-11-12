@@ -30,16 +30,26 @@
                     </div>
                 </div>
                 <!-- Language -->
-                <div class="flex items-center space-x-2 cursor-pointer select-none">
+                <div class="flex items-center space-x-2 cursor-pointer select-none relative" @click="toogleLang">
                     <svg class="w-[14px]" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M7.00004 13.4167C10.5438 13.4167 13.4167 10.5438 13.4167 7.00004C13.4167 3.45629 10.5438 0.583374 7.00004 0.583374M7.00004 13.4167C3.45629 13.4167 0.583374 10.5438 0.583374 7.00004C0.583374 3.45629 3.45629 0.583374 7.00004 0.583374M7.00004 13.4167C8.75004 13.4167 9.33337 10.5 9.33337 7.00004C9.33337 3.50004 8.75004 0.583374 7.00004 0.583374M7.00004 13.4167C5.25004 13.4167 4.66671 10.5 4.66671 7.00004C4.66671 3.50004 5.25004 0.583374 7.00004 0.583374M1.16671 9.33337H12.8334M1.16671 4.66671H12.8334"
                             stroke="#E92A34" />
                     </svg>
-                    <p class="font-sf_pro font-normal text-sm text-m_gray-200">English</p>
+                    <p class="font-sf_pro font-normal text-sm text-m_gray-200">{{ activeLang }}</p>
                     <svg class="w-[14px]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 6L8 10L12 6" stroke="#666666" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
+                    <div v-if="isLang" class="absolute -bottom-[130px] -left-8 px-[16px] py-3 bg-gray-100 text-black">
+                        <div v-for="item in languages" :key="item.id" class="flex items-center space-x-2 mb-2"
+                            @click="updateLang(item.title)">
+                            <div class="w-[20px]">
+                                <img :src="item.img">
+                            </div>
+                            <p class="font-sf_pro font-normal text-sm hover:text-m_red-100 duration-300">{{ item.title
+                                }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -127,16 +137,28 @@
                         </div>
                     </div>
                     <!-- Language -->
-                    <div class="flex items-center space-x-2 cursor-pointer select-none">
+                    <div class="flex items-center space-x-2 cursor-pointer select-none relative" @click="toogleLang">
                         <svg class="w-[14px]" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M7.00004 13.4167C10.5438 13.4167 13.4167 10.5438 13.4167 7.00004C13.4167 3.45629 10.5438 0.583374 7.00004 0.583374M7.00004 13.4167C3.45629 13.4167 0.583374 10.5438 0.583374 7.00004C0.583374 3.45629 3.45629 0.583374 7.00004 0.583374M7.00004 13.4167C8.75004 13.4167 9.33337 10.5 9.33337 7.00004C9.33337 3.50004 8.75004 0.583374 7.00004 0.583374M7.00004 13.4167C5.25004 13.4167 4.66671 10.5 4.66671 7.00004C4.66671 3.50004 5.25004 0.583374 7.00004 0.583374M1.16671 9.33337H12.8334M1.16671 4.66671H12.8334"
                                 stroke="#E92A34" />
                         </svg>
-                        <p class="font-sf_pro font-normal text-sm text-m_gray-200">English</p>
+                        <p class="font-sf_pro font-normal text-sm text-m_gray-200">{{ activeLang }}</p>
                         <svg class="w-[14px]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6L8 10L12 6" stroke="#666666" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
+                        <div v-if="isLang"
+                            class="absolute -bottom-[130px] -left-8 px-[16px] py-3 bg-gray-100 text-black">
+                            <div v-for="item in languages" :key="item.id" class="flex items-center space-x-2 mb-2"
+                                @click="updateLang(item.title)">
+                                <div class="w-[20px]">
+                                    <img :src="item.img">
+                                </div>
+                                <p class="font-sf_pro font-normal text-sm hover:text-m_red-100 duration-300">{{
+                        item.title
+                                    }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -145,6 +167,7 @@
 </template>
 
 <script>
+import { markRaw } from 'vue';
 import phone from './icons/phone.vue';
 import mail from './icons/mail.vue';
 import pin from './icons/pin.vue';
@@ -152,6 +175,13 @@ import instagram from './icons/instagram.vue';
 import facebook from './icons/facebook.vue';
 import youtube from './icons/youtube.vue';
 import linkedin from './icons/linkedin.vue';
+const nonReactivePhoneIcon = markRaw(phone)
+const nonReactiveMailIcon = markRaw(mail)
+const nonReactivePinIcon = markRaw(pin)
+const nonReactiveInstagramIcon = markRaw(instagram)
+const nonReactiveFacebookIcon = markRaw(facebook)
+const nonReactiveYoutubeIcon = markRaw(youtube)
+const nonReactiveLinkedinIcon = markRaw(linkedin)
 export default {
     name: "Navbar",
     components: {
@@ -176,10 +206,15 @@ export default {
                 { id: 3, icon: youtube, url: '/' },
                 { id: 4, icon: linkedin, url: '/' },
             ],
+            languages: [
+                { id: 1, name: 'TM', title: 'Turkmen', img: '/imgs/tm.png' },
+                { id: 2, name: 'EN', title: 'English', img: '/imgs/en.png', },
+                { id: 3, name: 'RU', title: 'Russian', img: '/imgs/ru.png' },
+            ],
+            activeLang: 'Turkmen',
             isOpen: false,
             isLang: false,
             hoveredIcon: null,
-            langs: ['TM', 'EN', 'RU']
         }
     },
     methods: {
@@ -191,6 +226,9 @@ export default {
         },
         updateLang(lang) {
             localStorage.setItem('lang', lang)
+            if (lang === 'English') this.activeLang = 'English'
+            if (lang === 'Russian') this.activeLang = 'Russian'
+            if (lang === 'Turkmen') this.activeLang = 'Turkmen'
             this.$i18n.locale = lang
         }
     }

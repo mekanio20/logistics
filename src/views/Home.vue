@@ -266,7 +266,7 @@
                                     fill="white" />
                             </svg>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="flex flex-col space-y-1">
                             <AnimatedCounter class="font-poppins font-semibold lg:text-3xl text-2xl text-white" :finalValue="5"
                                 :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
                             <p class="font-poppins lg:text-xl text-lg text-white">Years of experience</p>
@@ -286,10 +286,10 @@
                                     stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="flex flex-col space-y-1">
                             <AnimatedCounter class="font-poppins font-semibold lg:text-3xl text-2xl text-white" :finalValue="500"
                                 :start-value="100" :speed="1" :plus="true"></AnimatedCounter>
-                            <p class="font-poppins lg:text-xl text-lg text-white">Cargo deliveredusers</p>
+                            <p class="font-poppins lg:text-xl text-lg text-white">Cargo delivered</p>
                         </div>
                     </div>
                     <div class="sm:w-[300px] w-full flex items-center space-x-4">
@@ -309,7 +309,7 @@
                                     fill="white" />
                             </svg>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="flex flex-col space-y-1">
                             <AnimatedCounter class="font-poppins font-semibold lg:text-3xl text-2xl text-white" :finalValue="480"
                                 :start-value="0" :speed="1" :plus="true"></AnimatedCounter>
                             <p class="font-poppins lg:text-xl text-lg text-white">Satisfied clients</p>
@@ -326,7 +326,7 @@
                                     stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="flex flex-col space-y-1">
                             <AnimatedCounter class="font-poppins font-semibold lg:text-3xl text-2xl text-white" :finalValue="20"
                                 :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
                             <p class="font-poppins lg:text-xl text-lg text-white">Warehouses</p>
@@ -405,6 +405,7 @@
 </template>
 
 <script>
+import api from '@/api/index'
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 import AnimatedCounter from '@/components/AnimatedCounter.vue';
@@ -421,11 +422,13 @@ export default {
         Swiper,
         SwiperSlide,
     },
+    async created() {
+        await this.getGallery()
+    },
     data() {
         return {
             slidesPerView: null,
             modules: [Navigation, EffectFade, Autoplay],
-            images: ['/imgs/slider-1.webp', '/imgs/slider-2.webp', '/imgs/slider-3.webp'],
             countries: [
                 {
                     id: 1,
@@ -448,47 +451,7 @@ export default {
                     flag: "/svgs/dubay.svg"
                 },
             ],
-            galleryItems: [
-                {
-                    img: '/imgs/slide-1.webp',
-                },
-                {
-                    img: '/imgs/service1.webp',
-                },
-                {
-                    img: '/imgs/slide-3.webp',
-                },
-                {
-                    img: '/imgs/service2.webp',
-                },
-                {
-                    img: '/imgs/slide-2.webp',
-                },
-                {
-                    img: '/imgs/service3.webp',
-                },
-                {
-                    img: '/imgs/slide-4.webp',
-                },
-                {
-                    img: '/imgs/slide-5.webp',
-                },
-                {
-                    img: '/imgs/slide-6.webp',
-                },
-                {
-                    img: '/imgs/slide-7.webp',
-                },
-                {
-                    img: '/imgs/slide-8.webp',
-                },
-                {
-                    img: '/imgs/slide-9.webp',
-                },
-                {
-                    img: '/imgs/slide-10.webp',
-                },
-            ],
+            galleryItems: null,
             country_breakpoints: {
                 300: { slidesPerView: 1 },
                 500: { slidesPerView: 2 },
@@ -504,6 +467,12 @@ export default {
                 "Перевозка дорогостоящих грузов",
                 "Получение виз для иностранных водителей и визовая поддержка на территории Туркменистана."
             ]
+        }
+    },
+    methods: {
+        async getGalleryItems() {
+            const gallery = await api.get('/sliders/')
+            console.log(gallery);
         }
     }
 }
