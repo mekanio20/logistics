@@ -1,33 +1,37 @@
 <template>
-    <div class="w-full overflow-hidden">
+    <div class="w-full">
         <Navbar />
         <!-- Main -->
-        <div class="relative">
-            <img class="h-screen fixed -z-10 top-0 object-cover" src="/imgs/bg.png">
-            <div class="container flex lg:flex-row lg:space-y-0 space-y-10 flex-col justify-between items-start mt-10">
-                <div class="lg:w-1/2 w-full flex flex-col space-y-4 lg:mt-20 mb-10 mr-4">
-                    <p class="font-poppins font-medium lg:text-base text-sm text-m_red-100">Turkmen Milli Logistik</p>
-                    <h1 class="lg:w-fit sm:w-4/5 w-full font-poppins font-bold lg:text-5xl md:text-4xl text-3xl lg:!leading-[65px] !leading-[40px]">Delivering seamless logistics solutions
-                        worldwide</h1>
-                    <p class="font-manjari text-m_gray-300 lg:text-base text-sm">
-                        Lorem ipsum dolor sit amet, consec tetur adipi sicing elit temporibus repel lendus quae quaerat
-                        inventore ipsam distinctio officiis unde assumenda minima qui obcaecati iustor praeses antium
-                        ametus.
-                    </p>
+        <swiper class="relative -top-10 !-z-10 select-none" :slides-per-view="1" :modules="modules"
+            :autoplay="{ delay: 2000, disableOnInteraction: false, }" :speed="2000">
+            <swiper-slide v-for="item in galleryItems" :key="item.id" class="w-full !h-[650px]">
+                <div class="w-full h-[1000px] absolute -top-20 -z-10">
+                    <img :src="item.img" class="w-full h-full object-cover">
                 </div>
-                <div class="xl:w-[600px] w-[500px] h-[600px] lg:block hidden overflow-y-scroll no-scrollbar relative">
-                    <div class="sm:columns-2 columns-1 gap-8 animate-scroll">
-                        <div v-for="(item, index) in galleryItems" :key="index" class="w-full mb-5 overflow-hidden">
-                            <img class="w-full h-full object-cover mb-3 rounded-xl" :src="item.img" />
-                        </div>
+                <div
+                    class="container flex lg:flex-row lg:space-y-0 space-y-20 flex-col justify-between items-start mt-10">
+                    <div class="lg:w-2/3 w-full flex flex-col space-y-6 lg:mt-20 mb-20 mr-4 text-white">
+                        <p class="font-poppins font-medium lg:text-base text-sm"
+                        >Turkmen Milli Logistik</p>
+                        <h1
+                            class="lg:w-fit sm:w-4/5 w-full font-poppins font-bold lg:text-5xl md:text-4xl text-3xl lg:!leading-[65px] !leading-[40px]">
+                            {{ item.title }}</h1>
+                        <p class="font-manjari lg:text-base text-sm">
+                            {{ item.desc }}
+                        </p>
+                        <router-link 
+                        to="/about" class="w-fit px-8 py-3 bg-m_red-100 text-base font-sf_pro">
+                            Learn more
+                        </router-link>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="w-full h-full" style="box-shadow: 0 -50px 40px 5px #eee">
+            </swiper-slide>
+        </swiper>
+        <div class="w-full">
             <!-- About us -->
             <div class="bg-white">
-                <div class="container flex lg:flex-row flex-col lg:space-y-0 space-y-6 items-center lg:space-x-10 space-x-0 lg:py-40 py-10">
+                <div
+                    class="container flex lg:flex-row flex-col lg:space-y-0 space-y-6 items-center lg:space-x-10 space-x-0 lg:py-20 py-10">
                     <div class="lg:w-[500px] w-full lg:h-[600px] h-full">
                         <img class="w-full h-full object-cover rounded-lg" src="@/assets/imgs/service-page.webp">
                     </div>
@@ -37,7 +41,8 @@
                             About us</h3>
                         <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3">Главный принцип нашей работы –
                             Прозрачность и надежность</h1>
-                        <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">Компания имеет прямые договора с
+                        <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300" v-scroll-reveal="{ duration: 1000, origin: 'left', distance: '100px' }">Компания имеет прямые
+                            договора с
                             Агентствами железнодорожного, автомо- бильного, морского и
                             речного транспорта Туркменистана. Также налажено долгос- рочное сотрудничество с крупнейшими
                             собственниками подвижного состава и экспедиторами стран СНГ, Средиземного моря и стран
@@ -54,9 +59,11 @@
                                     </svg>
                                 </div>
                                 <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold lg:text-lg text-base">Сплоченность персонала, командная
+                                    <h3 class="font-poppins font-bold lg:text-lg text-base">Сплоченность персонала,
+                                        командная
                                         работа компании</h3>
-                                    <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">Сплоченность и
+                                    <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
+                                        Сплоченность и
                                         командная работа — наши ключевые принципы. Каждый член команды
                                         понимает свою роль и вносит свой уникальный вклад, делая общее дело успешным.
                                     </p>
@@ -72,7 +79,8 @@
                                     </svg>
                                 </div>
                                 <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold lg:text-lg text-base">«Надежность» с точки зрения клиентов</h3>
+                                    <h3 class="font-poppins font-bold lg:text-lg text-base">«Надежность» с точки зрения
+                                        клиентов</h3>
                                     <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
                                         Надежность для нас — это готовность поддержать клиента в любой ситуации,
                                         предлагать
@@ -89,17 +97,20 @@
             <!-- Certificate -->
             <div class="bg-m_gray-400">
                 <div class="container lg:py-40 py-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Licenses and
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Licenses
+                        and
                         certificates
                     </h2>
                     <div class="flex items-center gap-x-8 rounded-lg py-20 text-center overflow-x-auto no-scrollbar">
                         <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
                             <img class="w-full h-full object-cover" src="@/assets/imgs/cert1.webp">
-                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские и речные перевозки</p>
+                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские и речные
+                                перевозки</p>
                         </div>
                         <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
                             <img class="w-full h-full object-cover" src="@/assets/imgs/cert2.webp">
-                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские автомобильные перевозки
+                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские автомобильные
+                                перевозки
                             </p>
                         </div>
                         <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
@@ -111,13 +122,16 @@
             </div>
             <!-- Core Values -->
             <div class="bg-white">
-                <div class="container flex lg:flex-row flex-col lg:space-y-0 space-y-10 items-center lg:space-x-20 space-x-0 lg:py-40 py-20">
+                <div
+                    class="container flex lg:flex-row flex-col lg:space-y-0 space-y-10 items-center lg:space-x-20 space-x-0 lg:py-40 py-20">
                     <div class="flex-1 flex flex-col space-y-8">
                         <h3
                             class="font-poppins font-semibold uppercase text-m_red-100 lg:text-base text-sm border-b-2 border-m_red-100 w-fit">
                             Ключевые ценности</h3>
-                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3">Наши ценности — основа нашего успеха</h1>
-                        <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">Компания имеет прямые договора с
+                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3">Наши ценности — основа нашего
+                            успеха</h1>
+                        <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">Компания имеет прямые
+                            договора с
                             Наши ценности отражают наши принципы и стремления. Мы придерживаемся честности,
                             ответственности и высокого уровня качества, создавая прочные и доверительные отношения с
                             нашими клиентами и партнерами.
@@ -133,7 +147,8 @@
                                             fill="#E92A34" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold lg:text-lg text-base">Доверие и признание со стороны государства
+                                <h3 class="font-poppins font-bold lg:text-lg text-base">Доверие и признание со стороны
+                                    государства
                                 </h3>
                             </div>
                             <div class="p-4 border flex items-center space-x-6"
@@ -146,7 +161,8 @@
                                             fill="#E92A34" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold lg:text-lg text-base">Стабильность развития компании</h3>
+                                <h3 class="font-poppins font-bold lg:text-lg text-base">Стабильность развития компании
+                                </h3>
                             </div>
                             <div class="p-4 border flex items-center space-x-6"
                                 style="border-color: rgba(0, 0, 0, 0.06);">
@@ -158,7 +174,8 @@
                                             fill="#E92A34" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold lg:text-lg text-base">Ответственность за взятые на себя
+                                <h3 class="font-poppins font-bold lg:text-lg text-base">Ответственность за взятые на
+                                    себя
                                     обязательства.</h3>
                             </div>
                             <div class="p-4 border flex items-center space-x-6"
@@ -196,7 +213,8 @@
             <!-- Our services -->
             <div class="bg-m_gray-400">
                 <div class="container lg:py-40 py-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Our Services</h2>
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Our
+                        Services</h2>
                     <div class="pt-20 flex items-start gap-x-6 overflow-x-auto no-scrollbar">
                         <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
                             <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
@@ -267,8 +285,8 @@
                             </svg>
                         </div>
                         <div class="flex flex-col space-y-1">
-                            <AnimatedCounter class="font-poppins font-semibold lg:text-3xl text-2xl text-white" :finalValue="5"
-                                :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
+                            <AnimatedCounter class="font-poppins font-semibold lg:text-3xl text-2xl text-white"
+                                :finalValue="5" :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
                             <p class="font-poppins lg:text-xl text-lg text-white">Years of experience</p>
                         </div>
                     </div>
@@ -287,8 +305,8 @@
                             </svg>
                         </div>
                         <div class="flex flex-col space-y-1">
-                            <AnimatedCounter class="font-poppins font-semibold lg:text-3xl text-2xl text-white" :finalValue="500"
-                                :start-value="100" :speed="1" :plus="true"></AnimatedCounter>
+                            <AnimatedCounter class="font-poppins font-semibold lg:text-3xl text-2xl text-white"
+                                :finalValue="500" :start-value="100" :speed="1" :plus="true"></AnimatedCounter>
                             <p class="font-poppins lg:text-xl text-lg text-white">Cargo delivered</p>
                         </div>
                     </div>
@@ -310,8 +328,8 @@
                             </svg>
                         </div>
                         <div class="flex flex-col space-y-1">
-                            <AnimatedCounter class="font-poppins font-semibold lg:text-3xl text-2xl text-white" :finalValue="480"
-                                :start-value="0" :speed="1" :plus="true"></AnimatedCounter>
+                            <AnimatedCounter class="font-poppins font-semibold lg:text-3xl text-2xl text-white"
+                                :finalValue="480" :start-value="0" :speed="1" :plus="true"></AnimatedCounter>
                             <p class="font-poppins lg:text-xl text-lg text-white">Satisfied clients</p>
                         </div>
                     </div>
@@ -327,8 +345,8 @@
                             </svg>
                         </div>
                         <div class="flex flex-col space-y-1">
-                            <AnimatedCounter class="font-poppins font-semibold lg:text-3xl text-2xl text-white" :finalValue="20"
-                                :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
+                            <AnimatedCounter class="font-poppins font-semibold lg:text-3xl text-2xl text-white"
+                                :finalValue="20" :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
                             <p class="font-poppins lg:text-xl text-lg text-white">Warehouses</p>
                         </div>
                     </div>
@@ -337,7 +355,8 @@
             <!-- Cargo -->
             <div class="bg-white">
                 <div class="container lg:pt-40 pt-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Main types of cargo
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Main types
+                        of cargo
                         transported</h2>
                     <div class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 py-20">
                         <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
@@ -423,11 +442,10 @@ export default {
         SwiperSlide,
     },
     async created() {
-        await this.getGallery()
+        await this.getGalleryItems()
     },
     data() {
         return {
-            slidesPerView: null,
             modules: [Navigation, EffectFade, Autoplay],
             countries: [
                 {
@@ -451,14 +469,32 @@ export default {
                     flag: "/svgs/dubay.svg"
                 },
             ],
-            galleryItems: null,
-            country_breakpoints: {
-                300: { slidesPerView: 1 },
-                500: { slidesPerView: 2 },
-                950: { slidesPerView: 2.8 },
-                1100: { slidesPerView: 3.4 },
-                1200: { slidesPerView: 4 }
-            },
+            galleryItems: [
+                {
+                    id: 1,
+                    img: '/imgs/slide-1.webp',
+                    title: 'Delivering seamless logistics solutions worldwide',
+                    desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                },
+                {
+                    id: 2,
+                    img: '/imgs/service1.webp',
+                    title: 'Logistics solutions for international shipping',
+                    desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                },
+                {
+                    id: 3,
+                    img: '/imgs/slide-9.webp',
+                    title: 'Delivering seamless logistics solutions worldwide',
+                    desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                },
+                {
+                    id: 4,
+                    img: '/imgs/slide-10.webp',
+                    title: 'Logistics solutions for international shipping',
+                    desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                },
+            ],
             services: [
                 "Экспедирование экспортно-импортных и транзитных перевозок, грузов по странам СНГ, Ближнего и Дальнего Востока, стран Балтии и Евросоюза",
                 "Перевозка опасных грузов",

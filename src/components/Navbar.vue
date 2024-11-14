@@ -40,7 +40,7 @@
                     <svg class="w-[14px]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 6L8 10L12 6" stroke="#666666" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <div v-if="isLang" class="absolute -bottom-[130px] -left-8 px-[16px] py-3 bg-gray-100 text-black">
+                    <div v-if="isLang" class="absolute -bottom-[120px] -left-6 px-[16px] py-3 bg-gray-100 text-black">
                         <div v-for="item in languages" :key="item.id" class="flex items-center space-x-2 mb-2"
                             @click="updateLang(item.title)">
                             <div class="w-[20px]">
@@ -155,8 +155,8 @@
                                     <img :src="item.img">
                                 </div>
                                 <p class="font-sf_pro font-normal text-sm hover:text-m_red-100 duration-300">{{
-                        item.title
-                                    }}</p>
+                                    item.title }}
+                                </p>
                             </div>
                         </div>
                     </div>
