@@ -2,18 +2,21 @@
   <div class="w-full h-full">
     <Loader :loading="loading" />
     <RouterView v-show="!loading" />
+    <ScrollToTop />
   </div>
 </template>
 
 <script>
 import { RouterView } from 'vue-router'
 import Loader from "@/components/Loader.vue";
+import ScrollToTop from '@/components/ScrollToTop.vue'
 
 export default {
   name: "App",
   components: {
     RouterView,
-    Loader
+    Loader,
+    ScrollToTop
   },
   data() {
     return {

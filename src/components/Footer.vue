@@ -143,6 +143,7 @@ export default {
     data() {
         return {
             pages: null,
+            hoveredIcon: null,
             icons: [
                 { id: 1, icon: instagram, url: '/' },
                 { id: 2, icon: facebook, url: '/' },
