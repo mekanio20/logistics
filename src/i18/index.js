@@ -11,6 +11,10 @@ const messages = {
       title3: "Call now",
       title4: "Email",
       title5: "Location",
+      title6: "Newsletter Signup",
+      title7:
+        "lorem ipsum dolar sit amet consectetur adipisicing elit. Tempore, quae.",
+      title8: "Enter Email",
     },
     home: {
       title1: "Learn more",
@@ -91,6 +95,10 @@ const messages = {
       title3: "Позвоните сейчас",
       title4: "Электронная почта",
       title5: "Местоположение",
+      title6: "Подписка на рассылку",
+      title7:
+        "lorem ipsum dolar sit amet consectetur adipisicing elit. Tempore, quae.",
+      title8: "Введите Email",
     },
     home: {
       title1: "Узнать больше",
@@ -171,6 +179,10 @@ const messages = {
       title3: "Indi jaň ediň",
       title4: "E-poçta",
       title5: "Ýerleşýän ýeri",
+      title6: "Habar býulletenine ýazylyň",
+      title7:
+        "lorem ipsum dolar sit amet consectetur adipisicing elit. Tempore, quae.",
+      title8: "E-poçta giriziň",
     },
     home: {
       title1: "Hasaba almak",

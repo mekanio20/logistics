@@ -29,13 +29,33 @@
                             Policy</router-link> </div>
                 </div>
                 <div
-                    class="w-full flex sm:flex-row flex-col items-start justify-evenly sm:space-x-20 sm:space-y-0 space-y-10 lg:pb-0 pb-10">
+                    class="w-full flex sm:flex-row flex-col items-start justify-evenly sm:space-x-10 sm:space-y-0 space-y-10 lg:pb-0 pb-10">
+                    <div class="flex flex-col space-y-4">
+                        <h4 class="font-poppins font-medium lg:text-base text-sm text-black pb-4 mb-4
+                        relative inline-block after:w-[50px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:rounded-lg after:bg-m_black-100 after:opacity-50
+                        ">{{ $t('footer.title6') }}</h4>
+                        <p class="font-sf_pro font-normal lg:text-base text-sm text-m_gray-200 w-[300px]">
+                            {{ $t('footer.title7') }}
+                        </p>
+                        <div class="flex w-full pt-5">
+                            <input type="email" :placeholder="`${$t('footer.title8')}`"
+                                class="font-sf_pro px-4 py-3 text-black placeholder-gray-300 rounded-l-sm border-none focus:outline-none" />
+                            <button
+                                class="flex items-center justify-center px-4 py-2 bg-m_red-100 rounded-r-sm hover:bg-m_red-400 focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 text-white" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                     <div class="flex flex-col space-y-4">
                         <h4 class="font-poppins font-medium lg:text-base text-sm text-black pb-4 mb-4
                         relative inline-block after:w-[20px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:rounded-lg after:bg-m_black-100 after:opacity-50
                         ">{{ $t('footer.title2') }}</h4>
                         <ul class="flex flex-col space-y-4">
-                            <li v-for="(item, index) in pages" :key="index" class="font-sf_pro font-normal lg:text-base text-sm text-m_gray-200">
+                            <li v-for="(item, index) in pages" :key="index"
+                                class="font-sf_pro font-normal lg:text-base text-sm text-m_gray-200">
                                 <router-link :to="item.url">{{ item.name }}</router-link>
                             </li>
                             <li class="font-sf_pro font-normal lg:text-base text-sm text-m_gray-200">
@@ -53,7 +73,8 @@
                                     <phone />
                                 </div>
                                 <div class="flex flex-col space-y-1">
-                                    <h4 class="font-poppins font-medium lg:text-sm text-xs text-black">{{ $t('footer.title3') }}</h4>
+                                    <h4 class="font-poppins font-medium lg:text-sm text-xs text-black">{{
+                            $t('footer.title3') }}</h4>
                                     <p class="font-sf_pro font-normal text-xs text-m_gray-200">+993 12 96-49-97</p>
                                 </div>
                             </div>
@@ -62,7 +83,8 @@
                                     <mail />
                                 </div>
                                 <div class="flex flex-col space-y-1">
-                                    <h4 class="font-poppins font-medium lg:text-sm text-xs text-black">{{ $t('footer.title4') }}</h4>
+                                    <h4 class="font-poppins font-medium lg:text-sm text-xs text-black">{{
+                            $t('footer.title4') }}</h4>
                                     <p class="font-sf_pro font-normal text-xs text-m_gray-200">example@gmail.com</p>
                                 </div>
                             </div>
@@ -71,7 +93,8 @@
                                     <pin />
                                 </div>
                                 <div class="flex flex-col space-y-1">
-                                    <h4 class="font-poppins font-medium lg:text-sm text-xs text-black">{{ $t('footer.title5') }}</h4>
+                                    <h4 class="font-poppins font-medium lg:text-sm text-xs text-black">{{
+                            $t('footer.title5') }}</h4>
                                     <p class="font-sf_pro font-normal text-xs text-m_gray-200">744000, Ashgabat,
                                         Seyitnazar Seydi 70/2</p>
                                 </div>
