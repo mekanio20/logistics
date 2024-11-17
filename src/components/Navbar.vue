@@ -42,7 +42,7 @@
                     </svg>
                     <div v-if="isLang" class="absolute -bottom-[120px] -left-6 px-[16px] py-3 bg-gray-100 text-black">
                         <div v-for="item in languages" :key="item.id" class="flex items-center space-x-2 mb-2"
-                            @click="updateLang(item.title)">
+                            @click="updateLang(item)">
                             <div class="w-[20px]">
                                 <img :src="item.img">
                             </div>
@@ -77,13 +77,9 @@
                     </svg>
                 </button>
             </div>
-            <!-- <router-link to="/contact"
-                class="before:ease relative lg:text-base text-sm py-8 px-10 overflow-hidden bg-m_red-400 text-white transition-all before:absolute before:right-0 before:top-0 before:h-40 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-m_red-100 hover:before:-translate-x-40">
-                <span relative="relative z-10">Contact us</span>
-            </router-link> -->
             <router-link to="/contact"
                 class="sm:block hidden font-manjari font-normal lg:text-base text-sm bg-m_red-400 hover:bg-red-700 duration-300 text-white py-8 px-10">
-                Contact us
+                {{ $t('navbar.title1') }}
             </router-link>
         </nav>
     </div>
@@ -107,10 +103,9 @@
                     :class="{ 'text-m_red-100': $route.path === item.url }">
                     {{ item.name }}
                 </router-link>
-                <router-link to="/contact"
-                    :class="{ 'text-m_red-100': $route.path === '/contact' }"
+                <router-link to="/contact" :class="{ 'text-m_red-100': $route.path === '/contact' }"
                     class="w-full font-sf_pro font-medium lg:text-lg text-base cursor-pointer text-black py-4 border-b border-gray-200 hover:text-m_red-100 duration-300">
-                    Contact us
+                    {{ $t('navbar.title1') }}
                 </router-link>
             </div>
             <div class="w-full py-6">
@@ -155,7 +150,7 @@
                         <div v-if="isLang"
                             class="absolute -bottom-[130px] -left-8 px-[16px] py-3 bg-gray-100 text-black">
                             <div v-for="item in languages" :key="item.id" class="flex items-center space-x-2 mb-2"
-                                @click="updateLang(item.title)">
+                                @click="updateLang(item)">
                                 <div class="w-[20px]">
                                     <img :src="item.img">
                                 </div>
@@ -187,6 +182,7 @@ const nonReactiveInstagramIcon = markRaw(instagram)
 const nonReactiveFacebookIcon = markRaw(facebook)
 const nonReactiveYoutubeIcon = markRaw(youtube)
 const nonReactiveLinkedinIcon = markRaw(linkedin)
+import { pages } from '@/data/index'
 export default {
     name: "Navbar",
     components: {
@@ -200,11 +196,6 @@ export default {
     },
     data() {
         return {
-            pages: [
-                { id: 1, name: 'Home', url: '/' },
-                { id: 2, name: 'About us', url: '/about' },
-                { id: 3, name: 'Service', url: '/service' },
-            ],
             icons: [
                 { id: 1, icon: instagram, url: '/' },
                 { id: 2, icon: facebook, url: '/' },
@@ -216,7 +207,8 @@ export default {
                 { id: 2, name: 'EN', title: 'English', img: '/imgs/en.png', },
                 { id: 3, name: 'RU', title: 'Russian', img: '/imgs/ru.png' },
             ],
-            activeLang: 'Turkmen',
+            activeLang: null,
+            pages: null,
             isOpen: false,
             isLang: false,
             hoveredIcon: null,
@@ -230,11 +222,23 @@ export default {
             this.isLang = !this.isLang;
         },
         updateLang(lang) {
-            localStorage.setItem('lang', lang)
-            if (lang === 'English') this.activeLang = 'English'
-            if (lang === 'Russian') this.activeLang = 'Russian'
-            if (lang === 'Turkmen') this.activeLang = 'Turkmen'
-            this.$i18n.locale = lang
+            localStorage.setItem('lang', lang.name)
+            if (lang.title === 'English') this.activeLang = 'English'
+            if (lang.title === 'Russian') this.activeLang = 'Russian'
+            if (lang.title === 'Turkmen') this.activeLang = 'Turkmen'
+            this.$i18n.locale = lang.name
+        }
+    },
+    watch: {
+        '$i18n.locale': {
+            immediate: true,
+            handler() {
+                let locale = this.$i18n.locale
+                this.pages = pages[locale]
+                if (locale === 'EN') this.activeLang = 'English'
+                if (locale === 'RU') this.activeLang = 'Russian'
+                if (locale === 'TM') this.activeLang = 'Turkmen'
+            }
         }
     }
 }

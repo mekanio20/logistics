@@ -7,11 +7,12 @@
                 <img class="w-full h-full object-cover filter brightness-50" src="@/assets/imgs/about-page.webp">
             </div>
             <div class="flex flex-col space-y-6 pt-40 container">
-                <h1 class="font-poppins font-bold xl:text-5xl lg:text-4xl text-3xl text-white">About Us</h1>
+                <h1 class="font-poppins font-bold xl:text-5xl lg:text-4xl text-3xl text-white">{{ $t('home.title2') }}
+                </h1>
                 <div class="flex items-center space-x-2 font-manjari text-white lg:text-lg text-base">
-                    <router-link to="/">Home</router-link>
+                    <router-link to="/">{{ $t('about.title1') }}</router-link>
                     <span>/</span>
-                    <router-link to="/about">About Us</router-link>
+                    <router-link to="/about">{{ $t('home.title2') }}</router-link>
                 </div>
             </div>
         </div>
@@ -26,15 +27,10 @@
                     <div class="lg:flex-1 w-full flex flex-col space-y-4">
                         <h3
                             class="font-poppins font-semibold uppercase lg:text-base text-sm text-m_red-100 border-b-2 border-m_red-100 w-fit">
-                            About us</h3>
-                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3">Главный принцип нашей работы –
-                            Прозрачность и надежность</h1>
-                        <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">Компания имеет прямые
-                            договора с
-                            Агентствами железнодорожного, автомо- бильного, морского и
-                            речного транспорта Туркменистана. Также налажено долгос- рочное сотрудничество с крупнейшими
-                            собственниками подвижного состава и экспедиторами стран СНГ, Средиземного моря и стран
-                            Балтии.
+                            {{ $t('home.title2') }}</h3>
+                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3">{{ $t('home.title3') }}</h1>
+                        <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
+                            {{ $t('home.title4') }}
                         </p>
                         <div class="flex flex-col space-y-4">
                             <div class="p-6 flex items-start space-x-4 border"
@@ -47,13 +43,10 @@
                                     </svg>
                                 </div>
                                 <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold lg:text-lg text-base">Сплоченность персонала,
-                                        командная
-                                        работа компании</h3>
+                                    <h3 class="font-poppins font-bold lg:text-lg text-base">
+                                        {{ $t('home.title5') }}</h3>
                                     <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
-                                        Сплоченность и
-                                        командная работа — наши ключевые принципы. Каждый член команды
-                                        понимает свою роль и вносит свой уникальный вклад, делая общее дело успешным.
+                                        {{ $t('home.title6') }}
                                     </p>
                                 </div>
                             </div>
@@ -67,14 +60,10 @@
                                     </svg>
                                 </div>
                                 <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold lg:text-lg text-base">«Надежность» с точки зрения
-                                        клиентов</h3>
+                                    <h3 class="font-poppins font-bold lg:text-lg text-base">
+                                        {{ $t('home.title7') }}</h3>
                                     <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
-                                        Надежность для нас — это готовность поддержать клиента в любой ситуации,
-                                        предлагать
-                                        решения и обеспечивать высокий уровень сервиса, который оправдывает и
-                                        превосходит
-                                        ожидания.
+                                        {{ $t('home.title8') }}
                                     </p>
                                 </div>
                             </div>
@@ -84,34 +73,40 @@
             </div>
             <!-- Certificate -->
             <div class="bg-m_gray-400">
-                <div class="container lg:py-20 py-10">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Licenses
-                        and
-                        certificates
+                <div class="container lg:py-40 py-20">
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">
+                        {{ $t('home.title9') }}
                     </h2>
-                    <div class="flex items-center gap-x-8 rounded-lg py-20 text-center overflow-x-auto no-scrollbar">
-                        <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
-                            <img class="w-full h-full object-cover" src="@/assets/imgs/cert1.webp">
-                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские и речные
-                                перевозки</p>
-                        </div>
-                        <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
-                            <img class="w-full h-full object-cover" src="@/assets/imgs/cert2.webp">
-                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские автомобильные
-                                перевозки
-                            </p>
-                        </div>
-                        <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
-                            <img class="w-full h-full object-cover" src="@/assets/imgs/cert3.webp">
-                            <p class="font-poppins font-normal lg:text-lg text-base">Сертификат ISO 9001:2015</p>
-                        </div>
+                    <div class="mt-20">
+                        <swiper :slidesPerView="3" :spaceBetween="30" :modules="modules" :speed="2000" :loop="true"
+                            :breakpoints="{ '300': { slidesPerView: 1 }, '480': { slidesPerView: 2 }, '1024': { slidesPerView: 3 } }">
+                            <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
+                                <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert1.webp">
+                                <p class="h-[60px] px-10 font-poppins font-normal lg:text-lg text-base">
+                                    {{ $t('home.title10') }}
+                                </p>
+                            </swiper-slide>
+                            <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
+                                <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert2.webp">
+                                <p class="h-[60px] px-10 font-poppins font-normal lg:text-lg text-base">
+                                    {{ $t('home.title11') }}
+                                </p>
+                            </swiper-slide>
+                            <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
+                                <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert3.webp">
+                                <p class="h-[60px] px-10 font-poppins font-normal lg:text-lg text-base">
+                                    {{ $t('home.title12') }}
+                                </p>
+                            </swiper-slide>
+                        </swiper>
                     </div>
                 </div>
             </div>
             <!-- Core values -->
             <div class="w-full py-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-center lg:text-3xl text-2xl pb-20">Core
-                    Values</h2>
+                <h2 class="font-poppins font-semibold text-m_black-100 text-center lg:text-3xl text-2xl pb-20">
+                    {{ $t('about.title2') }}
+                </h2>
                 <div class="flex flex-wrap justify-center gap-10">
                     <div
                         class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between group bg-m_white-300 hover:bg-m_red-100 duration-300">
@@ -125,7 +120,8 @@
                         </div>
                         <p
                             class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
-                            Сплоченность персонала, командная работа компании</p>
+                            {{ $t('about.title3') }}
+                        </p>
                     </div>
                     <div
                         class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group">
@@ -142,7 +138,8 @@
                         </div>
                         <p
                             class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
-                            «Надежность» с точки зрения клиентов</p>
+                            {{ $t('about.title4') }}
+                        </p>
                     </div>
                     <div
                         class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group">
@@ -156,7 +153,8 @@
                         </div>
                         <p
                             class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
-                            Доверие и признание со стороны государства</p>
+                            {{ $t('about.title5') }}
+                        </p>
                     </div>
                     <div
                         class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group">
@@ -170,7 +168,8 @@
                         </div>
                         <p
                             class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
-                            Стабильность развития компании</p>
+                            {{ $t('about.title6') }}
+                        </p>
                     </div>
                     <div
                         class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group col-start-2">
@@ -184,7 +183,8 @@
                         </div>
                         <p
                             class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
-                            Ответственность за взятые на себя обязательства</p>
+                            {{ $t('about.title7') }}
+                        </p>
                     </div>
                     <div
                         class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group">
@@ -211,7 +211,8 @@
                         </div>
                         <p
                             class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
-                            Современный транспорт</p>
+                            {{ $t('about.title8') }}
+                        </p>
                     </div>
                     <div
                         class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group">
@@ -226,7 +227,8 @@
                         </div>
                         <p
                             class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
-                            Гарантия безопасности при транспортировки любых видов грузов</p>
+                            {{ $t('about.title9') }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -239,12 +241,23 @@
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 import AnimatedCounter from '@/components/AnimatedCounter.vue';
+import { EffectFade, Autoplay, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css/navigation';
+import 'swiper/css';
 export default {
     name: "About",
     components: {
         Navbar,
         Footer,
-        AnimatedCounter
-    }
+        AnimatedCounter,
+        Swiper,
+        SwiperSlide,
+    },
+    data() {
+        return {
+            modules: [Navigation, EffectFade, Autoplay],
+        };
+    },
 }
 </script>

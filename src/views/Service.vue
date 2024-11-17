@@ -7,11 +7,11 @@
                 <img class="w-full h-full object-cover filter brightness-50" src="@/assets/imgs/service-page.webp">
             </div>
             <div class="flex flex-col space-y-6 pt-40 container">
-                <h1 class="font-poppins font-bold lg:text-4xl text-3xl text-white">Service</h1>
+                <h1 class="font-poppins font-bold lg:text-4xl text-3xl text-white">{{ $t('service.title1') }}</h1>
                 <div class="flex items-center space-x-2 font-manjari text-white lg:text-lg text-base">
-                    <router-link to="/">Home</router-link>
+                    <router-link to="/">{{ $t('about.title1') }}</router-link>
                     <span>/</span>
-                    <router-link to="/service">Serivce</router-link>
+                    <router-link to="/service">{{ $t('service.title1') }}</router-link>
                 </div>
             </div>
         </div>
@@ -19,8 +19,9 @@
             <!-- Our services -->
             <div class="bg-m_gray-400">
                 <div class="container lg:py-20 py-10">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Our
-                        Services</h2>
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">
+                        {{ $t('home.title20') }}
+                    </h2>
                     <div class="pt-20 flex items-start gap-x-6 overflow-x-auto no-scrollbar">
                         <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
                             <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
@@ -37,7 +38,7 @@
                             </div>
                             <div
                                 class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-1/2">
-                                Reliable Sea Freight
+                                {{ $t('home.title21') }}
                             </div>
                         </div>
                         <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
@@ -55,7 +56,7 @@
                             </div>
                             <div
                                 class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-1/2">
-                                Ground Transportation
+                                {{ $t('home.title22') }}
                             </div>
                         </div>
                         <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
@@ -73,7 +74,7 @@
                             </div>
                             <div
                                 class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-3/5">
-                                Swift And Efficient Air Cargo
+                                {{ $t('home.title23') }}
                             </div>
                         </div>
                     </div>
@@ -81,9 +82,9 @@
             </div>
             <!-- Shipping -->
             <div class="container mt-20 mb-10">
-                <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">The Safest
-                    Shipping Service
-                    In Turkmenistan</h2>
+                <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">
+                    {{ $t('service.title2') }}
+                </h2>
                 <div class="py-20 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
                     <div class="rounded-lg bg-m_white-300 flex flex-col items-start space-y-14 p-6">
                         <div class="p-4 rounded-full flex items-center justify-center bg-m_red-300">
@@ -101,7 +102,9 @@
                                     stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <p class="font-poppins font-medium lg:text-2xl text-xl text-black">Easy Shipment</p>
+                        <p class="font-poppins font-medium lg:text-2xl text-xl text-black">
+                            {{ $t('service.title3') }}
+                        </p>
                     </div>
                     <div class="rounded-lg bg-m_white-300 flex flex-col items-start space-y-14 p-6">
                         <div class="p-4 rounded-full flex items-center justify-center bg-m_red-300">
@@ -121,7 +124,9 @@
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <p class="font-poppins font-medium lg:text-2xl text-xl text-black">Secure Delivery</p>
+                        <p class="font-poppins font-medium lg:text-2xl text-xl text-black">
+                            {{ $t('service.title4') }}
+                        </p>
                     </div>
                     <div class="rounded-lg bg-m_white-300 flex flex-col items-start space-y-14 p-6">
                         <div class="p-4 rounded-full flex items-center justify-center bg-m_red-300">
@@ -132,14 +137,16 @@
                                     fill="#E92A34" />
                             </svg>
                         </div>
-                        <p class="font-poppins font-medium lg:text-2xl text-xl text-black">Fast Arrival</p>
+                        <p class="font-poppins font-medium lg:text-2xl text-xl text-black">
+                            {{ $t('service.title5') }}
+                        </p>
                     </div>
                 </div>
             </div>
             <!-- Service -->
             <div class="container pb-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center pb-10">Services
-                    We provide
+                <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center pb-10">
+                    {{ $t('service.title6') }}
                 </h2>
                 <div class="flex flex-col lg:flex-row items-center bg-white p-8">
                     <div class="lg:w-1/2 lg:h-[585px] mb-16 lg:mb-0 lg:mr-16">
@@ -148,10 +155,11 @@
                     </div>
                     <div class="lg:w-1/2">
                         <ul class="space-y-4 text-gray-700">
-                            <li v-for="(service, index) in services" :key="index" class="flex items-start">
+                            <li v-for="(service, index) in services[this.$i18n.locale]" :key="index" class="flex items-start">
                                 <span class="text-red-500 mr-2">◆</span>
-                                <p class="leading-relaxed font-poppins font-normal lg:text-xl sm:text-lg text-base">{{
-                                    service }}</p>
+                                <p class="leading-relaxed font-poppins font-normal lg:text-xl sm:text-lg text-base">
+                                    {{ service }}
+                                </p>
                             </li>
                         </ul>
                     </div>
@@ -173,14 +181,32 @@ export default {
     },
     data() {
         return {
-            services: [
-                "Экспедирование экспортно-импортных и транзитных перевозок, грузов по странам СНГ, Ближнего и Дальнего Востока, стран Балтии и Евросоюза",
-                "Перевозка опасных грузов",
-                "Получение специального разрешения и перевозка грузов любой сложности: крупных, негабаритных, сверхгабаритных, тяжеловесных и длинномерных перевозка сборных грузов",
-                "Перевозка грузов под температурным режимом",
-                "Перевозка дорогостоящих грузов",
-                "Получение виз для иностранных водителей и визовая поддержка на территории Туркменистана."
-            ]
+            services: {
+                RU: [
+                    "Экспедирование экспортно-импортных и транзитных перевозок, грузов по странам СНГ, Ближнего и Дальнего Востока, стран Балтии и Евросоюза",
+                    "Перевозка опасных грузов",
+                    "Получение специального разрешения и перевозка грузов любой сложности: крупных, негабаритных, сверхгабаритных, тяжеловесных и длинномерных перевозка сборных грузов",
+                    "Перевозка грузов под температурным режимом",
+                    "Перевозка дорогостоящих грузов",
+                    "Получение виз для иностранных водителей и визовая поддержка на территории Туркменистана."
+                ],
+                EN: [
+                    "Freight forwarding for export-import and transit shipments across CIS countries, the Near and Far East, the Baltic states, and the European Union",
+                    "Transportation of hazardous goods",
+                    "Obtaining special permits and transporting goods of any complexity: large, oversized, over-dimensional, heavy, and long loads, as well as consolidated cargo transportation",
+                    "Transportation of goods under temperature control",
+                    "Transportation of high-value goods",
+                    "Visa issuance for foreign drivers and visa support within Turkmenistan."
+                ],
+                TM: [
+                    "Eksport-import we üstaşyr ýükleriň, Arkalaşygyň Garaşsyz Döwletleriniň, Ýakyn we Uzak Gündogar, Baltika döwletleriniň we Ýewropa Bileleşiginiň ýurtlary boýunça ýükleriniň ekspedisiýasy",
+                    "Howply ýükleriň daşalmagy",
+                    "Ýükleriň islendik çylşyrymly görnüşleri üçin ýörite rugsatnamalaryň alynmagy we daşalmagy: uly, ululykdan daşary, aşa ululykly, agyr we uzyn ýükleriň, şeýle hem birleşdirilen ýükleriň daşalmagy",
+                    "Temperatura gözegçiligi astynda ýükleriň daşalmagy",
+                    "Gymmat bahaly ýükleriň daşalmagy",
+                    "Daşary ýurtly sürüjiler üçin wiza almak we Türkmenistanyň çäginde wiza goldawy."
+                ]
+            }
         }
     }
 

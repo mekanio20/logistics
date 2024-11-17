@@ -6,8 +6,8 @@
             <div class="w-full h-[600px] relative select-none">
                 <swiper :slidesPerView="1" :modules="modules" :speed="2000" :loop="true"
                     :navigation="{ nextEl: '.next-slider', prevEl: '.prev-slider' }" class="w-full h-full">
-                    <swiper-slide v-for="item in galleryItems" :key="item.id" class="w-full h-full">
-                        <img :src="item.img" class="absolute w-full h-full object-cover">
+                    <swiper-slide v-for="(item, index) in galleryItems[this.$i18n.locale]" :key="item.id" class="w-full h-full">
+                        <img :src="galleryItems.imgs[index]" class="absolute w-full h-full object-cover">
                         <div class="container relative">
                             <div
                                 class="absolute !z-20 top-40 md:w-1/2 w-full h-full flex flex-col items-start space-y-6 text-white">
@@ -19,11 +19,10 @@
                                     v-scroll-reveal="{ origin: 'bottom', distance: '100px', duration: 1500 }">
                                     {{ item.desc }}
                                 </p>
-                                <router-link
-                                    to="/about"
+                                <router-link to="/about"
                                     class="font-manjari font-medium lg:text-lg text-sm hover:bg-m_red-100 duration-300 text-white py-4 px-10 bg-m_red-100"
                                     v-scroll-reveal="{ origin: 'bottom', distance: '100px', duration: 2000 }">
-                                    Learn more
+                                    {{ $t('home.title1') }}
                                 </router-link>
                             </div>
                         </div>
@@ -60,15 +59,10 @@
                     <div class="lg:flex-1 w-full flex flex-col space-y-4">
                         <h3
                             class="font-poppins font-semibold uppercase lg:text-base text-sm text-m_red-100 border-b-2 border-m_red-100 w-fit">
-                            About us</h3>
-                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3">Главный принцип нашей работы –
-                            Прозрачность и надежность</h1>
-                        <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">Компания имеет прямые
-                            договора с
-                            Агентствами железнодорожного, автомо- бильного, морского и
-                            речного транспорта Туркменистана. Также налажено долгос- рочное сотрудничество с крупнейшими
-                            собственниками подвижного состава и экспедиторами стран СНГ, Средиземного моря и стран
-                            Балтии.
+                            {{ $t('home.title2') }}</h3>
+                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3">{{ $t('home.title3') }}</h1>
+                        <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
+                            {{ $t('home.title4') }}
                         </p>
                         <div class="flex flex-col space-y-4">
                             <div class="p-6 flex items-start space-x-4 border"
@@ -81,13 +75,10 @@
                                     </svg>
                                 </div>
                                 <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold lg:text-lg text-base">Сплоченность персонала,
-                                        командная
-                                        работа компании</h3>
+                                    <h3 class="font-poppins font-bold lg:text-lg text-base">
+                                        {{ $t('home.title5') }}</h3>
                                     <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
-                                        Сплоченность и
-                                        командная работа — наши ключевые принципы. Каждый член команды
-                                        понимает свою роль и вносит свой уникальный вклад, делая общее дело успешным.
+                                        {{ $t('home.title6') }}
                                     </p>
                                 </div>
                             </div>
@@ -101,14 +92,10 @@
                                     </svg>
                                 </div>
                                 <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold lg:text-lg text-base">«Надежность» с точки зрения
-                                        клиентов</h3>
+                                    <h3 class="font-poppins font-bold lg:text-lg text-base">
+                                        {{ $t('home.title7') }}</h3>
                                     <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
-                                        Надежность для нас — это готовность поддержать клиента в любой ситуации,
-                                        предлагать
-                                        решения и обеспечивать высокий уровень сервиса, который оправдывает и
-                                        превосходит
-                                        ожидания.
+                                        {{ $t('home.title8') }}
                                     </p>
                                 </div>
                             </div>
@@ -119,26 +106,31 @@
             <!-- Certificate -->
             <div class="bg-m_gray-400">
                 <div class="container lg:py-40 py-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Licenses
-                        and
-                        certificates
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">
+                        {{ $t('home.title9') }}
                     </h2>
-                    <div class="flex items-center gap-x-8 rounded-lg py-20 text-center overflow-x-auto no-scrollbar">
-                        <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
-                            <img class="w-full h-full object-cover" src="@/assets/imgs/cert1.webp">
-                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские и речные
-                                перевозки</p>
-                        </div>
-                        <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
-                            <img class="w-full h-full object-cover" src="@/assets/imgs/cert2.webp">
-                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские автомобильные
-                                перевозки
-                            </p>
-                        </div>
-                        <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
-                            <img class="w-full h-full object-cover" src="@/assets/imgs/cert3.webp">
-                            <p class="font-poppins font-normal lg:text-lg text-base">Сертификат ISO 9001:2015</p>
-                        </div>
+                    <div class="mt-20">
+                        <swiper :slidesPerView="3" :spaceBetween="30" :modules="modules" :speed="2000" :loop="true"
+                            :breakpoints="{ '300': { slidesPerView: 1 }, '480': { slidesPerView: 2 }, '1024': { slidesPerView: 3 } }">
+                            <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
+                                <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert1.webp">
+                                <p class="h-[60px] px-10 font-poppins font-normal lg:text-lg text-base">
+                                    {{ $t('home.title10') }}
+                                </p>
+                            </swiper-slide>
+                            <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
+                                <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert2.webp">
+                                <p class="h-[60px] px-10 font-poppins font-normal lg:text-lg text-base">
+                                    {{ $t('home.title11') }}
+                                </p>
+                            </swiper-slide>
+                            <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
+                                <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert3.webp">
+                                <p class="h-[60px] px-10 font-poppins font-normal lg:text-lg text-base">
+                                    {{ $t('home.title12') }}
+                                </p>
+                            </swiper-slide>
+                        </swiper>
                     </div>
                 </div>
             </div>
@@ -149,14 +141,13 @@
                     <div class="flex-1 flex flex-col space-y-8">
                         <h3
                             class="font-poppins font-semibold uppercase text-m_red-100 lg:text-base text-sm border-b-2 border-m_red-100 w-fit">
-                            Ключевые ценности</h3>
-                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3">Наши ценности — основа нашего
-                            успеха</h1>
-                        <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">Компания имеет прямые
-                            договора с
-                            Наши ценности отражают наши принципы и стремления. Мы придерживаемся честности,
-                            ответственности и высокого уровня качества, создавая прочные и доверительные отношения с
-                            нашими клиентами и партнерами.
+                            {{ $t('home.title13') }}
+                        </h3>
+                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3">
+                            {{ $t('home.title14') }}
+                        </h1>
+                        <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
+                            {{ $t('home.title15') }}
                         </p>
                         <div class="grid xl:grid-cols-2 grid-cols-1 gap-4">
                             <div class="p-4 border flex items-center space-x-6"
@@ -169,8 +160,8 @@
                                             fill="#E92A34" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold lg:text-lg text-base">Доверие и признание со стороны
-                                    государства
+                                <h3 class="font-poppins font-bold lg:text-lg text-base">
+                                    {{ $t('home.title16') }}
                                 </h3>
                             </div>
                             <div class="p-4 border flex items-center space-x-6"
@@ -183,7 +174,8 @@
                                             fill="#E92A34" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold lg:text-lg text-base">Стабильность развития компании
+                                <h3 class="font-poppins font-bold lg:text-lg text-base">
+                                    {{ $t('home.title17') }}
                                 </h3>
                             </div>
                             <div class="p-4 border flex items-center space-x-6"
@@ -196,9 +188,9 @@
                                             fill="#E92A34" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold lg:text-lg text-base">Ответственность за взятые на
-                                    себя
-                                    обязательства.</h3>
+                                <h3 class="font-poppins font-bold lg:text-lg text-base">
+                                    {{ $t('home.title18') }}
+                                </h3>
                             </div>
                             <div class="p-4 border flex items-center space-x-6"
                                 style="border-color: rgba(0, 0, 0, 0.06);">
@@ -223,7 +215,9 @@
                                             stroke-linejoin="round" />
                                     </svg>
                                 </div>
-                                <h3 class="font-poppins font-bold lg:text-lg text-base">Современный транспорт</h3>
+                                <h3 class="font-poppins font-bold lg:text-lg text-base">
+                                    {{ $t('home.title19') }}
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -235,8 +229,9 @@
             <!-- Our services -->
             <div class="bg-m_gray-400">
                 <div class="container lg:py-40 py-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Our
-                        Services</h2>
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">
+                        {{ $t('home.title20') }}
+                    </h2>
                     <div class="pt-20 flex items-start gap-x-6 overflow-x-auto no-scrollbar">
                         <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
                             <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
@@ -253,7 +248,7 @@
                             </div>
                             <div
                                 class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-1/2">
-                                Reliable Sea Freight
+                                {{ $t('home.title21') }}
                             </div>
                         </div>
                         <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
@@ -271,7 +266,7 @@
                             </div>
                             <div
                                 class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-1/2">
-                                Ground Transportation
+                                {{ $t('home.title22') }}
                             </div>
                         </div>
                         <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
@@ -289,14 +284,14 @@
                             </div>
                             <div
                                 class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-3/5">
-                                Swift And Efficient Air Cargo
+                                {{ $t('home.title23') }}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Statistic -->
-            <div class="bg-m_red-100 py-20 px-6">
+            <div class="container bg-m_red-100 py-10 px-6">
                 <div class="container grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-y-10 place-items-center">
                     <div class="sm:w-[300px] w-full flex items-center space-x-4">
                         <div class="lg:w-[40px] w-[30px]">
@@ -309,7 +304,9 @@
                         <div class="flex flex-col space-y-1">
                             <AnimatedCounter class="font-poppins font-semibold lg:text-xl text-lg text-white"
                                 :finalValue="5" :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
-                            <p class="font-poppins lg:text-base text-sm text-white">Years of experience</p>
+                            <p class="font-poppins lg:text-base text-sm text-white">
+                                {{ $t('home.title24') }}
+                            </p>
                         </div>
                     </div>
                     <div class="sm:w-[300px] w-full flex items-center space-x-4">
@@ -329,7 +326,9 @@
                         <div class="flex flex-col space-y-1">
                             <AnimatedCounter class="font-poppins font-semibold lg:text-xl text-lg text-white"
                                 :finalValue="500" :start-value="100" :speed="1" :plus="true"></AnimatedCounter>
-                            <p class="font-poppins lg:text-base text-sm text-white">Cargo delivered</p>
+                            <p class="font-poppins lg:text-base text-sm text-white">
+                                {{ $t('home.title25') }}
+                            </p>
                         </div>
                     </div>
                     <div class="sm:w-[300px] w-full flex items-center space-x-4">
@@ -352,7 +351,9 @@
                         <div class="flex flex-col space-y-1">
                             <AnimatedCounter class="font-poppins font-semibold lg:text-xl text-lg text-white"
                                 :finalValue="480" :start-value="0" :speed="1" :plus="true"></AnimatedCounter>
-                            <p class="font-poppins lg:text-base text-sm text-white">Satisfied clients</p>
+                            <p class="font-poppins lg:text-base text-sm text-white">
+                                {{ $t('home.title26') }}
+                            </p>
                         </div>
                     </div>
                     <div class="sm:w-[300px] w-full flex items-center space-x-4">
@@ -369,73 +370,83 @@
                         <div class="flex flex-col space-y-1">
                             <AnimatedCounter class="font-poppins font-semibold lg:text-xl text-lg text-white"
                                 :finalValue="20" :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
-                            <p class="font-poppins lg:text-base text-sm text-white">Warehouses</p>
+                            <p class="font-poppins lg:text-base text-sm text-white">
+                                {{ $t('home.title27') }}
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Cargo -->
             <div class="bg-white">
-                <div class="container lg:pt-40 pt-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Main types
-                        of cargo
-                        transported</h2>
+                <div class="container lg:pt-32 pt-20">
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">
+                        {{ $t('home.title28') }}
+                    </h2>
                     <div class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 py-20">
                         <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo1.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                Бытовая и вычислительная техника</p>
+                                {{ $t('home.title29') }}
+                            </p>
                         </div>
                         <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo2.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                Медицина и фармацевтика</p>
+                                {{ $t('home.title30') }}
+                            </p>
                         </div>
                         <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo3.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                Производственные линии и оборудования</p>
+                                {{ $t('home.title31') }}
+                            </p>
                         </div>
                         <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo4.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                Семена и растения</p>
+                                {{ $t('home.title32') }}
+                            </p>
                         </div>
                         <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo5.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                Сельскохозяйственная техника</p>
+                                {{ $t('home.title33') }}
+                            </p>
                         </div>
                         <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo6.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                Химическая промышленность (сера, карбамид, полипропилен)</p>
+                                {{ $t('home.title34') }}
+                            </p>
                         </div>
                         <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo7.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                Текстиль</p>
+                                {{ $t('home.title35') }}
+                            </p>
                         </div>
                         <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
                                 src="@/assets/imgs/cargo8.webp">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                Продукты питания</p>
+                                {{ $t('home.title36') }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -454,15 +465,14 @@ import { EffectFade, Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css/navigation';
 import 'swiper/css';
-import ScrollReveal from 'scrollreveal';
 export default {
     name: "Home",
     components: {
         Navbar,
         Footer,
-        AnimatedCounter,
         Swiper,
         SwiperSlide,
+        AnimatedCounter,
     },
     async created() {
         await this.getGalleryItems()
@@ -492,32 +502,80 @@ export default {
                     flag: "/svgs/dubay.svg"
                 },
             ],
-            galleryItems: [
-                {
-                    id: 1,
-                    img: '/imgs/slide-1.webp',
-                    title: 'Delivering seamless logistics solutions worldwide',
-                    desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
-                },
-                {
-                    id: 2,
-                    img: '/imgs/service1.webp',
-                    title: 'Logistics solutions for international shipping',
-                    desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
-                },
-                {
-                    id: 3,
-                    img: '/imgs/slide-9.webp',
-                    title: 'Delivering seamless logistics solutions worldwide',
-                    desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
-                },
-                {
-                    id: 4,
-                    img: '/imgs/slide-10.webp',
-                    title: 'Logistics solutions for international shipping',
-                    desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
-                },
-            ],
+            galleryItems: {
+                imgs: [
+                    '/imgs/slide-1.webp',
+                    '/imgs/service1.webp',
+                    '/imgs/slide-9.webp',
+                    '/imgs/slide-10.webp',
+                ],
+                EN: [
+                    {
+                        id: 1,
+                        title: 'Delivering seamless logistics solutions worldwide',
+                        desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.'
+                    },
+                    {
+                        id: 2,
+                        title: 'Logistics solutions for international shipping',
+                        desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.'
+                    },
+                    {
+                        id: 3,
+                        title: 'Delivering seamless logistics solutions worldwide',
+                        desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                    },
+                    {
+                        id: 4,
+                        title: 'Logistics solutions for international shipping',
+                        desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                    },
+                ],
+                RU: [
+                    {
+                        id: 1,
+                        title: 'Предоставление бесперебойных логистических решений по всему миру',
+                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.'
+                    },
+                    {
+                        id: 2,
+                        title: 'Логистические решения для международных перевозок',
+                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.'
+                    },
+                    {
+                        id: 3,
+                        title: 'Предоставление бесперебойных логистических решений по всему миру',
+                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                    },
+                    {
+                        id: 4,
+                        title: 'Логистические решения для международных перевозок',
+                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                    },
+                ],
+                TM: [
+                    {
+                        id: 1,
+                        title: 'Dünýä boýunça bökdençsiz logistika çözgütlerini üpjün etmek',
+                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.'
+                    },
+                    {
+                        id: 2,
+                        title: 'Halkara ýük daşama üçin logistika çözgütleri',
+                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.'
+                    },
+                    {
+                        id: 3,
+                        title: 'Dünýä boýunça bökdençsiz logistika çözgütlerini üpjün etmek',
+                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                    },
+                    {
+                        id: 4,
+                        title: 'Halkara ýük daşama üçin logistika çözgütleri',
+                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                    },
+                ],
+            },
             services: [
                 "Экспедирование экспортно-импортных и транзитных перевозок, грузов по странам СНГ, Ближнего и Дальнего Востока, стран Балтии и Евросоюза",
                 "Перевозка опасных грузов",
@@ -530,7 +588,7 @@ export default {
     },
     mounted() {
         // İlk yükleme sırasında ScrollReveal'ı başlat
-        // this.initScrollReveal();
+        this.initScrollReveal();
     },
     methods: {
         async getGalleryItems() {
@@ -540,8 +598,8 @@ export default {
         initScrollReveal() {
             console.log('tetiklandı');
             // ScrollReveal'ı temizle ve yeniden başlat
-            ScrollReveal().clean(); // Eski tanımlamaları temizle
-            ScrollReveal().reveal("[v-scroll-reveal]");
+            // ScrollReveal().clean(); // Eski tanımlamaları temizle
+            // ScrollReveal().reveal("[v-scroll-reveal]");
         },
     }
 }
