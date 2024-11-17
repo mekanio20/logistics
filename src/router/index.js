@@ -28,6 +28,11 @@ const router = createRouter({
       name: "Test",
       component: () => import("@/views/test.vue"),
     },
+    // {
+    //   path: "/home",
+    //   name: "Home",
+    //   component: () => import("@/views/demo/Home.vue"),
+    // },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

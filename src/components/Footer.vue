@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-m_white-200">
+    <div class="bg-m_white-200 pt-20">
         <div class="container sm:py-16 py-10">
             <div class="flex lg:flex-row flex-col-reverse items-start justify-between rounded-xl">
                 <div

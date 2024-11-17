@@ -1,21 +1,21 @@
 <template>
     <div class="w-full">
         <Navbar />
-        <div class="w-full h-full">
-            <!-- Contact us header -->
-            <div class="w-full h-full relative mb-40">
-                <div class="absolute -top-10 left-0 right-0 -z-10 h-96">
-                    <img class="w-full h-full object-cover filter brightness-50" src="@/assets/imgs/contact-page.webp">
-                </div>
-                <div class="flex flex-col space-y-6 py-20 container">
-                    <h1 class="font-poppins font-bold lg:text-4xl text-3xl text-white">Contact us</h1>
-                    <div class="flex items-center space-x-2 font-manjari text-white lg:text-lg text-base">
-                        <router-link to="/">Home</router-link>
-                        <span>/</span>
-                        <router-link to="/contact">Contact us</router-link>
-                    </div>
+        <!-- Contact us header -->
+        <div class="w-full !h-[400px] relative top-[120px]">
+            <div class="w-full h-full absolute left-0 right-0 -z-10">
+                <img class="w-full h-full object-cover filter brightness-50" src="@/assets/imgs/contact-page.webp">
+            </div>
+            <div class="flex flex-col space-y-6 pt-40 container">
+                <h1 class="font-poppins font-bold lg:text-4xl text-3xl text-white">Contact us</h1>
+                <div class="flex items-center space-x-2 font-manjari text-white lg:text-lg text-base">
+                    <router-link to="/">Home</router-link>
+                    <span>/</span>
+                    <router-link to="/contact">Contact us</router-link>
                 </div>
             </div>
+        </div>
+        <div class="w-full mt-40">
             <!-- Contact -->
             <div class="flex justify-center items-center my-10">
                 <form @submit.prevent="addContact" class="bg-white p-8 rounded-lg lg:w-1/2 sm:w-4/5 w-full">
@@ -57,7 +57,7 @@ export default {
     },
     methods: {
         addContact() {
-            
+
         }
     }
 }

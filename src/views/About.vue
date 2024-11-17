@@ -1,21 +1,21 @@
 <template>
-    <div class="w-full">
+    <div class="w-full relative">
         <Navbar />
-        <div class="w-full h-full">
-            <!-- About us header -->
-            <div class="w-full h-full relative">
-                <div class="absolute -top-10 left-0 right-0 -z-10 h-96">
-                    <img class="w-full h-full object-cover filter brightness-50" src="@/assets/imgs/about-page.webp">
-                </div>
-                <div class="flex flex-col space-y-6 py-20 container">
-                    <h1 class="font-poppins font-bold xl:text-5xl lg:text-4xl text-3xl text-white">About Us</h1>
-                    <div class="flex items-center space-x-2 font-manjari text-white lg:text-lg text-base">
-                        <router-link to="/">Home</router-link>
-                        <span>/</span>
-                        <router-link to="/about">About Us</router-link>
-                    </div>
+        <!-- About us header -->
+        <div class="w-full h-[600px] relative top-[120px]">
+            <div class="w-full h-full absolute left-0 right-0 -z-10">
+                <img class="w-full h-full object-cover filter brightness-50" src="@/assets/imgs/about-page.webp">
+            </div>
+            <div class="flex flex-col space-y-6 pt-40 container">
+                <h1 class="font-poppins font-bold xl:text-5xl lg:text-4xl text-3xl text-white">About Us</h1>
+                <div class="flex items-center space-x-2 font-manjari text-white lg:text-lg text-base">
+                    <router-link to="/">Home</router-link>
+                    <span>/</span>
+                    <router-link to="/about">About Us</router-link>
                 </div>
             </div>
+        </div>
+        <div class="w-full h-full">
             <!-- About us -->
             <div class="bg-white">
                 <div
@@ -85,17 +85,20 @@
             <!-- Certificate -->
             <div class="bg-m_gray-400">
                 <div class="container lg:py-20 py-10">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Licenses and
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">Licenses
+                        and
                         certificates
                     </h2>
                     <div class="flex items-center gap-x-8 rounded-lg py-20 text-center overflow-x-auto no-scrollbar">
                         <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
                             <img class="w-full h-full object-cover" src="@/assets/imgs/cert1.webp">
-                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские и речные перевозки</p>
+                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские и речные
+                                перевозки</p>
                         </div>
                         <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
                             <img class="w-full h-full object-cover" src="@/assets/imgs/cert2.webp">
-                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские автомобильные перевозки
+                            <p class="font-poppins font-normal lg:text-lg text-base">Лицензия на морские автомобильные
+                                перевозки
                             </p>
                         </div>
                         <div class="flex flex-col space-y-8 py-12 px-20 bg-m_white-100 rounded-xl">
@@ -107,7 +110,8 @@
             </div>
             <!-- Core values -->
             <div class="w-full py-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-center lg:text-3xl text-2xl pb-20">Core Values</h2>
+                <h2 class="font-poppins font-semibold text-m_black-100 text-center lg:text-3xl text-2xl pb-20">Core
+                    Values</h2>
                 <div class="flex flex-wrap justify-center gap-10">
                     <div
                         class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between group bg-m_white-300 hover:bg-m_red-100 duration-300">

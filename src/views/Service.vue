@@ -1,21 +1,21 @@
 <template>
     <div class="w-full">
         <Navbar />
-        <div class="w-full">
-            <!-- Service header -->
-            <div class="w-full h-full relative mb-20">
-                <div class="absolute -top-10 left-0 right-0 -z-10 h-96">
-                    <img class="w-full h-full object-cover filter brightness-50" src="@/assets/imgs/service-page.webp">
-                </div>
-                <div class="flex flex-col space-y-6 py-20 container">
-                    <h1 class="font-poppins font-bold lg:text-4xl text-3xl text-white">Service</h1>
-                    <div class="flex items-center space-x-2 font-manjari text-white lg:text-lg text-base">
-                        <router-link to="/">Home</router-link>
-                        <span>/</span>
-                        <router-link to="/service">Serivce</router-link>
-                    </div>
+        <!-- Service header -->
+        <div class="w-full h-[600px] relative top-[120px]">
+            <div class="w-full h-full absolute left-0 right-0 -z-10">
+                <img class="w-full h-full object-cover filter brightness-50" src="@/assets/imgs/service-page.webp">
+            </div>
+            <div class="flex flex-col space-y-6 pt-40 container">
+                <h1 class="font-poppins font-bold lg:text-4xl text-3xl text-white">Service</h1>
+                <div class="flex items-center space-x-2 font-manjari text-white lg:text-lg text-base">
+                    <router-link to="/">Home</router-link>
+                    <span>/</span>
+                    <router-link to="/service">Serivce</router-link>
                 </div>
             </div>
+        </div>
+        <div class="w-full">
             <!-- Our services -->
             <div class="bg-m_gray-400">
                 <div class="container lg:py-20 py-10">
@@ -81,7 +81,8 @@
             </div>
             <!-- Shipping -->
             <div class="container mt-20 mb-10">
-                <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">The Safest Shipping Service
+                <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">The Safest
+                    Shipping Service
                     In Turkmenistan</h2>
                 <div class="py-20 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
                     <div class="rounded-lg bg-m_white-300 flex flex-col items-start space-y-14 p-6">
@@ -137,7 +138,8 @@
             </div>
             <!-- Service -->
             <div class="container pb-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center pb-10">Services We provide
+                <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center pb-10">Services
+                    We provide
                 </h2>
                 <div class="flex flex-col lg:flex-row items-center bg-white p-8">
                     <div class="lg:w-1/2 lg:h-[585px] mb-16 lg:mb-0 lg:mr-16">
@@ -148,7 +150,8 @@
                         <ul class="space-y-4 text-gray-700">
                             <li v-for="(service, index) in services" :key="index" class="flex items-start">
                                 <span class="text-red-500 mr-2">◆</span>
-                                <p class="leading-relaxed font-poppins font-normal lg:text-xl sm:text-lg text-base">{{ service }}</p>
+                                <p class="leading-relaxed font-poppins font-normal lg:text-xl sm:text-lg text-base">{{
+                                    service }}</p>
                             </li>
                         </ul>
                     </div>

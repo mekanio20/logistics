@@ -1,5 +1,5 @@
 <template>
-    <div class="sm:container w-full absolute top-0 left-0 right-0 z-40">
+    <div class="sm:container w-full">
         <!-- Header -->
         <header class="sm:flex hidden lg:flex-row flex-col lg:space-y-0 space-y-4 items-center justify-between py-5">
             <!-- Contact -->
@@ -88,7 +88,7 @@
         </nav>
     </div>
     <!-- Sidebar -->
-    <div class="fixed top-0 left-0 w-full h-full bg-white z-40 transition-all duration-500 ease-in-out"
+    <div class="fixed top-0 left-0 w-full h-full bg-white z-10 transition-all duration-500 ease-in-out"
         :class="{ '-translate-x-full': !isOpen, 'translate-x-0': isOpen }">
         <!-- Sidebar Content -->
         <div v-show="isOpen" class="p-8">
@@ -173,13 +173,13 @@
 
 <script>
 import { markRaw } from 'vue';
-import phone from './icons/phone.vue';
-import mail from './icons/mail.vue';
-import pin from './icons/pin.vue';
-import instagram from './icons/instagram.vue';
-import facebook from './icons/facebook.vue';
-import youtube from './icons/youtube.vue';
-import linkedin from './icons/linkedin.vue';
+import phone from '../icons/phone.vue';
+import mail from '../icons/mail.vue';
+import pin from '../icons/pin.vue';
+import instagram from '../icons/instagram.vue';
+import facebook from '../icons/facebook.vue';
+import youtube from '../icons/youtube.vue';
+import linkedin from '../icons/linkedin.vue';
 const nonReactivePhoneIcon = markRaw(phone)
 const nonReactiveMailIcon = markRaw(mail)
 const nonReactivePinIcon = markRaw(pin)
