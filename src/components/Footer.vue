@@ -9,7 +9,7 @@
                     </router-link>
                     <p
                         class="sm:w-96 w-full font-sf_pro font-normal lg:text-base sm:text-sm text-xs lg:text-start text-center text-black my-10">
-                        Turkmen Milli Logistik – {{ $t('footer.title1') }}
+                        Türkmen Milli Logistik – {{ $t('footer.title1') }}
                     </p>
                     <!-- Social links -->
                     <div class="flex items-center space-x-2">

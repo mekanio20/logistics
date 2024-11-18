@@ -2,7 +2,7 @@
     <div class="w-full relative">
         <Navbar />
         <!-- Main -->
-        <div class="w-full relative top-[120px]">
+        <div class="w-full relative sm:top-[120px] top-[100px]">
             <div class="w-full h-[600px] relative select-none">
                 <swiper :slidesPerView="1" :modules="modules" :speed="2000" :loop="true"
                     :navigation="{ nextEl: '.next-slider', prevEl: '.prev-slider' }" class="w-full h-full">
@@ -31,7 +31,7 @@
             </div>
             <div class="w-full absolute z-10">
                 <div
-                    class="absolute bottom-[300px] left-6 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-m_gray-500 rounded-full flex items-center justify-center cursor-pointer hover:bg-m_red-100 duration-300 prev-slider">
+                    class="absolute sm:bottom-[300px] bottom-0 left-6 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-m_gray-500 rounded-full flex items-center justify-center cursor-pointer hover:bg-m_red-100 duration-300 prev-slider">
                     <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
@@ -39,7 +39,7 @@
                     </svg>
                 </div>
                 <div
-                    class="absolute bottom-[300px] right-6 transform translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-m_gray-500 rounded-full flex items-center justify-center cursor-pointer hover:bg-m_red-100 duration-300 next-slider">
+                    class="absolute sm:bottom-[300px] bottom-0 right-6 transform translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-m_gray-500 rounded-full flex items-center justify-center cursor-pointer hover:bg-m_red-100 duration-300 next-slider">
                     <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
@@ -105,8 +105,8 @@
             </div>
             <!-- Certificate -->
             <div class="bg-m_gray-400">
-                <div class="container lg:py-40 py-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">
+                <div class="container py-20">
+                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-4xl text-3xl text-center">
                         {{ $t('home.title9') }}
                     </h2>
                     <div class="mt-20">
@@ -114,19 +114,19 @@
                             :breakpoints="{ '300': { slidesPerView: 1 }, '480': { slidesPerView: 2 }, '1024': { slidesPerView: 3 } }">
                             <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
                                 <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert1.webp">
-                                <p class="h-[60px] px-10 font-poppins font-normal lg:text-lg text-base">
+                                <p class="h-[60px] text-center px-10 font-poppins font-normal lg:text-lg text-base">
                                     {{ $t('home.title10') }}
                                 </p>
                             </swiper-slide>
                             <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
                                 <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert2.webp">
-                                <p class="h-[60px] px-10 font-poppins font-normal lg:text-lg text-base">
+                                <p class="h-[60px] text-center px-10 font-poppins font-normal lg:text-lg text-base">
                                     {{ $t('home.title11') }}
                                 </p>
                             </swiper-slide>
                             <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
                                 <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert3.webp">
-                                <p class="h-[60px] px-10 font-poppins font-normal lg:text-lg text-base">
+                                <p class="h-[60px] text-center px-10 font-poppins font-normal lg:text-lg text-base">
                                     {{ $t('home.title12') }}
                                 </p>
                             </swiper-slide>
@@ -137,7 +137,7 @@
             <!-- Core Values -->
             <div class="bg-white">
                 <div
-                    class="container flex lg:flex-row flex-col lg:space-y-0 space-y-10 items-center lg:space-x-20 space-x-0 lg:py-40 py-20">
+                    class="container flex lg:flex-row flex-col lg:space-y-0 space-y-10 items-center lg:space-x-20 space-x-0 py-20">
                     <div class="flex-1 flex flex-col space-y-8">
                         <h3
                             class="font-poppins font-semibold uppercase text-m_red-100 lg:text-base text-sm border-b-2 border-m_red-100 w-fit">
@@ -228,7 +228,7 @@
             </div>
             <!-- Our services -->
             <div class="bg-m_gray-400">
-                <div class="container lg:py-40 py-20">
+                <div class="container py-20">
                     <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">
                         {{ $t('home.title20') }}
                     </h2>
@@ -379,7 +379,7 @@
             </div>
             <!-- Cargo -->
             <div class="bg-white">
-                <div class="container lg:pt-32 pt-20">
+                <div class="container pt-20">
                     <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">
                         {{ $t('home.title28') }}
                     </h2>
@@ -513,66 +513,66 @@ export default {
                     {
                         id: 1,
                         title: 'Delivering seamless logistics solutions worldwide',
-                        desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.'
+                        desc: 'We offer fast and reliable delivery solutions for our logistics company.'
                     },
                     {
                         id: 2,
                         title: 'Logistics solutions for international shipping',
-                        desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.'
+                        desc: 'We offer fast and reliable delivery solutions for our logistics company.'
                     },
                     {
                         id: 3,
                         title: 'Delivering seamless logistics solutions worldwide',
-                        desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                        desc: 'We offer fast and reliable delivery solutions for our logistics company.',
                     },
                     {
                         id: 4,
                         title: 'Logistics solutions for international shipping',
-                        desc: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                        desc: 'We offer fast and reliable delivery solutions for our logistics company.',
                     },
                 ],
                 RU: [
                     {
                         id: 1,
                         title: 'Предоставление бесперебойных логистических решений по всему миру',
-                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.'
+                        desc: 'Мы предлагаем быстрые и надежные решения для доставки в нашей логистической компании.'
                     },
                     {
                         id: 2,
                         title: 'Логистические решения для международных перевозок',
-                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.'
+                        desc: 'Мы предлагаем быстрые и надежные решения для доставки в нашей логистической компании.'
                     },
                     {
                         id: 3,
                         title: 'Предоставление бесперебойных логистических решений по всему миру',
-                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                        desc: 'Мы предлагаем быстрые и надежные решения для доставки в нашей логистической компании.',
                     },
                     {
                         id: 4,
                         title: 'Логистические решения для международных перевозок',
-                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                        desc: 'Мы предлагаем быстрые и надежные решения для доставки в нашей логистической компании.',
                     },
                 ],
                 TM: [
                     {
                         id: 1,
                         title: 'Dünýä boýunça bökdençsiz logistika çözgütlerini üpjün etmek',
-                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.'
+                        desc: 'Logistika kompaniýamyz üçin çalt, ygtybarly eltip berme çözgütlerini hödürleýäris.'
                     },
                     {
                         id: 2,
                         title: 'Halkara ýük daşama üçin logistika çözgütleri',
-                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.'
+                        desc: 'Logistika kompaniýamyz üçin çalt, ygtybarly eltip berme çözgütlerini hödürleýäris.'
                     },
                     {
                         id: 3,
                         title: 'Dünýä boýunça bökdençsiz logistika çözgütlerini üpjün etmek',
-                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                        desc: 'Logistika kompaniýamyz üçin çalt, ygtybarly eltip berme çözgütlerini hödürleýäris.',
                     },
                     {
                         id: 4,
                         title: 'Halkara ýük daşama üçin logistika çözgütleri',
-                        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quae.',
+                        desc: 'Logistika kompaniýamyz üçin çalt, ygtybarly eltip berme çözgütlerini hödürleýäris.',
                     },
                 ],
             },

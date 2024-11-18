@@ -13,7 +13,7 @@ const messages = {
       title5: "Location",
       title6: "Newsletter Signup",
       title7:
-        "lorem ipsum dolar sit amet consectetur adipisicing elit. Tempore, quae.",
+        "Subscribe to our newsletter to stay updated on our news, promotions, and exclusive offers!",
       title8: "Enter Email",
     },
     home: {
@@ -97,7 +97,7 @@ const messages = {
       title5: "Местоположение",
       title6: "Подписка на рассылку",
       title7:
-        "lorem ipsum dolar sit amet consectetur adipisicing elit. Tempore, quae.",
+        "Подпишитесь на нашу рассылку, чтобы быть в курсе новостей, акций и эксклюзивных предложений!",
       title8: "Введите Email",
     },
     home: {
@@ -176,18 +176,18 @@ const messages = {
       title1:
         "Dünýä ýüzünde päsgelçiliksiz logistika çözgütlerini hödürleýäris",
       title2: "Sahypalar",
-      title3: "Indi jaň ediň",
+      title3: "Habarlaşmak",
       title4: "E-poçta",
       title5: "Ýerleşýän ýeri",
-      title6: "Habar býulletenine ýazylyň",
+      title6: "Habarnama ýazylyň",
       title7:
-        "lorem ipsum dolar sit amet consectetur adipisicing elit. Tempore, quae.",
+        "Täzeliklerimizden, mahabatlardan we aýratyn tekliplerimizden habarly bolmak üçin habarnama ýazylyň!",
       title8: "E-poçta giriziň",
     },
     home: {
-      title1: "Hasaba almak",
+      title1: "Dowamyny oka",
       title2: "Biz barada",
-      title3: "Işimiziň esasy prinsipi: Açyklyk we ynamlylyk",
+      title3: "Işimiziň esasy maksady: Açyklyk we ynamlylyk",
       title4:
         "Kärhananyň Türkmenistandaky demirýol, awtoulag, deňiz we derýa ulag agentlikleri bilen aragatnaşyklary bar. Şeýle hem, BSG ýurtlarynda, Ortaýer sebitinde we Baltika döwletlerinde uly ulag ätiýaçlyklary we ýük göterijiler bilen uzakmöhletli hyzmatdaşlyklar guruldy.",
       title5: "Toparyň jebisligi we kärhananyň toparçylyk işleri",
@@ -201,12 +201,12 @@ const messages = {
       title11: "Deňiz we awtoulag ulaglary üçin lisenziýa",
       title12: "ISO 9001:2015 Sertifikaty",
       title13: "Başlyca gymmatlyklarymyz",
-      title14: "Bizim gymmatlyklarymyz üstünlikimiziň binýady bolup durýar.",
+      title14: "Biziň gymmatlyklarymyz üstünligimiziň binýady bolup durýar.",
       title15:
         "Kärhana biziň gymmatlyklarymyzyň esasy prinsiplerimizi we maksatlarymyzy beýan edýär. Biz halallygy, jogapkärçiligi we ýokary hil derejesini goldaýarys, müşderilerimiz we hyzmatdaşlarymyz bilen ygtybarly we ygtybarly gatnaşyklaryň ýola goýulmagyna ýardam berýäris.",
-      title16: "Devlete bolan ynam we tanalma",
+      title16: "Döwlet tarapyndan bolan ynam we tanalma",
       title17: "Kärhananyň ösüşindäki durnuklylyk",
-      title18: "Götürilen borçlar üçin jogapkärçilik.",
+      title18: "Göterilen borçlar üçin jogapkärçilik.",
       title19: "Zamanyň talabyna laýyk ulag",
       title20: "Hyzmatlarymyz",
       title21: "Ynançly Deňiz Ýükleri",
@@ -215,11 +215,11 @@ const messages = {
       title24: "Şahsy tejribe ýyllary",
       title25: "Görnüşli ýükler",
       title26: "Satyşly müşderiler",
-      title27: "Magazalar",
+      title27: "Ammarlar",
       title28: "Daşalýan esasy ýükler",
-      title29: "Eýdip edilýän we kompýuter enjamlary",
+      title29: "Hojalyk we kompýuter enjamlary",
       title30: "Derman we farmasewtika önümleri",
-      title31: "Işlemek liniýalary we enjamlar",
+      title31: "Önümçilik liniýalary we enjamlar",
       title32: "Tohumlar we ösümlikler",
       title33: "Agrar tehnika",
       title34: "Himiýa senagaty (gümüş, üre, polipropilen)",
@@ -238,7 +238,7 @@ const messages = {
       title9: "Her dürli ýüküň daşalmagynyň howpsuzlygyna kepillik.",
     },
     service: {
-      title1: "Hyzmat",
+      title1: "Hyzmatlar",
       title2: "Türkmenistandaky iň ygtybarly ýük daşama hyzmaty",
       title3: "Ýönekeý ýük daşama",
       title4: "Howpsuz eltip bermek",

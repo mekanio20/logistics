@@ -2,7 +2,7 @@
     <div class="w-full relative">
         <Navbar />
         <!-- About us header -->
-        <div class="w-full h-[600px] relative top-[120px]">
+        <div class="w-full h-[600px] relative sm:top-[120px] top-[100px]">
             <div class="w-full h-full absolute left-0 right-0 -z-10">
                 <img class="w-full h-full object-cover filter brightness-50" src="@/assets/imgs/about-page.webp">
             </div>
@@ -73,8 +73,8 @@
             </div>
             <!-- Certificate -->
             <div class="bg-m_gray-400">
-                <div class="container lg:py-40 py-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">
+                <div class="container py-20">
+                    <h2 class="font-poppins font-semibold text-m_black-100 llg:text-4xl text-3xl text-center">
                         {{ $t('home.title9') }}
                     </h2>
                     <div class="mt-20">
@@ -82,19 +82,19 @@
                             :breakpoints="{ '300': { slidesPerView: 1 }, '480': { slidesPerView: 2 }, '1024': { slidesPerView: 3 } }">
                             <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
                                 <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert1.webp">
-                                <p class="h-[60px] px-10 font-poppins font-normal lg:text-lg text-base">
+                                <p class="h-[60px] text-center px-10 font-poppins font-normal lg:text-lg text-base">
                                     {{ $t('home.title10') }}
                                 </p>
                             </swiper-slide>
                             <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
                                 <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert2.webp">
-                                <p class="h-[60px] px-10 font-poppins font-normal lg:text-lg text-base">
+                                <p class="h-[60px] text-center px-10 font-poppins font-normal lg:text-lg text-base">
                                     {{ $t('home.title11') }}
                                 </p>
                             </swiper-slide>
                             <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
                                 <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert3.webp">
-                                <p class="h-[60px] px-10 font-poppins font-normal lg:text-lg text-base">
+                                <p class="h-[60px] text-center px-10 font-poppins font-normal lg:text-lg text-base">
                                     {{ $t('home.title12') }}
                                 </p>
                             </swiper-slide>
@@ -108,9 +108,9 @@
                     {{ $t('about.title2') }}
                 </h2>
                 <div class="flex flex-wrap justify-center gap-10">
-                    <div
-                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between group bg-m_white-300 hover:bg-m_red-100 duration-300">
-                        <div class="rounded-full p-2 text-center w-fit bg-white">
+                    <div class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl flex items-start flex-col justify-between group bg-m_white-300 hover:bg-m_red-100 duration-300 relative">
+                        <img class="w-full h-full object-cover rounded-xl" src="/imgs/service1.webp">
+                        <div class="absolute top-5 left-5 rounded-full p-2 text-center w-fit bg-white">
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -119,13 +119,14 @@
                             </svg>
                         </div>
                         <p
-                            class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
+                            class="absolute bottom-5 left-5 right-5 font-poppins font-medium lg:text-lg text-base text-start text-white group-hover:text-white group-hover:font-semibold">
                             {{ $t('about.title3') }}
                         </p>
                     </div>
                     <div
-                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group">
-                        <div class="rounded-full p-2 text-center w-fit bg-white">
+                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group relative">
+                        <img class="w-full h-full object-cover rounded-xl" src="/imgs/service2.webp">
+                        <div class="absolute top-5 left-5 rounded-full p-2 text-center w-fit bg-white">
                             <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -137,13 +138,14 @@
                             </svg>
                         </div>
                         <p
-                            class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
+                            class="absolute bottom-5 left-5 right-5 font-poppins font-medium lg:text-lg text-base text-start text-white group-hover:text-white group-hover:font-semibold">
                             {{ $t('about.title4') }}
                         </p>
                     </div>
                     <div
-                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group">
-                        <div class="rounded-full p-2 text-center w-fit bg-white">
+                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group relative">
+                        <img class="w-full h-full object-cover rounded-xl" src="/imgs/service3.webp">
+                        <div class="absolute top-5 left-5 rounded-full p-2 text-center w-fit bg-white">
                             <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -152,13 +154,14 @@
                             </svg>
                         </div>
                         <p
-                            class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
+                            class="absolute bottom-5 left-5 right-5 font-poppins font-medium lg:text-lg text-base text-start text-white group-hover:text-white group-hover:font-semibold">
                             {{ $t('about.title5') }}
                         </p>
                     </div>
                     <div
-                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group">
-                        <div class="rounded-full p-2 text-center w-fit bg-white">
+                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group relative">
+                        <img class="w-full h-full object-cover rounded-xl" src="/imgs/slide-1.webp">
+                        <div class="absolute top-5 left-5 rounded-full p-2 text-center w-fit bg-white">
                             <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -167,13 +170,14 @@
                             </svg>
                         </div>
                         <p
-                            class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
+                            class="absolute bottom-5 left-5 right-5 font-poppins font-medium lg:text-lg text-base text-start text-white group-hover:text-white group-hover:font-semibold">
                             {{ $t('about.title6') }}
                         </p>
                     </div>
                     <div
-                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group col-start-2">
-                        <div class="rounded-full p-2 text-center w-fit bg-white">
+                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group relative col-start-2">
+                        <img class="w-full h-full object-cover rounded-xl" src="/imgs/slide-2.webp">
+                        <div class="absolute top-5 left-5 rounded-full p-2 text-center w-fit bg-white">
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -182,13 +186,14 @@
                             </svg>
                         </div>
                         <p
-                            class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
+                            class="absolute bottom-5 left-5 right-5 font-poppins font-medium lg:text-lg text-base text-start text-white group-hover:text-white group-hover:font-semibold">
                             {{ $t('about.title7') }}
                         </p>
                     </div>
                     <div
-                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group">
-                        <div class="rounded-full p-2 text-center w-fit bg-white">
+                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group relative">
+                        <img class="w-full h-full object-cover rounded-xl" src="/imgs/slide-3.webp">
+                        <div class="absolute top-5 left-5 rounded-full p-2 text-center w-fit bg-white">
                             <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -210,13 +215,14 @@
                             </svg>
                         </div>
                         <p
-                            class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
+                            class="absolute bottom-5 left-5 right-5 font-poppins font-medium lg:text-lg text-base text-start text-white group-hover:text-white group-hover:font-semibold">
                             {{ $t('about.title8') }}
                         </p>
                     </div>
                     <div
-                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl p-6 flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group">
-                        <div class="rounded-full p-2 text-center w-fit bg-white">
+                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl flex items-start flex-col justify-between bg-m_white-300 hover:bg-m_red-100 duration-300 group relative">
+                        <img class="w-full h-full object-cover rounded-xl" src="/imgs/slide-4.webp">
+                        <div class="absolute top-5 left-5 rounded-full p-2 text-center w-fit bg-white">
                             <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -226,7 +232,7 @@
                             </svg>
                         </div>
                         <p
-                            class="font-poppins font-medium lg:text-lg text-base text-start text-black group-hover:text-white group-hover:font-semibold">
+                            class="absolute bottom-5 left-5 right-5 font-poppins font-medium lg:text-lg text-base text-start text-white group-hover:text-white group-hover:font-semibold">
                             {{ $t('about.title9') }}
                         </p>
                     </div>

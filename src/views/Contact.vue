@@ -2,7 +2,7 @@
     <div class="w-full">
         <Navbar />
         <!-- Contact us header -->
-        <div class="w-full !h-[400px] relative top-[120px]">
+        <div class="w-full !h-[400px] relative sm:top-[120px] top-[100px]">
             <div class="w-full h-full absolute left-0 right-0 -z-10">
                 <img class="w-full h-full object-cover filter brightness-50" src="@/assets/imgs/contact-page.webp">
             </div>
