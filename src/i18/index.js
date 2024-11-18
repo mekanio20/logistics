@@ -170,7 +170,7 @@ const messages = {
   },
   TM: {
     navbar: {
-      title1: "Biz bilen habarlaşyň",
+      title1: "Habarlaşyň",
     },
     footer: {
       title1:

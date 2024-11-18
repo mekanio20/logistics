@@ -18,17 +18,18 @@
         </div>
         <div class="w-full h-full">
             <!-- About us -->
-            <div class="bg-white">
+            <div class="bg-white dark:bg-m_black-100">
                 <div
                     class="container flex lg:flex-row flex-col lg:space-y-0 space-y-6 items-center lg:space-x-10 space-x-0 lg:py-20 py-10">
-                    <div class="lg:w-[500px] w-full lg:h-[600px] h-full">
+                    <div class="lg:w-[500px] w-full lg:h-[600px] h-full select-none">
                         <img class="w-full h-full object-cover rounded-lg" src="@/assets/imgs/service-page.webp">
                     </div>
                     <div class="lg:flex-1 w-full flex flex-col space-y-4">
                         <h3
                             class="font-poppins font-semibold uppercase lg:text-base text-sm text-m_red-100 border-b-2 border-m_red-100 w-fit">
                             {{ $t('home.title2') }}</h3>
-                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3">{{ $t('home.title3') }}</h1>
+                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3 dark:text-white">{{
+                    $t('home.title3') }}</h1>
                         <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
                             {{ $t('home.title4') }}
                         </p>
@@ -43,7 +44,7 @@
                                     </svg>
                                 </div>
                                 <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold lg:text-lg text-base">
+                                    <h3 class="font-poppins font-bold lg:text-lg text-base dark:text-white">
                                         {{ $t('home.title5') }}</h3>
                                     <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
                                         {{ $t('home.title6') }}
@@ -60,7 +61,7 @@
                                     </svg>
                                 </div>
                                 <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold lg:text-lg text-base">
+                                    <h3 class="font-poppins font-bold lg:text-lg text-base dark:text-white">
                                         {{ $t('home.title7') }}</h3>
                                     <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
                                         {{ $t('home.title8') }}
@@ -72,29 +73,36 @@
                 </div>
             </div>
             <!-- Certificate -->
-            <div class="bg-m_gray-400">
+            <div class="bg-m_gray-400 dark:bg-black">
                 <div class="container py-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 llg:text-4xl text-3xl text-center">
+                    <h2
+                        class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-4xl text-3xl text-center">
                         {{ $t('home.title9') }}
                     </h2>
                     <div class="mt-20">
                         <swiper :slidesPerView="3" :spaceBetween="30" :modules="modules" :speed="2000" :loop="true"
                             :breakpoints="{ '300': { slidesPerView: 1 }, '480': { slidesPerView: 2 }, '1024': { slidesPerView: 3 } }">
-                            <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
+                            <swiper-slide
+                                class="flex flex-col space-y-8 py-12 bg-m_white-100 dark:bg-m_black-100 rounded-xl">
                                 <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert1.webp">
-                                <p class="h-[60px] text-center px-10 font-poppins font-normal lg:text-lg text-base">
+                                <p
+                                    class="h-[60px] dark:text-white text-center px-10 font-poppins font-normal lg:text-lg text-base">
                                     {{ $t('home.title10') }}
                                 </p>
                             </swiper-slide>
-                            <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
+                            <swiper-slide
+                                class="flex flex-col space-y-8 py-12 bg-m_white-100 dark:bg-m_black-100 rounded-xl">
                                 <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert2.webp">
-                                <p class="h-[60px] text-center px-10 font-poppins font-normal lg:text-lg text-base">
+                                <p
+                                    class="h-[60px] dark:text-white text-center px-10 font-poppins font-normal lg:text-lg text-base">
                                     {{ $t('home.title11') }}
                                 </p>
                             </swiper-slide>
-                            <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 rounded-xl">
+                            <swiper-slide
+                                class="flex flex-col space-y-8 py-12 bg-m_white-100 dark:bg-m_black-100 rounded-xl">
                                 <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert3.webp">
-                                <p class="h-[60px] text-center px-10 font-poppins font-normal lg:text-lg text-base">
+                                <p
+                                    class="h-[60px] dark:text-white text-center px-10 font-poppins font-normal lg:text-lg text-base">
                                     {{ $t('home.title12') }}
                                 </p>
                             </swiper-slide>
@@ -103,12 +111,13 @@
                 </div>
             </div>
             <!-- Core values -->
-            <div class="w-full py-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 text-center lg:text-3xl text-2xl pb-20">
+            <div class="w-full py-20 dark:bg-m_black-100">
+                <h2 class="font-poppins font-semibold text-m_black-100 dark:text-white text-center lg:text-3xl text-2xl pb-20">
                     {{ $t('about.title2') }}
                 </h2>
                 <div class="flex flex-wrap justify-center gap-10">
-                    <div class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl flex items-start flex-col justify-between group bg-m_white-300 hover:bg-m_red-100 duration-300 relative">
+                    <div
+                        class="sm:w-[300px] w-full h-[300px] sm:mx-0 mx-4 rounded-xl flex items-start flex-col justify-between group bg-m_white-300 hover:bg-m_red-100 duration-300 relative">
                         <img class="w-full h-full object-cover rounded-xl" src="/imgs/service1.webp">
                         <div class="absolute top-5 left-5 rounded-full p-2 text-center w-fit bg-white">
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none"

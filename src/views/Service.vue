@@ -15,11 +15,11 @@
                 </div>
             </div>
         </div>
-        <div class="w-full">
+        <div class="w-full dark:bg-m_black-100">
             <!-- Our services -->
-            <div class="bg-m_gray-400">
+            <div class="bg-m_gray-400 dark:bg-black">
                 <div class="container lg:py-20 py-10">
-                    <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">
+                    <h2 class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center">
                         {{ $t('home.title20') }}
                     </h2>
                     <div class="pt-20 flex items-start gap-x-6 overflow-x-auto no-scrollbar">
@@ -82,7 +82,7 @@
             </div>
             <!-- Shipping -->
             <div class="container mt-20 mb-10">
-                <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center">
+                <h2 class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center">
                     {{ $t('service.title2') }}
                 </h2>
                 <div class="py-20 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
@@ -145,10 +145,10 @@
             </div>
             <!-- Service -->
             <div class="container pb-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 lg:text-3xl text-2xl text-center pb-10">
+                <h2 class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center pb-10">
                     {{ $t('service.title6') }}
                 </h2>
-                <div class="flex flex-col lg:flex-row items-center bg-white p-8">
+                <div class="flex flex-col lg:flex-row items-center bg-white dark:bg-m_black-100 p-8">
                     <div class="lg:w-1/2 lg:h-[585px] mb-16 lg:mb-0 lg:mr-16">
                         <img src="@/assets/imgs/provide.webp" alt="Warehouse"
                             class="rounded-lg shadow-lg object-cover w-full h-full" />
@@ -157,7 +157,7 @@
                         <ul class="space-y-4 text-gray-700">
                             <li v-for="(service, index) in services[this.$i18n.locale]" :key="index" class="flex items-start">
                                 <span class="text-red-500 mr-2">◆</span>
-                                <p class="leading-relaxed font-poppins font-normal lg:text-xl sm:text-lg text-base">
+                                <p class="leading-relaxed font-poppins font-normal lg:text-xl sm:text-lg text-base dark:text-white">
                                     {{ service }}
                                 </p>
                             </li>

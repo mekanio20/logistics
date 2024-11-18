@@ -1,5 +1,6 @@
 <template>
-  <div class="w-full h-full">
+  <div :class="{ 'dark': isDarkMode }" class="w-full h-full">
+    <ThemeToggleButton />
     <Loader :loading="loading" />
     <RouterView v-show="!loading" />
     <ScrollToTop />
@@ -10,18 +11,26 @@
 import { RouterView } from 'vue-router'
 import Loader from "@/components/Loader.vue";
 import ScrollToTop from '@/components/ScrollToTop.vue'
+import ThemeToggleButton from "@/components/ThemeToggleButton.vue";
 
 export default {
   name: "App",
   components: {
     RouterView,
     Loader,
-    ScrollToTop
+    ScrollToTop,
+    ThemeToggleButton
   },
   data() {
     return {
+      isDarkMode: false,
       loading: false,
     };
+  },
+  computed: {
+    isDarkMode() {
+      return this.$store.getters.isDarkMode;
+    },
   },
   watch: {
     $route: {
