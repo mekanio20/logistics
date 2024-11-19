@@ -54,7 +54,7 @@
                 <div
                     class="container flex lg:flex-row flex-col lg:space-y-0 space-y-6 items-center lg:space-x-10 space-x-0 lg:py-20 py-10">
                     <div class="lg:w-[500px] w-full lg:h-[600px] h-full select-none">
-                        <img class="w-full h-full object-cover rounded-lg" src="@/assets/imgs/service-page.webp">
+                        <img class="w-full h-full object-cover rounded-lg" src="@/assets/imgs/provide.webp">
                     </div>
                     <div class="lg:flex-1 w-full flex flex-col space-y-4">
                         <h3
@@ -509,10 +509,10 @@ export default {
             ],
             galleryItems: {
                 imgs: [
-                    '/imgs/slide-1.webp',
-                    '/imgs/service1.webp',
-                    '/imgs/slide-9.webp',
-                    '/imgs/slide-10.webp',
+                    '/imgs/logistic1.webp',
+                    '/imgs/logistic2.webp',
+                    '/imgs/logistic3.webp',
+                    '/imgs/logistic4.webp',
                 ],
                 EN: [
                     {
