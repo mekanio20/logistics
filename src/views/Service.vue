@@ -4,7 +4,7 @@
         <!-- Service header -->
         <div class="w-full h-[600px] relative sm:top-[120px] top-[100px]">
             <div class="w-full h-full absolute left-0 right-0 -z-10">
-                <img class="w-full h-full object-cover filter brightness-50" src="@/assets/imgs/service-page.webp">
+                <img class="w-full h-full object-cover filter brightness-50" :src="service?.header_image">
             </div>
             <div class="flex flex-col space-y-6 pt-40 container">
                 <h1 class="font-poppins font-bold lg:text-4xl text-3xl text-white">{{ $t('service.title1') }}</h1>
@@ -18,15 +18,17 @@
         <div class="w-full dark:bg-m_black-100">
             <!-- Our services -->
             <div class="bg-m_gray-400 dark:bg-black">
-                <div class="container lg:py-20 py-10">
-                    <h2 class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center">
+                <div class="container py-20">
+                    <h2
+                        class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center">
                         {{ $t('home.title20') }}
                     </h2>
                     <div class="pt-20 flex items-start gap-x-6 overflow-x-auto no-scrollbar">
-                        <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
+                        <div v-for="item in ourServices" :key="item.id"
+                            class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
                             <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
-                                src="@/assets/imgs/service1.webp">
-                            <div class="absolute top-4 right-4 cursor-pointer">
+                                :src="item.image">
+                            <router-link to="/service" class="absolute top-4 right-4 cursor-pointer">
                                 <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle opacity="0.9" cx="30.7734" cy="30.7734" r="21.2756"
@@ -35,46 +37,10 @@
                                         d="M27.0284 25.4929C26.8602 25.5143 26.707 25.6006 26.6015 25.7333C26.496 25.866 26.4465 26.0347 26.4636 26.2034C26.4808 26.3721 26.5631 26.5275 26.6931 26.6363C26.8232 26.7451 26.9905 26.7989 27.1596 26.786L34.6043 26.032L26.2913 35.7273C26.1791 35.8582 26.1234 36.0283 26.1366 36.2002C26.1498 36.3721 26.2308 36.5317 26.3617 36.6439C26.4926 36.7562 26.6627 36.8118 26.8346 36.7986C27.0065 36.7854 27.1661 36.7045 27.2783 36.5736L35.5913 26.8783L35.983 34.3514C35.9874 34.4367 36.0085 34.5203 36.0452 34.5974C36.082 34.6745 36.1335 34.7436 36.1969 34.8008C36.2603 34.8579 36.3344 34.9021 36.4148 34.9306C36.4953 34.9592 36.5806 34.9716 36.6659 34.9672C36.7511 34.9628 36.8347 34.9417 36.9118 34.9049C36.9889 34.8682 37.058 34.8167 37.1152 34.7533C37.1724 34.6899 37.2165 34.6158 37.245 34.5354C37.2736 34.4549 37.286 34.3696 37.2816 34.2843L36.8178 25.4146C36.8077 25.2209 36.7329 25.0362 36.6054 24.89C36.5521 24.8244 36.4872 24.7692 36.414 24.727C36.2503 24.624 36.0569 24.5787 35.8644 24.5983L27.0284 25.4929Z"
                                         fill="black" />
                                 </svg>
-                            </div>
+                            </router-link>
                             <div
                                 class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-1/2">
-                                {{ $t('home.title21') }}
-                            </div>
-                        </div>
-                        <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
-                            <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
-                                src="@/assets/imgs/service2.webp">
-                            <div class="absolute top-4 right-4 cursor-pointer">
-                                <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <circle opacity="0.9" cx="30.7734" cy="30.7734" r="21.2756"
-                                        transform="rotate(40.6108 30.7734 30.7734)" fill="white" />
-                                    <path
-                                        d="M27.0284 25.4929C26.8602 25.5143 26.707 25.6006 26.6015 25.7333C26.496 25.866 26.4465 26.0347 26.4636 26.2034C26.4808 26.3721 26.5631 26.5275 26.6931 26.6363C26.8232 26.7451 26.9905 26.7989 27.1596 26.786L34.6043 26.032L26.2913 35.7273C26.1791 35.8582 26.1234 36.0283 26.1366 36.2002C26.1498 36.3721 26.2308 36.5317 26.3617 36.6439C26.4926 36.7562 26.6627 36.8118 26.8346 36.7986C27.0065 36.7854 27.1661 36.7045 27.2783 36.5736L35.5913 26.8783L35.983 34.3514C35.9874 34.4367 36.0085 34.5203 36.0452 34.5974C36.082 34.6745 36.1335 34.7436 36.1969 34.8008C36.2603 34.8579 36.3344 34.9021 36.4148 34.9306C36.4953 34.9592 36.5806 34.9716 36.6659 34.9672C36.7511 34.9628 36.8347 34.9417 36.9118 34.9049C36.9889 34.8682 37.058 34.8167 37.1152 34.7533C37.1724 34.6899 37.2165 34.6158 37.245 34.5354C37.2736 34.4549 37.286 34.3696 37.2816 34.2843L36.8178 25.4146C36.8077 25.2209 36.7329 25.0362 36.6054 24.89C36.5521 24.8244 36.4872 24.7692 36.414 24.727C36.2503 24.624 36.0569 24.5787 35.8644 24.5983L27.0284 25.4929Z"
-                                        fill="black" />
-                                </svg>
-                            </div>
-                            <div
-                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-1/2">
-                                {{ $t('home.title22') }}
-                            </div>
-                        </div>
-                        <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
-                            <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
-                                src="@/assets/imgs/service3.webp">
-                            <div class="absolute top-4 right-4 cursor-pointer">
-                                <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <circle opacity="0.9" cx="30.7734" cy="30.7734" r="21.2756"
-                                        transform="rotate(40.6108 30.7734 30.7734)" fill="white" />
-                                    <path
-                                        d="M27.0284 25.4929C26.8602 25.5143 26.707 25.6006 26.6015 25.7333C26.496 25.866 26.4465 26.0347 26.4636 26.2034C26.4808 26.3721 26.5631 26.5275 26.6931 26.6363C26.8232 26.7451 26.9905 26.7989 27.1596 26.786L34.6043 26.032L26.2913 35.7273C26.1791 35.8582 26.1234 36.0283 26.1366 36.2002C26.1498 36.3721 26.2308 36.5317 26.3617 36.6439C26.4926 36.7562 26.6627 36.8118 26.8346 36.7986C27.0065 36.7854 27.1661 36.7045 27.2783 36.5736L35.5913 26.8783L35.983 34.3514C35.9874 34.4367 36.0085 34.5203 36.0452 34.5974C36.082 34.6745 36.1335 34.7436 36.1969 34.8008C36.2603 34.8579 36.3344 34.9021 36.4148 34.9306C36.4953 34.9592 36.5806 34.9716 36.6659 34.9672C36.7511 34.9628 36.8347 34.9417 36.9118 34.9049C36.9889 34.8682 37.058 34.8167 37.1152 34.7533C37.1724 34.6899 37.2165 34.6158 37.245 34.5354C37.2736 34.4549 37.286 34.3696 37.2816 34.2843L36.8178 25.4146C36.8077 25.2209 36.7329 25.0362 36.6054 24.89C36.5521 24.8244 36.4872 24.7692 36.414 24.727C36.2503 24.624 36.0569 24.5787 35.8644 24.5983L27.0284 25.4929Z"
-                                        fill="black" />
-                                </svg>
-                            </div>
-                            <div
-                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-3/5">
-                                {{ $t('home.title23') }}
+                                {{ getLocalizedName(item) }}
                             </div>
                         </div>
                     </div>
@@ -82,7 +48,8 @@
             </div>
             <!-- Shipping -->
             <div class="container mt-20 mb-10">
-                <h2 class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center">
+                <h2
+                    class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center">
                     {{ $t('service.title2') }}
                 </h2>
                 <div class="py-20 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
@@ -145,20 +112,23 @@
             </div>
             <!-- Service -->
             <div class="container pb-20">
-                <h2 class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center pb-10">
+                <h2
+                    class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center pb-10">
                     {{ $t('service.title6') }}
                 </h2>
                 <div class="flex flex-col lg:flex-row items-center bg-white dark:bg-m_black-100 p-8">
                     <div class="lg:w-1/2 lg:h-[585px] mb-16 lg:mb-0 lg:mr-16">
-                        <img src="@/assets/imgs/provide.webp" alt="Warehouse"
+                        <img :src="service?.image"
                             class="rounded-lg shadow-lg object-cover w-full h-full" />
                     </div>
                     <div class="lg:w-1/2">
                         <ul class="space-y-4 text-gray-700">
-                            <li v-for="(service, index) in services[this.$i18n.locale]" :key="index" class="flex items-start">
+                            <li v-for="(service, index) in serviceItems" :key="index"
+                                class="flex items-start">
                                 <span class="text-red-500 mr-2">◆</span>
-                                <p class="leading-relaxed font-poppins font-normal lg:text-xl sm:text-lg text-base dark:text-white">
-                                    {{ service }}
+                                <p
+                                    class="leading-relaxed font-poppins font-normal lg:text-xl sm:text-lg text-base dark:text-white">
+                                    {{ getLocalizedDesc(service) }}
                                 </p>
                             </li>
                         </ul>
@@ -171,6 +141,7 @@
 </template>
 
 <script>
+import api from '@/api/index'
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 export default {
@@ -181,33 +152,44 @@ export default {
     },
     data() {
         return {
-            services: {
-                RU: [
-                    "Экспедирование экспортно-импортных и транзитных перевозок, грузов по странам СНГ, Ближнего и Дальнего Востока, стран Балтии и Евросоюза",
-                    "Перевозка опасных грузов",
-                    "Получение специального разрешения и перевозка грузов любой сложности: крупных, негабаритных, сверхгабаритных, тяжеловесных и длинномерных перевозка сборных грузов",
-                    "Перевозка грузов под температурным режимом",
-                    "Перевозка дорогостоящих грузов",
-                    "Получение виз для иностранных водителей и визовая поддержка на территории Туркменистана."
-                ],
-                EN: [
-                    "Freight forwarding for export-import and transit shipments across CIS countries, the Near and Far East, the Baltic states, and the European Union",
-                    "Transportation of hazardous goods",
-                    "Obtaining special permits and transporting goods of any complexity: large, oversized, over-dimensional, heavy, and long loads, as well as consolidated cargo transportation",
-                    "Transportation of goods under temperature control",
-                    "Transportation of high-value goods",
-                    "Visa issuance for foreign drivers and visa support within Turkmenistan."
-                ],
-                TM: [
-                    "Eksport-import we üstaşyr ýükleriň, Arkalaşygyň Garaşsyz Döwletleriniň, Ýakyn we Uzak Gündogar, Baltika döwletleriniň we Ýewropa Bileleşiginiň ýurtlary boýunça ýükleriniň ekspedisiýasy",
-                    "Howply ýükleriň daşalmagy",
-                    "Ýükleriň islendik çylşyrymly görnüşleri üçin ýörite rugsatnamalaryň alynmagy we daşalmagy: uly, ululykdan daşary, aşa ululykly, agyr we uzyn ýükleriň, şeýle hem birleşdirilen ýükleriň daşalmagy",
-                    "Temperatura gözegçiligi astynda ýükleriň daşalmagy",
-                    "Gymmat bahaly ýükleriň daşalmagy",
-                    "Daşary ýurtly sürüjiler üçin wiza almak we Türkmenistanyň çäginde wiza goldawy."
-                ]
-            }
+            service: null,
+            ourServices: null,
+            serviceItems: null,
         }
+    },
+    async created() {
+        this.getServices()
+        this.getOurServices()
+        this.getServiceItems()
+    },
+    methods: {
+        getLocalizedName(item) {
+            const locale = this.$i18n.locale;
+            if (locale === 'TM') return item?.name_tm;
+            if (locale === 'RU') return item?.name_ru;
+            if (locale === 'EN') return item?.name_en;
+            return item?.name_tm;
+        },
+        getLocalizedDesc(item) {
+            const locale = this.$i18n.locale;
+            if (locale === 'TM') return item?.desc_tm;
+            if (locale === 'RU') return item?.desc_ru;
+            if (locale === 'EN') return item?.desc_en;
+            return item?.desc_tm;
+        },
+        async getServices() {
+            const services = await api.get('/service/')
+            this.service = services.data[0]
+        },
+        async getOurServices() {
+            const services = await api.get('/our-service/')
+            this.ourServices = services.data
+        },
+        async getServiceItems() {
+            const serviceItems = await api.get('/service-items/')
+            console.log(serviceItems);
+            this.serviceItems = serviceItems.data
+        },
     }
 
 }

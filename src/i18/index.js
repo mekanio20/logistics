@@ -200,7 +200,7 @@ const messages = {
       title10: "Deňiz we derýa ulaglary üçin lisenziýa",
       title11: "Deňiz we awtoulag ulaglary üçin lisenziýa",
       title12: "ISO 9001:2015 Sertifikaty",
-      title13: "Başlyca gymmatlyklarymyz",
+      title13: "Biziň gymmatlyklarymyz",
       title14: "Biziň gymmatlyklarymyz üstünligimiziň binýady bolup durýar.",
       title15:
         "Kärhana biziň gymmatlyklarymyzyň esasy prinsiplerimizi we maksatlarymyzy beýan edýär. Biz halallygy, jogapkärçiligi we ýokary hil derejesini goldaýarys, müşderilerimiz we hyzmatdaşlarymyz bilen ygtybarly we ygtybarly gatnaşyklaryň ýola goýulmagyna ýardam berýäris.",
@@ -222,7 +222,7 @@ const messages = {
       title31: "Önümçilik liniýalary we enjamlar",
       title32: "Tohumlar we ösümlikler",
       title33: "Agrar tehnika",
-      title34: "Himiýa senagaty (gümüş, üre, polipropilen)",
+      title34: "Himiýa senagaty (kükürt, karmabid, polipropilen)",
       title35: "Tekstiller",
       title36: "Azyk önümleri",
     },

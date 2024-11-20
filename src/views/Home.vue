@@ -6,22 +6,19 @@
             <div class="w-full h-[600px] relative select-none">
                 <swiper :slidesPerView="1" :modules="modules" :speed="2000" :loop="true"
                     :navigation="{ nextEl: '.next-slider', prevEl: '.prev-slider' }" class="w-full h-full">
-                    <swiper-slide v-for="(item, index) in galleryItems[this.$i18n.locale]" :key="item.id" class="w-full h-full">
-                        <img :src="galleryItems.imgs[index]" class="absolute w-full h-full object-cover">
+                    <swiper-slide v-for="(item, index) in galleryItems" :key="index" class="w-full h-full">
+                        <img :src="item.image" class="absolute w-full h-full object-cover">
                         <div class="container relative">
                             <div
                                 class="absolute !z-20 top-40 md:w-1/2 w-full h-full flex flex-col items-start space-y-6 text-white">
-                                <h1 class="font-poppins font-bold lg:text-5xl md:text-4xl text-3xl !leading-[60px]"
-                                    v-scroll-reveal="{ origin: 'bottom', distance: '100px', duration: 1000 }">
-                                    {{ item.title }}
+                                <h1 class="font-poppins font-bold lg:text-5xl md:text-4xl text-3xl !leading-[60px]">
+                                    {{ getLocalizedName(item) }}
                                 </h1>
-                                <p class="font-manjari lg:text-lg text-sm"
-                                    v-scroll-reveal="{ origin: 'bottom', distance: '100px', duration: 1500 }">
-                                    {{ item.desc }}
+                                <p class="font-manjari lg:text-lg text-sm">
+                                    {{ getLocalizedDesc(item) }}
                                 </p>
                                 <router-link to="/about"
-                                    class="font-manjari font-medium lg:text-lg text-sm hover:bg-m_red-100 duration-300 text-white py-4 px-10 bg-m_red-100"
-                                    v-scroll-reveal="{ origin: 'bottom', distance: '100px', duration: 2000 }">
+                                    class="font-manjari font-medium lg:text-lg text-sm hover:bg-m_red-100 duration-300 text-white py-4 px-10 bg-m_red-100">
                                     {{ $t('home.title1') }}
                                 </router-link>
                             </div>
@@ -54,18 +51,21 @@
                 <div
                     class="container flex lg:flex-row flex-col lg:space-y-0 space-y-6 items-center lg:space-x-10 space-x-0 lg:py-20 py-10">
                     <div class="lg:w-[500px] w-full lg:h-[600px] h-full select-none">
-                        <img class="w-full h-full object-cover rounded-lg" src="@/assets/imgs/provide.webp">
+                        <img class="w-full h-full object-cover rounded-lg" :src="about?.image">
                     </div>
                     <div class="lg:flex-1 w-full flex flex-col space-y-4">
                         <h3
                             class="font-poppins font-semibold uppercase lg:text-base text-sm text-m_red-100 border-b-2 border-m_red-100 w-fit">
-                            {{ $t('home.title2') }}</h3>
-                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3 dark:text-white">{{ $t('home.title3') }}</h1>
+                            {{ $t('home.title2') }}
+                        </h3>
+                        <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3 dark:text-white">
+                            {{ getLocalizedName(about) }}
+                        </h1>
                         <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
-                            {{ $t('home.title4') }}
+                            {{ getLocalizedDesc(about) }}
                         </p>
                         <div class="flex flex-col space-y-4">
-                            <div class="p-6 flex items-start space-x-4 border"
+                            <div v-for="item in aboutItems" :key="item.id" class="p-6 flex items-start space-x-4 border"
                                 style="border-color: rgba(0, 0, 0, 0.06);">
                                 <div class="w-[70px] pt-1">
                                     <svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,26 +76,10 @@
                                 </div>
                                 <div class="flex flex-col space-y-4">
                                     <h3 class="font-poppins font-bold lg:text-lg text-base dark:text-white">
-                                        {{ $t('home.title5') }}</h3>
+                                        {{ getLocalizedName(item) }}
+                                    </h3>
                                     <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
-                                        {{ $t('home.title6') }}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="p-6 flex items-start space-x-4 border"
-                                style="border-color: rgba(0, 0, 0, 0.06);">
-                                <div class="w-[70px] pt-1">
-                                    <svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M8.33337 0.333374C12.7518 0.333374 16.3334 3.91497 16.3334 8.33337C16.3334 12.7518 12.7518 16.3334 8.33337 16.3334C3.91497 16.3334 0.333374 12.7518 0.333374 8.33337C0.333374 3.91497 3.91497 0.333374 8.33337 0.333374ZM10.9094 5.90937L7.33337 9.48537L5.75737 7.90937C5.64363 7.80339 5.4932 7.74569 5.33776 7.74843C5.18232 7.75118 5.03401 7.81415 4.92408 7.92408C4.81415 8.03401 4.75118 8.18232 4.74843 8.33776C4.74569 8.4932 4.80339 8.64363 4.90937 8.75737L6.90937 10.7574C7.02187 10.8697 7.17437 10.9328 7.33337 10.9328C7.49237 10.9328 7.64487 10.8697 7.75737 10.7574L11.7574 6.75737C11.8163 6.70244 11.8636 6.6362 11.8964 6.5626C11.9292 6.48901 11.9468 6.40955 11.9482 6.32899C11.9497 6.24843 11.9348 6.16841 11.9047 6.0937C11.8745 6.01899 11.8296 5.95112 11.7726 5.89414C11.7156 5.83717 11.6478 5.79225 11.5731 5.76208C11.4983 5.7319 11.4183 5.71708 11.3378 5.7185C11.2572 5.71992 11.1777 5.73756 11.1041 5.77035C11.0305 5.80314 10.9643 5.85042 10.9094 5.90937Z"
-                                            fill="#E92A34" />
-                                    </svg>
-                                </div>
-                                <div class="flex flex-col space-y-4">
-                                    <h3 class="font-poppins font-bold lg:text-lg text-base dark:text-white">
-                                        {{ $t('home.title7') }}</h3>
-                                    <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
-                                        {{ $t('home.title8') }}
+                                        {{ getLocalizedDesc(item) }}
                                     </p>
                                 </div>
                             </div>
@@ -106,28 +90,19 @@
             <!-- Certificate -->
             <div class="bg-m_gray-400 dark:bg-black">
                 <div class="container py-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-4xl text-3xl text-center">
+                    <h2
+                        class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-4xl text-3xl text-center">
                         {{ $t('home.title9') }}
                     </h2>
                     <div class="mt-20">
-                        <swiper :slidesPerView="3" :spaceBetween="30" :modules="modules" :speed="2000" :loop="true"
+                        <swiper :slidesPerView="3" :spaceBetween="30" :modules="modules" :speed="2000"
                             :breakpoints="{ '300': { slidesPerView: 1 }, '480': { slidesPerView: 2 }, '1024': { slidesPerView: 3 } }">
-                            <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 dark:bg-m_black-100 rounded-xl">
-                                <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert1.webp">
-                                <p class="h-[60px] dark:text-white text-center px-10 font-poppins font-normal lg:text-lg text-base">
-                                    {{ $t('home.title10') }}
-                                </p>
-                            </swiper-slide>
-                            <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 dark:bg-m_black-100 rounded-xl">
-                                <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert2.webp">
-                                <p class="h-[60px] dark:text-white text-center px-10 font-poppins font-normal lg:text-lg text-base">
-                                    {{ $t('home.title11') }}
-                                </p>
-                            </swiper-slide>
-                            <swiper-slide class="flex flex-col space-y-8 py-12 bg-m_white-100 dark:bg-m_black-100 rounded-xl">
-                                <img class="w-full h-full object-cover px-20" src="@/assets/imgs/cert3.webp">
-                                <p class="h-[60px] dark:text-white text-center px-10 font-poppins font-normal lg:text-lg text-base">
-                                    {{ $t('home.title12') }}
+                            <swiper-slide v-for="item in licenses" :key="item.id"
+                                class="flex flex-col space-y-8 py-12 bg-m_white-100 dark:bg-m_black-100 rounded-xl">
+                                <img class="w-full h-full object-cover px-20" :src="item.image">
+                                <p
+                                    class="h-[60px] dark:text-white text-center px-10 font-poppins font-normal lg:text-lg text-base">
+                                    {{ getLocalizedName(item) }}
                                 </p>
                             </swiper-slide>
                         </swiper>
@@ -144,20 +119,19 @@
                             {{ $t('home.title13') }}
                         </h3>
                         <h1 class="font-poppins font-bold lg:text-3xl text-2xl pb-3 dark:text-white">
-                            {{ $t('home.title14') }}
+                            {{ getLocalizedName(keyValues) }}
                         </h1>
                         <p class="font-manjari font-normal lg:text-base text-sm text-m_gray-300">
-                            {{ $t('home.title15') }}
+                            {{ getLocalizedDesc(keyValues) }}
                         </p>
                         <div class="grid xl:grid-cols-2 grid-cols-1 gap-4">
                             <div class="p-4 border flex items-center space-x-6"
                                 style="border-color: rgba(0, 0, 0, 0.06);">
                                 <div class="rounded-full p-3 bg-m_white-200 dark:bg-black">
-                                    <svg class="w-[20px] h-[20px] fill-m_red-100 dark:fill-white" viewBox="0 0 26 19" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="w-[20px] h-[20px] fill-m_red-100 dark:fill-white" viewBox="0 0 26 19"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
-                                            d="M25.8273 6.95961L23.2355 1.77383C23.14 1.58296 23.0078 1.41277 22.8466 1.27297C22.6853 1.13318 22.4981 1.02652 22.2956 0.959087C22.0931 0.891654 21.8793 0.864769 21.6664 0.879966C21.4536 0.895163 21.2458 0.952146 21.0549 1.04766L18.529 2.31008L13.2082 0.902425C13.0717 0.866896 12.9283 0.866896 12.7918 0.902425L7.47092 2.31008L4.94506 1.04766C4.75421 0.952146 4.54641 0.895163 4.33353 0.879966C4.12065 0.864769 3.90687 0.891654 3.70438 0.959087C3.50189 1.02652 3.31467 1.13318 3.15341 1.27297C2.99215 1.41277 2.86 1.58296 2.76452 1.77383L0.172642 6.9586C0.0771289 7.14945 0.0201465 7.35725 0.00494921 7.57013C-0.0102481 7.78301 0.0166373 7.9968 0.0840702 8.19928C0.151503 8.40177 0.258162 8.58899 0.397957 8.75025C0.537752 8.91152 0.707944 9.04366 0.898814 9.13914L3.641 10.5113L9.2767 14.5362C9.35979 14.5952 9.45312 14.6382 9.55194 14.6631L16.0519 16.2881C16.1881 16.3223 16.3307 16.3206 16.466 16.2832C16.6012 16.2458 16.7245 16.174 16.8238 16.0748L22.4169 10.4808L25.1001 9.13914C25.4854 8.94631 25.7782 8.6084 25.9144 8.1997C26.0506 7.791 26.0189 7.34496 25.8263 6.95961H25.8273ZM20.2526 10.3488L16.7578 7.54969C16.6012 7.42431 16.4038 7.36127 16.2036 7.37271C16.0033 7.38415 15.8144 7.46925 15.6731 7.61164C13.8643 9.43368 11.8483 9.20313 10.5625 8.39063L14.954 4.125H18.1848L20.9483 9.65102L20.2526 10.3488ZM4.21788 2.5L6.29686 3.53797L3.69991 8.72274L1.62499 7.68578L4.21788 2.5ZM15.9991 14.5991L10.0973 13.1245L5.10045 9.55555L7.94421 3.86805L13 2.52844L13.9953 2.79149L9.42499 7.22774L9.41686 7.23688C9.24482 7.40892 9.11361 7.61739 9.0329 7.84692C8.9522 8.07645 8.92407 8.32117 8.95058 8.56302C8.9771 8.80488 9.05758 9.03769 9.1861 9.24428C9.31462 9.45087 9.48788 9.62597 9.69311 9.75664C11.7812 11.0902 14.301 10.8738 16.2855 9.24883L19.0937 11.5045L15.9991 14.5991ZM22.296 8.72172L19.7041 3.54203L21.7821 2.5L24.375 7.68578L22.296 8.72172ZM13.3839 18.1335C13.34 18.3091 13.2387 18.465 13.0961 18.5765C12.9535 18.688 12.7778 18.7487 12.5968 18.749C12.53 18.749 12.4635 18.7408 12.3987 18.7246L8.16663 17.6663C8.06765 17.6419 7.97424 17.5988 7.89139 17.5394L5.21522 15.628C5.05067 15.4988 4.9423 15.3111 4.91267 15.104C4.88304 14.8969 4.93444 14.6863 5.05617 14.5162C5.17789 14.346 5.36056 14.2294 5.56613 14.1905C5.7717 14.1517 5.98434 14.1937 6.15975 14.3077L8.70999 16.1297L12.7969 17.1494C13.0059 17.2017 13.1856 17.3348 13.2964 17.5196C13.4072 17.7043 13.4402 17.9255 13.388 18.1345L13.3839 18.1335Z"
-                                             />
+                                            d="M25.8273 6.95961L23.2355 1.77383C23.14 1.58296 23.0078 1.41277 22.8466 1.27297C22.6853 1.13318 22.4981 1.02652 22.2956 0.959087C22.0931 0.891654 21.8793 0.864769 21.6664 0.879966C21.4536 0.895163 21.2458 0.952146 21.0549 1.04766L18.529 2.31008L13.2082 0.902425C13.0717 0.866896 12.9283 0.866896 12.7918 0.902425L7.47092 2.31008L4.94506 1.04766C4.75421 0.952146 4.54641 0.895163 4.33353 0.879966C4.12065 0.864769 3.90687 0.891654 3.70438 0.959087C3.50189 1.02652 3.31467 1.13318 3.15341 1.27297C2.99215 1.41277 2.86 1.58296 2.76452 1.77383L0.172642 6.9586C0.0771289 7.14945 0.0201465 7.35725 0.00494921 7.57013C-0.0102481 7.78301 0.0166373 7.9968 0.0840702 8.19928C0.151503 8.40177 0.258162 8.58899 0.397957 8.75025C0.537752 8.91152 0.707944 9.04366 0.898814 9.13914L3.641 10.5113L9.2767 14.5362C9.35979 14.5952 9.45312 14.6382 9.55194 14.6631L16.0519 16.2881C16.1881 16.3223 16.3307 16.3206 16.466 16.2832C16.6012 16.2458 16.7245 16.174 16.8238 16.0748L22.4169 10.4808L25.1001 9.13914C25.4854 8.94631 25.7782 8.6084 25.9144 8.1997C26.0506 7.791 26.0189 7.34496 25.8263 6.95961H25.8273ZM20.2526 10.3488L16.7578 7.54969C16.6012 7.42431 16.4038 7.36127 16.2036 7.37271C16.0033 7.38415 15.8144 7.46925 15.6731 7.61164C13.8643 9.43368 11.8483 9.20313 10.5625 8.39063L14.954 4.125H18.1848L20.9483 9.65102L20.2526 10.3488ZM4.21788 2.5L6.29686 3.53797L3.69991 8.72274L1.62499 7.68578L4.21788 2.5ZM15.9991 14.5991L10.0973 13.1245L5.10045 9.55555L7.94421 3.86805L13 2.52844L13.9953 2.79149L9.42499 7.22774L9.41686 7.23688C9.24482 7.40892 9.11361 7.61739 9.0329 7.84692C8.9522 8.07645 8.92407 8.32117 8.95058 8.56302C8.9771 8.80488 9.05758 9.03769 9.1861 9.24428C9.31462 9.45087 9.48788 9.62597 9.69311 9.75664C11.7812 11.0902 14.301 10.8738 16.2855 9.24883L19.0937 11.5045L15.9991 14.5991ZM22.296 8.72172L19.7041 3.54203L21.7821 2.5L24.375 7.68578L22.296 8.72172ZM13.3839 18.1335C13.34 18.3091 13.2387 18.465 13.0961 18.5765C12.9535 18.688 12.7778 18.7487 12.5968 18.749C12.53 18.749 12.4635 18.7408 12.3987 18.7246L8.16663 17.6663C8.06765 17.6419 7.97424 17.5988 7.89139 17.5394L5.21522 15.628C5.05067 15.4988 4.9423 15.3111 4.91267 15.104C4.88304 14.8969 4.93444 14.6863 5.05617 14.5162C5.17789 14.346 5.36056 14.2294 5.56613 14.1905C5.7717 14.1517 5.98434 14.1937 6.15975 14.3077L8.70999 16.1297L12.7969 17.1494C13.0059 17.2017 13.1856 17.3348 13.2964 17.5196C13.4072 17.7043 13.4402 17.9255 13.388 18.1345L13.3839 18.1335Z" />
                                     </svg>
                                 </div>
                                 <h3 class="dark:text-white font-poppins font-bold lg:text-lg text-base">
@@ -167,11 +141,10 @@
                             <div class="p-4 border flex items-center space-x-6"
                                 style="border-color: rgba(0, 0, 0, 0.06);">
                                 <div class="rounded-full p-3 bg-m_white-200 dark:bg-black">
-                                    <svg class="w-[20px] h-[20px] fill-m_red-100 dark:fill-white" viewBox="0 0 20 21" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="w-[20px] h-[20px] fill-m_red-100 dark:fill-white" viewBox="0 0 20 21"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
-                                            d="M14.3243 0.975C14.3243 0.716414 14.427 0.468419 14.6099 0.285571C14.7927 0.102723 15.0407 0 15.2993 0H18.5493C18.8079 0 19.0559 0.102723 19.2388 0.285571C19.4216 0.468419 19.5243 0.716414 19.5243 0.975V4.225C19.5243 4.48359 19.4216 4.73158 19.2388 4.91443C19.0559 5.09728 18.8079 5.2 18.5493 5.2C18.2907 5.2 18.0427 5.09728 17.8599 4.91443C17.677 4.73158 17.5743 4.48359 17.5743 4.225V3.328L11.7633 9.139C11.5805 9.32158 11.3327 9.42414 11.0743 9.42414C10.8159 9.42414 10.5681 9.32158 10.3853 9.139L7.17432 5.928L1.68832 11.414C1.59906 11.5098 1.49142 11.5866 1.37182 11.6399C1.25222 11.6932 1.12311 11.7219 0.9922 11.7242C0.861286 11.7265 0.731249 11.7024 0.609844 11.6534C0.48844 11.6043 0.378155 11.5313 0.285571 11.4387C0.192987 11.3462 0.119999 11.2359 0.0709613 11.1145C0.0219239 10.9931 -0.00215808 10.863 0.000151737 10.7321C0.00246156 10.6012 0.0311162 10.4721 0.0844057 10.3525C0.137695 10.2329 0.214528 10.1253 0.310321 10.036L6.48532 3.861C6.66813 3.67841 6.91594 3.57586 7.17432 3.57586C7.4327 3.57586 7.68051 3.67841 7.86332 3.861L11.0743 7.072L16.1963 1.95H15.2993C15.0407 1.95 14.7927 1.84728 14.6099 1.66443C14.427 1.48158 14.3243 1.23359 14.3243 0.975ZM0.999321 15.6C1.25791 15.6 1.5059 15.7027 1.68875 15.8856C1.8716 16.0684 1.97432 16.3164 1.97432 16.575V19.825C1.97432 20.0836 1.8716 20.3316 1.68875 20.5144C1.5059 20.6973 1.25791 20.8 0.999321 20.8C0.740735 20.8 0.49274 20.6973 0.309892 20.5144C0.127044 20.3316 0.0243209 20.0836 0.0243209 19.825V16.575C0.0243209 16.3164 0.127044 16.0684 0.309892 15.8856C0.49274 15.7027 0.740735 15.6 0.999321 15.6ZM7.17432 12.675C7.17432 12.4164 7.0716 12.1684 6.88875 11.9856C6.7059 11.8027 6.45791 11.7 6.19932 11.7C5.94073 11.7 5.69274 11.8027 5.50989 11.9856C5.32704 12.1684 5.22432 12.4164 5.22432 12.675V19.825C5.22432 20.0836 5.32704 20.3316 5.50989 20.5144C5.69274 20.6973 5.94073 20.8 6.19932 20.8C6.45791 20.8 6.7059 20.6973 6.88875 20.5144C7.0716 20.3316 7.17432 20.0836 7.17432 19.825V12.675ZM11.3993 14.3C11.6579 14.3 11.9059 14.4027 12.0887 14.5856C12.2716 14.7684 12.3743 15.0164 12.3743 15.275V19.825C12.3743 20.0836 12.2716 20.3316 12.0887 20.5144C11.9059 20.6973 11.6579 20.8 11.3993 20.8C11.1407 20.8 10.8927 20.6973 10.7099 20.5144C10.527 20.3316 10.4243 20.0836 10.4243 19.825V15.275C10.4243 15.0164 10.527 14.7684 10.7099 14.5856C10.8927 14.4027 11.1407 14.3 11.3993 14.3ZM17.5743 10.075C17.5743 9.81641 17.4716 9.56842 17.2887 9.38557C17.1059 9.20272 16.8579 9.1 16.5993 9.1C16.3407 9.1 16.0927 9.20272 15.9099 9.38557C15.727 9.56842 15.6243 9.81641 15.6243 10.075V19.825C15.6243 20.0836 15.727 20.3316 15.9099 20.5144C16.0927 20.6973 16.3407 20.8 16.5993 20.8C16.8579 20.8 17.1059 20.6973 17.2887 20.5144C17.4716 20.3316 17.5743 20.0836 17.5743 19.825V10.075Z"
-                                             />
+                                            d="M14.3243 0.975C14.3243 0.716414 14.427 0.468419 14.6099 0.285571C14.7927 0.102723 15.0407 0 15.2993 0H18.5493C18.8079 0 19.0559 0.102723 19.2388 0.285571C19.4216 0.468419 19.5243 0.716414 19.5243 0.975V4.225C19.5243 4.48359 19.4216 4.73158 19.2388 4.91443C19.0559 5.09728 18.8079 5.2 18.5493 5.2C18.2907 5.2 18.0427 5.09728 17.8599 4.91443C17.677 4.73158 17.5743 4.48359 17.5743 4.225V3.328L11.7633 9.139C11.5805 9.32158 11.3327 9.42414 11.0743 9.42414C10.8159 9.42414 10.5681 9.32158 10.3853 9.139L7.17432 5.928L1.68832 11.414C1.59906 11.5098 1.49142 11.5866 1.37182 11.6399C1.25222 11.6932 1.12311 11.7219 0.9922 11.7242C0.861286 11.7265 0.731249 11.7024 0.609844 11.6534C0.48844 11.6043 0.378155 11.5313 0.285571 11.4387C0.192987 11.3462 0.119999 11.2359 0.0709613 11.1145C0.0219239 10.9931 -0.00215808 10.863 0.000151737 10.7321C0.00246156 10.6012 0.0311162 10.4721 0.0844057 10.3525C0.137695 10.2329 0.214528 10.1253 0.310321 10.036L6.48532 3.861C6.66813 3.67841 6.91594 3.57586 7.17432 3.57586C7.4327 3.57586 7.68051 3.67841 7.86332 3.861L11.0743 7.072L16.1963 1.95H15.2993C15.0407 1.95 14.7927 1.84728 14.6099 1.66443C14.427 1.48158 14.3243 1.23359 14.3243 0.975ZM0.999321 15.6C1.25791 15.6 1.5059 15.7027 1.68875 15.8856C1.8716 16.0684 1.97432 16.3164 1.97432 16.575V19.825C1.97432 20.0836 1.8716 20.3316 1.68875 20.5144C1.5059 20.6973 1.25791 20.8 0.999321 20.8C0.740735 20.8 0.49274 20.6973 0.309892 20.5144C0.127044 20.3316 0.0243209 20.0836 0.0243209 19.825V16.575C0.0243209 16.3164 0.127044 16.0684 0.309892 15.8856C0.49274 15.7027 0.740735 15.6 0.999321 15.6ZM7.17432 12.675C7.17432 12.4164 7.0716 12.1684 6.88875 11.9856C6.7059 11.8027 6.45791 11.7 6.19932 11.7C5.94073 11.7 5.69274 11.8027 5.50989 11.9856C5.32704 12.1684 5.22432 12.4164 5.22432 12.675V19.825C5.22432 20.0836 5.32704 20.3316 5.50989 20.5144C5.69274 20.6973 5.94073 20.8 6.19932 20.8C6.45791 20.8 6.7059 20.6973 6.88875 20.5144C7.0716 20.3316 7.17432 20.0836 7.17432 19.825V12.675ZM11.3993 14.3C11.6579 14.3 11.9059 14.4027 12.0887 14.5856C12.2716 14.7684 12.3743 15.0164 12.3743 15.275V19.825C12.3743 20.0836 12.2716 20.3316 12.0887 20.5144C11.9059 20.6973 11.6579 20.8 11.3993 20.8C11.1407 20.8 10.8927 20.6973 10.7099 20.5144C10.527 20.3316 10.4243 20.0836 10.4243 19.825V15.275C10.4243 15.0164 10.527 14.7684 10.7099 14.5856C10.8927 14.4027 11.1407 14.3 11.3993 14.3ZM17.5743 10.075C17.5743 9.81641 17.4716 9.56842 17.2887 9.38557C17.1059 9.20272 16.8579 9.1 16.5993 9.1C16.3407 9.1 16.0927 9.20272 15.9099 9.38557C15.727 9.56842 15.6243 9.81641 15.6243 10.075V19.825C15.6243 20.0836 15.727 20.3316 15.9099 20.5144C16.0927 20.6973 16.3407 20.8 16.5993 20.8C16.8579 20.8 17.1059 20.6973 17.2887 20.5144C17.4716 20.3316 17.5743 20.0836 17.5743 19.825V10.075Z" />
                                     </svg>
                                 </div>
                                 <h3 class="dark:text-white font-poppins font-bold lg:text-lg text-base">
@@ -181,11 +154,10 @@
                             <div class="p-4 border flex items-center space-x-6"
                                 style="border-color: rgba(0, 0, 0, 0.06);">
                                 <div class="rounded-full p-3 bg-m_white-200 dark:bg-black">
-                                    <svg class="w-[20px] h-[20px] fill-m_red-100 dark:fill-white" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="w-[20px] h-[20px] fill-m_red-100 dark:fill-white" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M11.6667 23.3333C5.22317 23.3333 0 18.1102 0 11.6667C0 5.22317 5.22317 0 11.6667 0C18.1102 0 23.3333 5.22317 23.3333 11.6667C23.3333 18.1102 18.1102 23.3333 11.6667 23.3333ZM11.6667 21.9333C14.3896 21.9333 17.0009 20.8517 18.9263 18.9263C20.8517 17.0009 21.9333 14.3896 21.9333 11.6667C21.9333 8.94378 20.8517 6.33241 18.9263 4.40704C17.0009 2.48166 14.3896 1.4 11.6667 1.4C8.94378 1.4 6.33241 2.48166 4.40704 4.40704C2.48166 6.33241 1.4 8.94378 1.4 11.6667C1.4 14.3896 2.48166 17.0009 4.40704 18.9263C6.33241 20.8517 8.94378 21.9333 11.6667 21.9333ZM10.2993 14.651L17.0765 7.875L18.0658 8.8655L11.1242 15.8072C10.9054 16.0259 10.6087 16.1488 10.2993 16.1488C9.98998 16.1488 9.69328 16.0259 9.4745 15.8072L5.83333 12.1637L6.82383 11.1732L10.3005 14.6498L10.2993 14.651Z"
-                                             />
+                                            d="M11.6667 23.3333C5.22317 23.3333 0 18.1102 0 11.6667C0 5.22317 5.22317 0 11.6667 0C18.1102 0 23.3333 5.22317 23.3333 11.6667C23.3333 18.1102 18.1102 23.3333 11.6667 23.3333ZM11.6667 21.9333C14.3896 21.9333 17.0009 20.8517 18.9263 18.9263C20.8517 17.0009 21.9333 14.3896 21.9333 11.6667C21.9333 8.94378 20.8517 6.33241 18.9263 4.40704C17.0009 2.48166 14.3896 1.4 11.6667 1.4C8.94378 1.4 6.33241 2.48166 4.40704 4.40704C2.48166 6.33241 1.4 8.94378 1.4 11.6667C1.4 14.3896 2.48166 17.0009 4.40704 18.9263C6.33241 20.8517 8.94378 21.9333 11.6667 21.9333ZM10.2993 14.651L17.0765 7.875L18.0658 8.8655L11.1242 15.8072C10.9054 16.0259 10.6087 16.1488 10.2993 16.1488C9.98998 16.1488 9.69328 16.0259 9.4745 15.8072L5.83333 12.1637L6.82383 11.1732L10.3005 14.6498L10.2993 14.651Z" />
                                     </svg>
                                 </div>
                                 <h3 class="dark:text-white font-poppins font-bold lg:text-lg text-base">
@@ -195,24 +167,20 @@
                             <div class="p-4 border flex items-center space-x-6"
                                 style="border-color: rgba(0, 0, 0, 0.06);">
                                 <div class="rounded-full p-3 bg-m_white-200 dark:bg-black">
-                                    <svg class="w-[20px] h-[20px] fill-m_red-100 dark:fill-white" viewBox="0 0 24 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="w-[20px] h-[20px] fill-m_red-100 dark:fill-white" viewBox="0 0 24 20"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path class="stroke-[#E92A34] dark:stroke-white"
                                             d="M17.4167 18.6667C18.6133 18.6667 19.5833 17.6966 19.5833 16.5C19.5833 15.3034 18.6133 14.3333 17.4167 14.3333C16.22 14.3333 15.25 15.3034 15.25 16.5C15.25 17.6966 16.22 18.6667 17.4167 18.6667Z"
-                                            stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                         <path class="stroke-[#E92A34] dark:stroke-white"
                                             d="M6.58332 18.6667C7.77994 18.6667 8.74999 17.6966 8.74999 16.5C8.74999 15.3034 7.77994 14.3333 6.58332 14.3333C5.38671 14.3333 4.41666 15.3034 4.41666 16.5C4.41666 17.6966 5.38671 18.6667 6.58332 18.6667Z"
-                                            stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                         <path class="stroke-[#E92A34] dark:stroke-white"
                                             d="M10.9167 15.4167H15.25M13.625 4.58334H14.6466C16.0657 4.58334 16.7764 4.58334 17.3777 4.92459C17.98 5.26475 18.3808 5.89417 19.1836 7.15192C19.7469 8.03375 20.3362 8.67509 21.1672 9.24384C22.0035 9.818 22.4022 10.0986 22.6221 10.5482C22.8333 10.9793 22.8333 11.4896 22.8333 12.5101C22.8333 13.8567 22.8333 14.5294 22.4552 14.9573L22.4054 15.0104C22.0078 15.4167 21.3806 15.4167 20.1282 15.4167H19.5833"
-                                            stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                         <path class="stroke-[#E92A34] dark:stroke-white"
                                             d="M13.0833 4.58334L14.1602 7.2765C14.6877 8.59492 14.951 9.25467 15.5024 9.62734C16.0527 10 16.7623 10 18.1837 10H21.75M13.0833 4.58334C13.0833 3.05042 13.0833 2.2845 12.6283 1.81C12.1733 1.33334 11.4399 1.33334 9.97416 1.33334H4.27582C2.81007 1.33334 2.07666 1.33442 1.62166 1.81C1.16666 2.28559 1.16666 3.0515 1.16666 4.58334V12.1667C1.16666 13.6996 1.16666 14.4655 1.62166 14.94C2.07666 15.4167 2.81007 15.4167 4.27582 15.4167M13.0833 4.58334V15.4167H8.42066"
-                                            stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </div>
                                 <h3 class="dark:text-white font-poppins font-bold lg:text-lg text-base">
@@ -222,20 +190,22 @@
                         </div>
                     </div>
                     <div class="lg:w-[500px] w-full lg:h-[600px] h-full">
-                        <img class="w-full h-full object-cover rounded-lg" src="@/assets/imgs/about-page2.webp">
+                        <img class="w-full h-full object-cover rounded-lg" :src="keyValues?.image">
                     </div>
                 </div>
             </div>
             <!-- Our services -->
             <div class="bg-m_gray-400 dark:bg-black">
                 <div class="container py-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center">
+                    <h2
+                        class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center">
                         {{ $t('home.title20') }}
                     </h2>
                     <div class="pt-20 flex items-start gap-x-6 overflow-x-auto no-scrollbar">
-                        <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
+                        <div v-for="item in ourServices" :key="item.id"
+                            class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
                             <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
-                                src="@/assets/imgs/service1.webp">
+                                :src="item.image">
                             <router-link to="/service" class="absolute top-4 right-4 cursor-pointer">
                                 <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -248,43 +218,7 @@
                             </router-link>
                             <div
                                 class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-1/2">
-                                {{ $t('home.title21') }}
-                            </div>
-                        </div>
-                        <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
-                            <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
-                                src="@/assets/imgs/service2.webp">
-                            <router-link to="/service" class="absolute top-4 right-4 cursor-pointer">
-                                <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <circle opacity="0.9" cx="30.7734" cy="30.7734" r="21.2756"
-                                        transform="rotate(40.6108 30.7734 30.7734)" fill="white" />
-                                    <path
-                                        d="M27.0284 25.4929C26.8602 25.5143 26.707 25.6006 26.6015 25.7333C26.496 25.866 26.4465 26.0347 26.4636 26.2034C26.4808 26.3721 26.5631 26.5275 26.6931 26.6363C26.8232 26.7451 26.9905 26.7989 27.1596 26.786L34.6043 26.032L26.2913 35.7273C26.1791 35.8582 26.1234 36.0283 26.1366 36.2002C26.1498 36.3721 26.2308 36.5317 26.3617 36.6439C26.4926 36.7562 26.6627 36.8118 26.8346 36.7986C27.0065 36.7854 27.1661 36.7045 27.2783 36.5736L35.5913 26.8783L35.983 34.3514C35.9874 34.4367 36.0085 34.5203 36.0452 34.5974C36.082 34.6745 36.1335 34.7436 36.1969 34.8008C36.2603 34.8579 36.3344 34.9021 36.4148 34.9306C36.4953 34.9592 36.5806 34.9716 36.6659 34.9672C36.7511 34.9628 36.8347 34.9417 36.9118 34.9049C36.9889 34.8682 37.058 34.8167 37.1152 34.7533C37.1724 34.6899 37.2165 34.6158 37.245 34.5354C37.2736 34.4549 37.286 34.3696 37.2816 34.2843L36.8178 25.4146C36.8077 25.2209 36.7329 25.0362 36.6054 24.89C36.5521 24.8244 36.4872 24.7692 36.414 24.727C36.2503 24.624 36.0569 24.5787 35.8644 24.5983L27.0284 25.4929Z"
-                                        fill="black" />
-                                </svg>
-                            </router-link>
-                            <div
-                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-1/2">
-                                {{ $t('home.title22') }}
-                            </div>
-                        </div>
-                        <div class="relative inline-block min-w-[20rem] rounded-lg overflow-hidden">
-                            <img class="transition-transform duration-500 ease-in-out transform hover:scale-110"
-                                src="@/assets/imgs/service3.webp">
-                            <router-link to="/service" class="absolute top-4 right-4 cursor-pointer">
-                                <svg width="61" height="61" viewBox="0 0 61 61" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <circle opacity="0.9" cx="30.7734" cy="30.7734" r="21.2756"
-                                        transform="rotate(40.6108 30.7734 30.7734)" fill="white" />
-                                    <path
-                                        d="M27.0284 25.4929C26.8602 25.5143 26.707 25.6006 26.6015 25.7333C26.496 25.866 26.4465 26.0347 26.4636 26.2034C26.4808 26.3721 26.5631 26.5275 26.6931 26.6363C26.8232 26.7451 26.9905 26.7989 27.1596 26.786L34.6043 26.032L26.2913 35.7273C26.1791 35.8582 26.1234 36.0283 26.1366 36.2002C26.1498 36.3721 26.2308 36.5317 26.3617 36.6439C26.4926 36.7562 26.6627 36.8118 26.8346 36.7986C27.0065 36.7854 27.1661 36.7045 27.2783 36.5736L35.5913 26.8783L35.983 34.3514C35.9874 34.4367 36.0085 34.5203 36.0452 34.5974C36.082 34.6745 36.1335 34.7436 36.1969 34.8008C36.2603 34.8579 36.3344 34.9021 36.4148 34.9306C36.4953 34.9592 36.5806 34.9716 36.6659 34.9672C36.7511 34.9628 36.8347 34.9417 36.9118 34.9049C36.9889 34.8682 37.058 34.8167 37.1152 34.7533C37.1724 34.6899 37.2165 34.6158 37.245 34.5354C37.2736 34.4549 37.286 34.3696 37.2816 34.2843L36.8178 25.4146C36.8077 25.2209 36.7329 25.0362 36.6054 24.89C36.5521 24.8244 36.4872 24.7692 36.414 24.727C36.2503 24.624 36.0569 24.5787 35.8644 24.5983L27.0284 25.4929Z"
-                                        fill="black" />
-                                </svg>
-                            </router-link>
-                            <div
-                                class="text-start absolute bottom-8 left-8 font-sf_pro font-bold lg:text-xl text-lg text-white w-3/5">
-                                {{ $t('home.title23') }}
+                                {{ getLocalizedName(item) }}
                             </div>
                         </div>
                     </div>
@@ -302,10 +236,10 @@
                             </svg>
                         </div>
                         <div class="flex flex-col space-y-1">
-                            <AnimatedCounter class="font-poppins font-semibold lg:text-xl text-lg text-white"
-                                :finalValue="5" :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
+                            <AnimateCounter class="font-poppins font-semibold lg:text-xl text-lg text-white" :start="0"
+                                :end="statistic?.experience_number" :duration="2000" :plus="true" />
                             <p class="font-poppins lg:text-base text-sm text-white">
-                                {{ $t('home.title24') }}
+                                {{ getLocalizationEx(statistic) }}
                             </p>
                         </div>
                     </div>
@@ -324,10 +258,10 @@
                             </svg>
                         </div>
                         <div class="flex flex-col space-y-1">
-                            <AnimatedCounter class="font-poppins font-semibold lg:text-xl text-lg text-white"
-                                :finalValue="500" :start-value="100" :speed="1" :plus="true"></AnimatedCounter>
+                            <AnimateCounter class="font-poppins font-semibold lg:text-xl text-lg text-white" :start="0"
+                                :end="statistic?.cargo_number" :duration="2000" :plus="true" />
                             <p class="font-poppins lg:text-base text-sm text-white">
-                                {{ $t('home.title25') }}
+                                {{ getLocalizationCargo(statistic) }}
                             </p>
                         </div>
                     </div>
@@ -349,10 +283,10 @@
                             </svg>
                         </div>
                         <div class="flex flex-col space-y-1">
-                            <AnimatedCounter class="font-poppins font-semibold lg:text-xl text-lg text-white"
-                                :finalValue="480" :start-value="0" :speed="1" :plus="true"></AnimatedCounter>
+                            <AnimateCounter class="font-poppins font-semibold lg:text-xl text-lg text-white" :start="0"
+                                :end="statistic?.clients_number" :duration="2000" :plus="true" />
                             <p class="font-poppins lg:text-base text-sm text-white">
-                                {{ $t('home.title26') }}
+                                {{ getLocalizationClient(statistic) }}
                             </p>
                         </div>
                     </div>
@@ -368,10 +302,10 @@
                             </svg>
                         </div>
                         <div class="flex flex-col space-y-1">
-                            <AnimatedCounter class="font-poppins font-semibold lg:text-xl text-lg text-white"
-                                :finalValue="20" :start-value="0" :speed="50" :plus="true"></AnimatedCounter>
+                            <AnimateCounter class="font-poppins font-semibold lg:text-xl text-lg text-white" :start="0"
+                                :end="statistic?.warehouses_number" :duration="2000" :plus="true" />
                             <p class="font-poppins lg:text-base text-sm text-white">
-                                {{ $t('home.title27') }}
+                                {{ getLocalizationWh(statistic) }}
                             </p>
                         </div>
                     </div>
@@ -380,72 +314,17 @@
             <!-- Cargo -->
             <div class="bg-white dark:bg-m_black-100">
                 <div class="container pt-20">
-                    <h2 class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center">
+                    <h2
+                        class="font-poppins font-semibold text-m_black-100 dark:text-white lg:text-3xl text-2xl text-center">
                         {{ $t('home.title28') }}
                     </h2>
                     <div class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 py-20">
-                        <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
+                        <div v-for="item in cargoes" :key="item.id" class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
                             <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                                src="@/assets/imgs/cargo1.webp">
+                                :src="item?.image">
                             <p
                                 class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                {{ $t('home.title29') }}
-                            </p>
-                        </div>
-                        <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                                src="@/assets/imgs/cargo2.webp">
-                            <p
-                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                {{ $t('home.title30') }}
-                            </p>
-                        </div>
-                        <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                                src="@/assets/imgs/cargo3.webp">
-                            <p
-                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                {{ $t('home.title31') }}
-                            </p>
-                        </div>
-                        <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                                src="@/assets/imgs/cargo4.webp">
-                            <p
-                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                {{ $t('home.title32') }}
-                            </p>
-                        </div>
-                        <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                                src="@/assets/imgs/cargo5.webp">
-                            <p
-                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                {{ $t('home.title33') }}
-                            </p>
-                        </div>
-                        <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                                src="@/assets/imgs/cargo6.webp">
-                            <p
-                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                {{ $t('home.title34') }}
-                            </p>
-                        </div>
-                        <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                                src="@/assets/imgs/cargo7.webp">
-                            <p
-                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                {{ $t('home.title35') }}
-                            </p>
-                        </div>
-                        <div class="sm:w-full sm:mx-0 mx-6 rounded-xl relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 hover:rotate-3"
-                                src="@/assets/imgs/cargo8.webp">
-                            <p
-                                class="text-start font-sf_pro font-medium text-white text-xl absolute bottom-10 left-8 w-4/5">
-                                {{ $t('home.title36') }}
+                                {{ getLocalizedName(item) }}
                             </p>
                         </div>
                     </div>
@@ -460,7 +339,7 @@
 import api from '@/api/index'
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
-import AnimatedCounter from '@/components/AnimatedCounter.vue';
+import AnimateCounter from '@/components/AnimateCounter.vue';
 import { EffectFade, Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css/navigation';
@@ -472,10 +351,17 @@ export default {
         Footer,
         Swiper,
         SwiperSlide,
-        AnimatedCounter,
+        AnimateCounter,
     },
     async created() {
-        await this.getGalleryItems()
+        this.getAbout()
+        this.getLicenses()
+        this.getGalleryItems()
+        this.getOurServices()
+        this.getAboutItems()
+        this.getKeyValues()
+        this.getStatistic()
+        this.getCargoes()
     },
     computed: {
         isDarkMode() {
@@ -485,126 +371,91 @@ export default {
     data() {
         return {
             modules: [Navigation, EffectFade, Autoplay],
-            countries: [
-                {
-                    id: 1,
-                    name: "Turkey",
-                    flag: "/src/assets/imgs/turkey.png"
-                },
-                {
-                    id: 2,
-                    name: "Russia",
-                    flag: "/src/assets/imgs/russia.png"
-                },
-                {
-                    id: 3,
-                    name: "China",
-                    flag: "/src/assets/imgs/china.png"
-                },
-                {
-                    id: 4,
-                    name: "Dubai",
-                    flag: "/svgs/dubay.svg"
-                },
-            ],
-            galleryItems: {
-                imgs: [
-                    '/imgs/logistic1.webp',
-                    '/imgs/logistic2.webp',
-                    '/imgs/logistic3.webp',
-                    '/imgs/logistic4.webp',
-                ],
-                EN: [
-                    {
-                        id: 1,
-                        title: 'Delivering seamless logistics solutions worldwide',
-                        desc: 'We offer fast and reliable delivery solutions for our logistics company.'
-                    },
-                    {
-                        id: 2,
-                        title: 'Logistics solutions for international shipping',
-                        desc: 'We offer fast and reliable delivery solutions for our logistics company.'
-                    },
-                    {
-                        id: 3,
-                        title: 'Delivering seamless logistics solutions worldwide',
-                        desc: 'We offer fast and reliable delivery solutions for our logistics company.',
-                    },
-                    {
-                        id: 4,
-                        title: 'Logistics solutions for international shipping',
-                        desc: 'We offer fast and reliable delivery solutions for our logistics company.',
-                    },
-                ],
-                RU: [
-                    {
-                        id: 1,
-                        title: 'Предоставление бесперебойных логистических решений по всему миру',
-                        desc: 'Мы предлагаем быстрые и надежные решения для доставки в нашей логистической компании.'
-                    },
-                    {
-                        id: 2,
-                        title: 'Логистические решения для международных перевозок',
-                        desc: 'Мы предлагаем быстрые и надежные решения для доставки в нашей логистической компании.'
-                    },
-                    {
-                        id: 3,
-                        title: 'Предоставление бесперебойных логистических решений по всему миру',
-                        desc: 'Мы предлагаем быстрые и надежные решения для доставки в нашей логистической компании.',
-                    },
-                    {
-                        id: 4,
-                        title: 'Логистические решения для международных перевозок',
-                        desc: 'Мы предлагаем быстрые и надежные решения для доставки в нашей логистической компании.',
-                    },
-                ],
-                TM: [
-                    {
-                        id: 1,
-                        title: 'Dünýä boýunça bökdençsiz logistika çözgütlerini üpjün etmek',
-                        desc: 'Logistika kompaniýamyz üçin çalt, ygtybarly eltip berme çözgütlerini hödürleýäris.'
-                    },
-                    {
-                        id: 2,
-                        title: 'Halkara ýük daşama üçin logistika çözgütleri',
-                        desc: 'Logistika kompaniýamyz üçin çalt, ygtybarly eltip berme çözgütlerini hödürleýäris.'
-                    },
-                    {
-                        id: 3,
-                        title: 'Dünýä boýunça bökdençsiz logistika çözgütlerini üpjün etmek',
-                        desc: 'Logistika kompaniýamyz üçin çalt, ygtybarly eltip berme çözgütlerini hödürleýäris.',
-                    },
-                    {
-                        id: 4,
-                        title: 'Halkara ýük daşama üçin logistika çözgütleri',
-                        desc: 'Logistika kompaniýamyz üçin çalt, ygtybarly eltip berme çözgütlerini hödürleýäris.',
-                    },
-                ],
-            },
-            services: [
-                "Экспедирование экспортно-импортных и транзитных перевозок, грузов по странам СНГ, Ближнего и Дальнего Востока, стран Балтии и Евросоюза",
-                "Перевозка опасных грузов",
-                "Получение специального разрешения и перевозка грузов любой сложности: крупных, негабаритных, сверхгабаритных, тяжеловесных и длинномерных перевозка сборных грузов",
-                "Перевозка грузов под температурным режимом",
-                "Перевозка дорогостоящих грузов",
-                "Получение виз для иностранных водителей и визовая поддержка на территории Туркменистана."
-            ]
+            galleryItems: null,
+            about: null,
+            licenses: null,
+            aboutItems: null,
+            ourServices: null,
+            keyValues: null,
+            statistic: null,
+            cargoes: null
         }
     },
-    mounted() {
-        // İlk yükleme sırasında ScrollReveal'ı başlat
-        this.initScrollReveal();
-    },
     methods: {
+        getLocalizedName(item) {
+            const locale = this.$i18n.locale;
+            if (locale === 'TM') return item?.name_tm;
+            if (locale === 'RU') return item?.name_ru;
+            if (locale === 'EN') return item?.name_en;
+            return item?.name_tm;
+        },
+        getLocalizedDesc(item) {
+            const locale = this.$i18n.locale;
+            if (locale === 'TM') return item?.desc_tm;
+            if (locale === 'RU') return item?.desc_ru;
+            if (locale === 'EN') return item?.desc_en;
+            return item?.desc_tm;
+        },
+        getLocalizationEx(item) {
+            const locale = this.$i18n.locale;
+            if (locale === 'TM') return item?.experience_name_tm;
+            if (locale === 'RU') return item?.experience_name_ru;
+            if (locale === 'EN') return item?.experience_name_en;
+            return item?.experience_name_tm;
+        },
+        getLocalizationCargo(item) {
+            const locale = this.$i18n.locale;
+            if (locale === 'TM') return item?.cargo_name_tm;
+            if (locale === 'RU') return item?.cargo_name_ru;
+            if (locale === 'EN') return item?.cargo_name_en;
+            return item?.cargo_name_tm;
+        },
+        getLocalizationClient(item) {
+            const locale = this.$i18n.locale;
+            if (locale === 'TM') return item?.clients_name_tm;
+            if (locale === 'RU') return item?.clients_name_ru;
+            if (locale === 'EN') return item?.clients_name_en;
+            return item?.clients_name_tm;
+        },
+        getLocalizationWh(item) {
+            const locale = this.$i18n.locale;
+            if (locale === 'TM') return item?.warehouses_name_tm;
+            if (locale === 'RU') return item?.warehouses_name_ru;
+            if (locale === 'EN') return item?.warehouses_name_en;
+            return item?.warehouses_name_tm;
+        },
+        // #####################
         async getGalleryItems() {
             const gallery = await api.get('/sliders/')
-            console.log(gallery);
+            this.galleryItems = gallery.data
         },
-        initScrollReveal() {
-            console.log('tetiklandı');
-            // ScrollReveal'ı temizle ve yeniden başlat
-            // ScrollReveal().clean(); // Eski tanımlamaları temizle
-            // ScrollReveal().reveal("[v-scroll-reveal]");
+        async getAbout() {
+            const about = await api.get('/about/')
+            this.about = about.data[0]
+        },
+        async getAboutItems() {
+            const aboutItems = await api.get('/about-items/')
+            this.aboutItems = aboutItems.data
+        },
+        async getLicenses() {
+            const licenses = await api.get('/licenses/')
+            this.licenses = licenses.data
+        },
+        async getKeyValues() {
+            const keyValues = await api.get('/key-values/')
+            this.keyValues = keyValues.data[0]
+        },
+        async getOurServices() {
+            const services = await api.get('/our-service/')
+            this.ourServices = services.data
+        },
+        async getStatistic() {
+            const statistic = await api.get('/statistics/')
+            this.statistic = statistic.data[0]
+        },
+        async getCargoes() {
+            const cargoes = await api.get('/cargoes/')
+            this.cargoes = cargoes.data
         },
     }
 }

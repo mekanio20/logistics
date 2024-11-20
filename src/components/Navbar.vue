@@ -115,15 +115,15 @@
                 <div class="flex flex-col items-start space-y-4 py-6">
                     <div class="flex items-center space-x-2">
                         <phone />
-                        <p class="font-sf_pro font-normal text-sm text-black dark:text-white">+993 12 96-49-97</p>
+                        <p class="font-sf_pro font-normal text-sm text-black dark:text-white">{{ contact?.phone }}</p>
                     </div>
                     <div class="flex items-center space-x-2">
                         <mail />
-                        <p class="font-sf_pro font-normal text-sm text-black dark:text-white">mail@logistics.tm </p>
+                        <p class="font-sf_pro font-normal text-sm text-black dark:text-white">{{ contact?.email }}</p>
                     </div>
                     <div class="flex items-center space-x-2">
                         <pin />
-                        <p class="font-sf_pro font-normal text-sm text-black dark:text-white">744000, Ashgabat, Seyitnazar Seydi 70/2
+                        <p class="font-sf_pro font-normal text-sm text-black dark:text-white">{{ contact?.address }}
                         </p>
                     </div>
                 </div>
@@ -169,6 +169,7 @@
 </template>
 
 <script>
+import api from '@/api/index'
 import { markRaw } from 'vue';
 import phone from './icons/phone.vue';
 import mail from './icons/mail.vue';
@@ -214,6 +215,7 @@ export default {
             isOpen: false,
             isLang: false,
             hoveredIcon: null,
+            contact: null
         }
     },
     computed: {
@@ -221,7 +223,14 @@ export default {
             return this.$store.getters.isDarkMode;
         },
     },
+    async created() {
+        this.getContact()
+    },
     methods: {
+        async getContact() {
+            const contact = await api.get('/contact/')
+            this.contact = contact.data[0]
+        },
         toggleSidebar() {
             this.isOpen = !this.isOpen;
         },
