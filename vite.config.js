@@ -16,9 +16,4 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
-  server: {
-    https: false,
-    host: "localhost",
-    port: 5173,
-  },
 })
