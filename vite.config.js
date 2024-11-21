@@ -17,6 +17,12 @@ export default defineConfig({
     }
   },
   server: {
-    host: true
-  }
+    proxy: {
+      '/api': {
+        target: 'http://bmamedov.beget.tech',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
 })
