@@ -1,5 +1,57 @@
-# Vue 3 + Vite
+# Logistika Taslamasy
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Bu taslama "Turkmen Milli Logistik" kärhanasynyň resmi web saýtydyr.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Tehniki enjamlar
+
+- Node.js (14.x ýa-da ondan ýokary)
+- Yarn paket menedžeri
+
+## Gerekli paketler
+
+Proýekti işe goýbermek üçin:
+
+```bash
+yarn install
+```
+
+Proýekti işe goýbermek
+
+```bash
+yarn dev
+```
+
+## Ulanylan tehnologiýalar
+
+- Vue.js 3 - Frontend framework
+- Vite - Build tool
+- Tailwind CSS - CSS framework
+- Vue Router - Routing
+- Vuex - State management
+- Vue I18n - Dil aýratynlyklary
+- Axios - HTTP client
+- Swiper - Slider
+- ScrollReveal - Animasiýalar
+- Animate.css - CSS animasiýalary
+
+## Proýekt struktury
+
+```
+logistics/
+├── src/           # Esasy kodlar
+├── public/        # Statik fayllar
+├── dist/          # Ýygnalan fayllar
+└── node_modules/  # Paketler
+```
+
+## Git
+
+Proýekti klonlamak üçin:
+
+```bash
+git clone https://github.com/mekanio20/logistics.git
+```
+
+## Lisensiýa
+
+Bu proýekt [MIT lisenziýasy] astynda ýaygynlaşdyrylýar.
